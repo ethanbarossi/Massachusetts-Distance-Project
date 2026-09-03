@@ -22,7 +22,6 @@
       --white: #ffffff;
       --off-white: #f5f5f5;
       --gray: #9a9a9a;
-      --light-gray: #dedede;
       --border: #242424;
       --max-width: 1180px;
     }
@@ -54,6 +53,10 @@
       text-decoration: none;
     }
 
+    button {
+      font: inherit;
+    }
+
     .container {
       width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
@@ -82,7 +85,6 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      min-width: 0;
     }
 
     .brand img {
@@ -123,9 +125,14 @@
 
     .hero {
       padding: 64px 0 48px;
+
       background:
-        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.85)),
-        url("assets/brookline-preseason-rankings-feature.jpeg") center/cover no-repeat;
+        linear-gradient(
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.85)
+        ),
+        url("assets/brookline-preseason-rankings-feature.jpeg")
+        center / cover no-repeat;
 
       min-height: 610px;
       display: flex;
@@ -167,13 +174,17 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       background: var(--blue);
       color: var(--white);
+
       padding: 12px 18px;
+
       font-weight: 800;
       font-size: 0.85rem;
       text-transform: uppercase;
       letter-spacing: 0.06em;
+
       border: 1px solid var(--blue);
       transition: 0.2s ease;
     }
@@ -198,7 +209,9 @@
     .quick-link {
       padding: 22px 18px;
       border-right: 1px solid var(--border);
+
       text-align: center;
+
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -238,6 +251,7 @@
       line-height: 1;
       text-transform: uppercase;
       letter-spacing: -0.035em;
+      max-width: 850px;
     }
 
     .section-heading p {
@@ -246,10 +260,9 @@
       font-size: 0.95rem;
     }
 
-    /* ARTICLE CARDS */
+    /* ARTICLES */
 
-    .article-grid,
-    .photo-grid {
+    .article-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
@@ -259,12 +272,10 @@
       background: var(--soft-black);
       border: 1px solid var(--border);
       overflow: hidden;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
 
-    .section-light .article-card {
-      background: var(--white);
-      border-color: #d5d5d5;
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .article-card:hover {
@@ -283,10 +294,13 @@
 
     .card-category {
       color: var(--blue);
+
       font-size: 0.72rem;
       font-weight: 800;
+
       text-transform: uppercase;
       letter-spacing: 0.1em;
+
       margin-bottom: 9px;
     }
 
@@ -302,24 +316,31 @@
       margin-bottom: 15px;
     }
 
-    .section-light .article-card p {
-      color: #626262;
-    }
-
     .text-link {
       color: var(--blue);
+
       font-size: 0.82rem;
       font-weight: 800;
+
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
 
-    /* PHOTO CARDS */
+    /* RACE PHOTO GALLERIES */
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
 
     .photo-card {
       position: relative;
+
       min-height: 390px;
+
       overflow: hidden;
+
       border: 1px solid var(--border);
       background: #111;
     }
@@ -327,15 +348,19 @@
     .photo-card img {
       position: absolute;
       inset: 0;
+
       width: 100%;
       height: 100%;
+
       object-fit: cover;
     }
 
     .photo-card::after {
       content: "";
+
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
           to top,
@@ -346,13 +371,13 @@
 
     .photo-card-content {
       position: absolute;
+
       z-index: 2;
+
       left: 20px;
       right: 20px;
       bottom: 20px;
     }
-
-    /* WHITE PHOTO ALBUM TITLES */
 
     .photo-card h3 {
       color: #ffffff;
@@ -375,25 +400,186 @@
       color: #ffffff;
     }
 
+    /* MEMORABLE MOMENTS */
+
+    .moments-section {
+      background: #080808;
+    }
+
+    .moments-grid {
+      columns: 3 300px;
+      column-gap: 18px;
+    }
+
+    .moment-card {
+      position: relative;
+
+      display: block;
+
+      width: 100%;
+
+      padding: 0;
+      margin: 0 0 18px;
+
+      break-inside: avoid;
+
+      border: 1px solid var(--border);
+
+      background: #111;
+
+      overflow: hidden;
+
+      cursor: zoom-in;
+      text-align: left;
+    }
+
+    .moment-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+
+      transition: transform 0.3s ease;
+    }
+
+    .moment-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .moment-overlay {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      padding: 55px 18px 18px;
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.95),
+          rgba(0, 0, 0, 0)
+        );
+
+      opacity: 0;
+
+      transform: translateY(8px);
+
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .moment-card:hover .moment-overlay,
+    .moment-card:focus .moment-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .moment-overlay p {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size: 0.92rem;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    /* IMAGE POPUP */
+
+    .lightbox {
+      display: none;
+
+      position: fixed;
+
+      z-index: 1000;
+
+      inset: 0;
+
+      padding: 28px;
+
+      background: rgba(0, 0, 0, 0.94);
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      max-width: min(1100px, 94vw);
+      max-height: 92vh;
+
+      text-align: center;
+    }
+
+    .lightbox img {
+      width: auto;
+
+      max-width: 100%;
+      max-height: 80vh;
+
+      margin: 0 auto;
+
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      margin-top: 14px;
+
+      color: #ffffff;
+
+      font-size: 0.95rem;
+    }
+
+    .lightbox-close {
+      position: fixed;
+
+      top: 18px;
+      right: 24px;
+
+      border: none;
+      background: transparent;
+
+      color: #ffffff;
+
+      font-size: 2.3rem;
+
+      cursor: pointer;
+    }
+
     /* INTERVIEWS */
 
     .interview-box {
       border: 1px solid var(--border);
+
       padding: 52px 24px;
+
       text-align: center;
+
       background: var(--soft-black);
     }
 
     .interview-box h3 {
       font-size: clamp(2.2rem, 6vw, 4.6rem);
+
       text-transform: uppercase;
+
       letter-spacing: -0.03em;
+
       margin-bottom: 14px;
     }
 
     .interview-box p {
       color: var(--gray);
+
       margin: 0 auto 20px;
+
       max-width: 560px;
     }
 
@@ -401,35 +587,49 @@
 
     .about-grid {
       display: grid;
+
       grid-template-columns: 1.15fr 0.85fr;
+
       gap: 50px;
+
       align-items: start;
     }
 
     .about-copy h2 {
       font-size: clamp(2.2rem, 5vw, 4.5rem);
+
       line-height: 0.98;
+
       text-transform: uppercase;
+
       margin-bottom: 20px;
+
       letter-spacing: -0.035em;
     }
 
     .about-copy p {
       color: #d0d0d0;
+
       margin-bottom: 14px;
+
       max-width: 720px;
     }
 
     .about-card {
       border-left: 4px solid var(--blue);
+
       padding: 24px;
+
       background: var(--soft-black);
     }
 
     .about-card strong {
       display: block;
+
       font-size: 1.1rem;
+
       margin-bottom: 10px;
+
       text-transform: uppercase;
     }
 
@@ -441,61 +641,82 @@
 
     .contact-grid {
       display: grid;
+
       grid-template-columns: repeat(2, 1fr);
+
       gap: 24px;
     }
 
     .contact-card {
       border: 1px solid #d5d5d5;
+
       background: var(--white);
+
       padding: 28px;
     }
 
     .contact-card.personal {
       display: grid;
+
       grid-template-columns: 145px 1fr;
+
       gap: 24px;
+
       align-items: center;
     }
 
     .contact-card.personal img {
       width: 145px;
       height: 145px;
+
       object-fit: cover;
+
       border-radius: 50%;
+
       border: 4px solid var(--blue);
     }
 
     .contact-label {
       color: var(--blue);
+
       font-size: 0.72rem;
       font-weight: 800;
+
       text-transform: uppercase;
       letter-spacing: 0.11em;
+
       margin-bottom: 8px;
     }
 
     .contact-card h3 {
       font-size: 1.7rem;
+
       line-height: 1.05;
+
       margin-bottom: 7px;
     }
 
     .contact-role {
       color: #676767;
+
       margin-bottom: 18px;
+
       font-size: 0.92rem;
     }
 
     .contact-links {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 10px 18px;
     }
 
     .contact-links a {
       color: var(--blue-dark);
+
       font-weight: 800;
+
       font-size: 0.88rem;
     }
 
@@ -507,15 +728,21 @@
 
     footer {
       padding: 32px 0;
+
       background: #030303;
+
       color: #8e8e8e;
+
       font-size: 0.84rem;
     }
 
     .footer-wrap {
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
+
       align-items: center;
     }
 
@@ -526,9 +753,12 @@
     /* TABLET */
 
     @media (max-width: 900px) {
+
       .nav-wrap {
         align-items: flex-start;
+
         flex-direction: column;
+
         padding: 14px 0;
       }
 
@@ -547,22 +777,19 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .quick-link:nth-child(2) {
-        border-right: none;
-      }
-
-      .quick-link:nth-child(-n + 2) {
-        border-bottom: 1px solid var(--border);
-      }
-
       .about-grid {
         grid-template-columns: 1fr;
+      }
+
+      .moments-grid {
+        columns: 2 260px;
       }
     }
 
     /* MOBILE */
 
     @media (max-width: 640px) {
+
       .container {
         width: min(100% - 26px, var(--max-width));
       }
@@ -571,12 +798,9 @@
         font-size: 0.78rem;
       }
 
-      nav {
-        font-size: 0.8rem;
-      }
-
       .hero {
         min-height: 500px;
+
         padding-top: 45px;
       }
 
@@ -602,7 +826,17 @@
 
       .section-heading {
         align-items: flex-start;
+
         flex-direction: column;
+      }
+
+      .moments-grid {
+        columns: 1;
+      }
+
+      .moment-overlay {
+        opacity: 1;
+        transform: none;
       }
 
       .contact-card.personal {
@@ -616,6 +850,7 @@
 
       .footer-wrap {
         flex-direction: column;
+
         align-items: flex-start;
       }
     }
@@ -627,9 +862,11 @@
   <!-- HEADER -->
 
   <header class="site-header">
+
     <div class="container nav-wrap">
 
       <a class="brand" href="#home">
+
         <img
           src="assets/mdp-logo.png"
           alt="Massachusetts Distance Project logo"
@@ -639,18 +876,29 @@
           Massachusetts<br />
           Distance Project
         </div>
+
       </a>
 
       <nav aria-label="Main navigation">
+
         <a href="#home">Home</a>
+
         <a href="#articles">Articles</a>
+
         <a href="#photos">Photos</a>
+
+        <a href="#moments">Moments</a>
+
         <a href="#interviews">Interviews</a>
+
         <a href="#about">About</a>
+
         <a href="#contact">Contact</a>
+
       </nav>
 
     </div>
+
   </header>
 
   <main id="home">
@@ -658,6 +906,7 @@
     <!-- FEATURED STORY -->
 
     <section class="hero">
+
       <div class="container">
 
         <div class="hero-content">
@@ -686,11 +935,13 @@
         </div>
 
       </div>
+
     </section>
 
     <!-- QUICK LINKS -->
 
     <section class="quick-links">
+
       <div class="container">
 
         <a class="quick-link" href="#articles">
@@ -701,8 +952,8 @@
           Race Photos
         </a>
 
-        <a class="quick-link" href="#interviews">
-          Interviews
+        <a class="quick-link" href="#moments">
+          Memorable Moments
         </a>
 
         <a class="quick-link" href="#about">
@@ -710,16 +961,19 @@
         </a>
 
       </div>
+
     </section>
 
-    <!-- ARTICLES -->
+    <!-- LATEST ARTICLES -->
 
     <section id="articles" class="section">
+
       <div class="container">
 
         <div class="section-heading">
 
           <div>
+
             <div class="eyebrow">
               Latest Coverage
             </div>
@@ -727,6 +981,7 @@
             <h2>
               Latest Articles
             </h2>
+
           </div>
 
           <p>
@@ -743,10 +998,12 @@
           <article class="article-card">
 
             <a href="articles/catholic-conference-what-to-expect.html">
+
               <img
                 src="assets/catholic-conference-feature.jpeg"
-                alt="BC High and St. John’s Prep runners competing in a dual meet"
+                alt="BC High and St. John’s Prep runners"
               />
+
             </a>
 
             <div class="card-body">
@@ -756,9 +1013,11 @@
               </div>
 
               <h3>
+
                 <a href="articles/catholic-conference-what-to-expect.html">
                   Catholic Conference: What to Expect
                 </a>
+
               </h3>
 
               <p>
@@ -782,10 +1041,12 @@
           <article class="article-card">
 
             <a href="articles/middlesex-league-what-to-expect.html">
+
               <img
                 src="assets/middlesex-league-feature.jpeg"
-                alt="Lexington and Reading runners competing in a 2025 dual meet"
+                alt="Lexington and Reading runners"
               />
+
             </a>
 
             <div class="card-body">
@@ -795,9 +1056,11 @@
               </div>
 
               <h3>
+
                 <a href="articles/middlesex-league-what-to-expect.html">
                   Middlesex League: What to Expect
                 </a>
+
               </h3>
 
               <p>
@@ -821,10 +1084,12 @@
           <article class="article-card">
 
             <a href="articles/bay-state-conference-what-to-expect.html">
+
               <img
                 src="assets/bay-state-conference-feature.jpeg"
                 alt="Bay State Conference runners"
               />
+
             </a>
 
             <div class="card-body">
@@ -834,9 +1099,11 @@
               </div>
 
               <h3>
+
                 <a href="articles/bay-state-conference-what-to-expect.html">
                   Bay State Conference: What to Expect
                 </a>
+
               </h3>
 
               <p>
@@ -860,10 +1127,12 @@
           <article class="article-card">
 
             <a href="articles/hockomock-league-what-to-expect.html">
+
               <img
                 src="assets/hockomock-league-feature.jpeg"
                 alt="Oliver Ames boys cross country team"
               />
+
             </a>
 
             <div class="card-body">
@@ -873,9 +1142,11 @@
               </div>
 
               <h3>
+
                 <a href="articles/hockomock-league-what-to-expect.html">
                   Hockomock League: What to Expect
                 </a>
+
               </h3>
 
               <p>
@@ -898,11 +1169,15 @@
 
           <article class="article-card">
 
-            <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
+            <a
+              href="articles/massachusetts-top-15-preseason-rankings-10-1.html"
+            >
+
               <img
                 src="assets/brookline-preseason-rankings-feature.jpeg"
-                alt="Brookline boys cross country team"
+                alt="Brookline boys cross country"
               />
+
             </a>
 
             <div class="card-body">
@@ -912,9 +1187,13 @@
               </div>
 
               <h3>
-                <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
+
+                <a
+                  href="articles/massachusetts-top-15-preseason-rankings-10-1.html"
+                >
                   Massachusetts Top 15 Preseason Rankings: No. 10–1
                 </a>
+
               </h3>
 
               <p>
@@ -936,11 +1215,15 @@
 
           <article class="article-card">
 
-            <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
+            <a
+              href="articles/massachusetts-top-15-preseason-rankings-15-11.html"
+            >
+
               <img
                 src="assets/longmeadow-preseason-rankings-feature.jpeg"
-                alt="Longmeadow boys cross country team"
+                alt="Longmeadow boys cross country"
               />
+
             </a>
 
             <div class="card-body">
@@ -950,9 +1233,13 @@
               </div>
 
               <h3>
-                <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
+
+                <a
+                  href="articles/massachusetts-top-15-preseason-rankings-15-11.html"
+                >
                   Massachusetts Top 15 Preseason Rankings: No. 15–11
                 </a>
+
               </h3>
 
               <p>
@@ -974,11 +1261,15 @@
 
           <article class="article-card">
 
-            <a href="articles/who-will-be-the-next-all-state-champion.html">
+            <a
+              href="articles/who-will-be-the-next-all-state-champion.html"
+            >
+
               <img
                 src="assets/all-state-champion-feature.jpeg"
-                alt="Massachusetts high school cross country runners"
+                alt="Massachusetts cross country runners"
               />
+
             </a>
 
             <div class="card-body">
@@ -988,9 +1279,13 @@
               </div>
 
               <h3>
-                <a href="articles/who-will-be-the-next-all-state-champion.html">
+
+                <a
+                  href="articles/who-will-be-the-next-all-state-champion.html"
+                >
                   Who Will Be the Next All-State Champion?
                 </a>
+
               </h3>
 
               <p>
@@ -1014,10 +1309,12 @@
           <article class="article-card">
 
             <a href="articles/newton-north-bay-state-sleeper-team.html">
+
               <img
                 src="assets/newton-north-feature.jpeg"
                 alt="Newton North boys distance runners"
               />
+
             </a>
 
             <div class="card-body">
@@ -1027,9 +1324,11 @@
               </div>
 
               <h3>
+
                 <a href="articles/newton-north-bay-state-sleeper-team.html">
                   Newton North: Bay State Sleeper Team
                 </a>
+
               </h3>
 
               <p>
@@ -1053,10 +1352,12 @@
           <article class="article-card">
 
             <a href="articles/brookline-5-for-5.html">
+
               <img
                 src="assets/brookline-feature.jpeg"
-                alt="Brookline boys cross country team"
+                alt="Brookline boys cross country"
               />
+
             </a>
 
             <div class="card-body">
@@ -1066,9 +1367,11 @@
               </div>
 
               <h3>
+
                 <a href="articles/brookline-5-for-5.html">
                   Will The Brookline Boys Go 5 for 5?
                 </a>
+
               </h3>
 
               <p>
@@ -1088,17 +1391,24 @@
           </article>
 
         </div>
+
       </div>
+
     </section>
 
     <!-- RACE PHOTOS -->
 
-    <section id="photos" class="section section-light">
+    <section
+      id="photos"
+      class="section section-light"
+    >
+
       <div class="container">
 
         <div class="section-heading">
 
           <div>
+
             <div class="eyebrow">
               Race Photography
             </div>
@@ -1106,6 +1416,7 @@
             <h2>
               Race Photos
             </h2>
+
           </div>
 
           <p>
@@ -1264,16 +1575,472 @@
         </div>
 
       </div>
+
     </section>
 
-    <!-- INTERVIEWS -->
+    <!-- MEMORABLE MOMENTS -->
 
-    <section id="interviews" class="section">
+    <section
+      id="moments"
+      class="section moments-section"
+    >
+
       <div class="container">
 
         <div class="section-heading">
 
           <div>
+
+            <div class="eyebrow">
+              Season in Photos
+            </div>
+
+            <h2>
+              Memorable Moments From the 2025/2026 Season
+            </h2>
+
+          </div>
+
+          <p>
+            A look back at some of the performances, finishes and
+            championship moments that defined the 2025/2026
+            Massachusetts distance running season.
+          </p>
+
+        </div>
+
+        <div class="moments-grid">
+
+          <!-- 1 SEAMUS EGAN -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Seamus Egan smiling after his third-place finish in the All-State two-mile."
+            onclick="openMoment(
+              'assets/moment-01-seamus-egan.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-01-seamus-egan.jpeg"
+              alt="Seamus Egan smiling after his third-place finish in the All-State two-mile."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Seamus Egan smiling after his third-place finish in
+                the All-State two-mile.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 2 HARRY FLINT -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Harry Flint claiming the state record in the 800m in 1:50.33."
+            onclick="openMoment(
+              'assets/moment-02-harry-flint.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-02-harry-flint.jpeg"
+              alt="Harry Flint claiming the state record in the 800m in 1:50.33."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Harry Flint claiming the state record in the 800m
+                in 1:50.33.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 3 GREG MCGRATH ALL-STATE -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Greg McGrath after winning the All-State two-mile in 9:08.15."
+            onclick="openMoment(
+              'assets/moment-03-greg-mcgrath-all-state.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-03-greg-mcgrath-all-state.jpeg"
+              alt="Greg McGrath after winning the All-State two-mile in 9:08.15."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Greg McGrath after winning the All-State two-mile
+                in 9:08.15.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 4 JOHN BIANCHI -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="John Bianchi claiming his first-ever state title."
+            onclick="openMoment(
+              'assets/moment-04-john-bianchi.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-04-john-bianchi.jpeg"
+              alt="John Bianchi claiming his first-ever state title."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                John Bianchi claiming his first-ever state title.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 5 LANDON SARNEY -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
+            onclick="openMoment(
+              'assets/moment-05-landon-sarney.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-05-landon-sarney.jpeg"
+              alt="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Landon Sarney upsetting the favorites to become the
+                Division 1 All-State champion.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 6 BOSTON LATIN ACADEMY -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
+            onclick="openMoment(
+              'assets/moment-06-boston-latin-academy.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-06-boston-latin-academy.jpeg"
+              alt="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Boston Latin Academy comes from behind to win the
+                Division 2 All-State meet by one point.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 7 BROOKLINE -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Brookline boys claim their fourth straight title."
+            onclick="openMoment(
+              'assets/moment-07-brookline.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-07-brookline.jpeg"
+              alt="Brookline boys claim their fourth straight title."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Brookline boys claim their fourth straight title.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 8 MICHAEL MAHORIC -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
+            onclick="openMoment(
+              'assets/moment-08-michael-mahoric.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-08-michael-mahoric.jpeg"
+              alt="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Michael Mahoric wins the BSR Elite Mile in 4:05.77.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 9 RYAN COSTELLO -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
+            onclick="openMoment(
+              'assets/moment-09-ryan-costello.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-09-ryan-costello.jpeg"
+              alt="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Ryan Costello on his way to running a 9:12 two-mile
+                at the Weston Twilight Invitational.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 10 SILAS GARTNER -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
+            onclick="openMoment(
+              'assets/moment-10-silas-gartner.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-10-silas-gartner.jpeg"
+              alt="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Silas Gartner becoming back-to-back cross country
+                Division 2 State Champion.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 11 GREG MCGRATH SUB 9 -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Greg McGrath on his way to running his first sub-nine-minute two-mile."
+            onclick="openMoment(
+              'assets/moment-11-greg-mcgrath-sub9.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-11-greg-mcgrath-sub9.jpeg"
+              alt="Greg McGrath on his way to running his first sub-nine-minute two-mile."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Greg McGrath on his way to running his first
+                sub-nine-minute two-mile.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 12 LIAM HARTMANN -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
+            onclick="openMoment(
+              'assets/moment-12-liam-hartmann.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-12-liam-hartmann.jpeg"
+              alt="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Liam Hartmann upsetting the favorites to win the
+                Twilight Invitational in 15:04.
+              </p>
+
+            </div>
+
+          </button>
+
+          <!-- 13 TIM CONNOLLY -->
+
+          <button
+            class="moment-card"
+            type="button"
+            data-caption="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
+            onclick="openMoment(
+              'assets/moment-13-tim-connolly.jpeg',
+              this.dataset.caption
+            )"
+          >
+
+            <img
+              src="assets/moment-13-tim-connolly.jpeg"
+              alt="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
+              loading="lazy"
+            />
+
+            <div class="moment-overlay">
+
+              <p>
+                Tim Connolly coming down the final stretch to win the
+                M12 League meet in a MA No. 1 15:03.
+              </p>
+
+            </div>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LIGHTBOX -->
+
+    <div
+      class="lightbox"
+      id="momentLightbox"
+      onclick="closeMoment(event)"
+    >
+
+      <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Close photo"
+        onclick="closeMoment(event, true)"
+      >
+        ×
+      </button>
+
+      <div
+        class="lightbox-inner"
+        onclick="event.stopPropagation()"
+      >
+
+        <img
+          id="momentLightboxImage"
+          src=""
+          alt=""
+        />
+
+        <p
+          class="lightbox-caption"
+          id="momentLightboxCaption"
+        ></p>
+
+      </div>
+
+    </div>
+
+    <!-- INTERVIEWS -->
+
+    <section
+      id="interviews"
+      class="section"
+    >
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+
             <div class="eyebrow">
               After the Finish
             </div>
@@ -1281,6 +2048,7 @@
             <h2>
               Interviews
             </h2>
+
           </div>
 
           <a
@@ -1289,7 +2057,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            YouTube channel →
+            YouTube Channel →
           </a>
 
         </div>
@@ -1308,11 +2076,15 @@
         </div>
 
       </div>
+
     </section>
 
     <!-- ABOUT -->
 
-    <section id="about" class="section">
+    <section
+      id="about"
+      class="section"
+    >
 
       <div class="container about-grid">
 
@@ -1360,7 +2132,11 @@
 
     <!-- CONTACT -->
 
-    <section id="contact" class="section section-light">
+    <section
+      id="contact"
+      class="section section-light"
+    >
+
       <div class="container">
 
         <div class="section-heading">
@@ -1482,6 +2258,7 @@
         </div>
 
       </div>
+
     </section>
 
   </main>
@@ -1513,6 +2290,71 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <!-- MEMORABLE MOMENTS POPUP SCRIPT -->
+
+  <script>
+
+    function openMoment(src, caption) {
+
+      const lightbox =
+        document.getElementById("momentLightbox");
+
+      const image =
+        document.getElementById("momentLightboxImage");
+
+      const captionText =
+        document.getElementById("momentLightboxCaption");
+
+      image.src = src;
+
+      image.alt = caption;
+
+      captionText.textContent = caption;
+
+      lightbox.classList.add("open");
+
+      document.body.style.overflow = "hidden";
+
+    }
+
+    function closeMoment(event, forceClose) {
+
+      if (
+        forceClose ||
+        event.target.id === "momentLightbox"
+      ) {
+
+        document
+          .getElementById("momentLightbox")
+          .classList
+          .remove("open");
+
+        document.body.style.overflow = "";
+
+      }
+
+    }
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+
+          document
+            .getElementById("momentLightbox")
+            .classList
+            .remove("open");
+
+          document.body.style.overflow = "";
+
+        }
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
