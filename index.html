@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta
     name="description"
     content="Massachusetts Distance Project — independent coverage of Massachusetts high school cross country and distance running."
   />
+
   <title>Massachusetts Distance Project</title>
 
   <link rel="icon" type="image/png" href="assets/favicon.png" />
@@ -20,6 +22,7 @@
       --white: #ffffff;
       --off-white: #f5f5f5;
       --gray: #9a9a9a;
+      --light-gray: #dedede;
       --border: #242424;
       --max-width: 1180px;
     }
@@ -55,6 +58,8 @@
       width: min(var(--max-width), calc(100% - 40px));
       margin: 0 auto;
     }
+
+    /* HEADER */
 
     .site-header {
       position: sticky;
@@ -107,17 +112,21 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      transition: color 0.2s ease;
     }
 
     nav a:hover {
       color: var(--blue);
     }
 
+    /* HERO */
+
     .hero {
       padding: 64px 0 48px;
       background:
-        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.85)),
+        linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.85)),
         url("assets/brookline-preseason-rankings-feature.jpeg") center/cover no-repeat;
+
       min-height: 610px;
       display: flex;
       align-items: flex-end;
@@ -166,12 +175,15 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       border: 1px solid var(--blue);
+      transition: 0.2s ease;
     }
 
     .button:hover {
       background: transparent;
       color: var(--blue);
     }
+
+    /* QUICK LINKS */
 
     .quick-links {
       background: var(--soft-black);
@@ -200,6 +212,8 @@
     .quick-link:hover {
       color: var(--blue);
     }
+
+    /* GENERAL SECTIONS */
 
     .section {
       padding: 72px 0;
@@ -232,6 +246,8 @@
       font-size: 0.95rem;
     }
 
+    /* ARTICLE CARDS */
+
     .article-grid,
     .photo-grid {
       display: grid;
@@ -257,7 +273,7 @@
     }
 
     .article-card img {
-      aspect-ratio: 16/10;
+      aspect-ratio: 16 / 10;
       object-fit: cover;
     }
 
@@ -298,6 +314,8 @@
       letter-spacing: 0.06em;
     }
 
+    /* PHOTO CARDS */
+
     .photo-card {
       position: relative;
       min-height: 390px;
@@ -309,6 +327,7 @@
     .photo-card img {
       position: absolute;
       inset: 0;
+      width: 100%;
       height: 100%;
       object-fit: cover;
     }
@@ -317,7 +336,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.05) 65%);
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.95),
+          rgba(0, 0, 0, 0.05) 65%
+        );
     }
 
     .photo-card-content {
@@ -328,17 +352,30 @@
       bottom: 20px;
     }
 
+    /* WHITE PHOTO ALBUM TITLES */
+
     .photo-card h3 {
+      color: #ffffff;
       font-size: 1.35rem;
       line-height: 1.15;
       margin-bottom: 8px;
     }
 
+    .photo-card .card-category {
+      color: #ffffff;
+    }
+
     .photo-card p {
-      color: #c8c8c8;
+      color: #ffffff;
       font-size: 0.9rem;
       margin-bottom: 12px;
     }
+
+    .photo-card .text-link {
+      color: #ffffff;
+    }
+
+    /* INTERVIEWS */
 
     .interview-box {
       border: 1px solid var(--border);
@@ -359,6 +396,8 @@
       margin: 0 auto 20px;
       max-width: 560px;
     }
+
+    /* ABOUT */
 
     .about-grid {
       display: grid;
@@ -397,6 +436,8 @@
     .about-card p {
       color: var(--gray);
     }
+
+    /* CONTACT */
 
     .contact-grid {
       display: grid;
@@ -462,6 +503,8 @@
       text-decoration: underline;
     }
 
+    /* FOOTER */
+
     footer {
       padding: 32px 0;
       background: #030303;
@@ -479,6 +522,8 @@
     .footer-wrap strong {
       color: var(--white);
     }
+
+    /* TABLET */
 
     @media (max-width: 900px) {
       .nav-wrap {
@@ -502,10 +547,20 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .quick-link:nth-child(2) {
+        border-right: none;
+      }
+
+      .quick-link:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--border);
+      }
+
       .about-grid {
         grid-template-columns: 1fr;
       }
     }
+
+    /* MOBILE */
 
     @media (max-width: 640px) {
       .container {
@@ -516,8 +571,13 @@
         font-size: 0.78rem;
       }
 
+      nav {
+        font-size: 0.8rem;
+      }
+
       .hero {
         min-height: 500px;
+        padding-top: 45px;
       }
 
       .hero h1 {
@@ -564,10 +624,17 @@
 
 <body>
 
+  <!-- HEADER -->
+
   <header class="site-header">
     <div class="container nav-wrap">
+
       <a class="brand" href="#home">
-        <img src="assets/mdp-logo.png" alt="Massachusetts Distance Project logo" />
+        <img
+          src="assets/mdp-logo.png"
+          alt="Massachusetts Distance Project logo"
+        />
+
         <div class="brand-text">
           Massachusetts<br />
           Distance Project
@@ -582,21 +649,31 @@
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
+
     </div>
   </header>
 
   <main id="home">
 
+    <!-- FEATURED STORY -->
+
     <section class="hero">
       <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow">XC · 2026 Preseason Rankings</div>
 
-          <h1>Massachusetts Top 15 Preseason Rankings: No. 10–1</h1>
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            XC · 2026 Preseason Rankings
+          </div>
+
+          <h1>
+            Massachusetts Top 15 Preseason Rankings: No. 10–1
+          </h1>
 
           <p>
-            The countdown concludes with the ten teams MDP believes enter the
-            2026 season with the best chance to make noise this fall.
+            The countdown concludes with the ten teams MDP believes
+            enter the 2026 season with the best chance to make noise
+            this fall.
           </p>
 
           <a
@@ -605,37 +682,105 @@
           >
             Read Featured Story
           </a>
+
         </div>
+
       </div>
     </section>
 
+    <!-- QUICK LINKS -->
+
     <section class="quick-links">
       <div class="container">
-        <a class="quick-link" href="#articles">Latest Articles</a>
-        <a class="quick-link" href="#photos">Race Photos</a>
-        <a class="quick-link" href="#interviews">Interviews</a>
-        <a class="quick-link" href="#about">About MDP</a>
+
+        <a class="quick-link" href="#articles">
+          Latest Articles
+        </a>
+
+        <a class="quick-link" href="#photos">
+          Race Photos
+        </a>
+
+        <a class="quick-link" href="#interviews">
+          Interviews
+        </a>
+
+        <a class="quick-link" href="#about">
+          About MDP
+        </a>
+
       </div>
     </section>
+
+    <!-- ARTICLES -->
 
     <section id="articles" class="section">
       <div class="container">
 
         <div class="section-heading">
+
           <div>
-            <div class="eyebrow">Latest Coverage</div>
-            <h2>Latest Articles</h2>
+            <div class="eyebrow">
+              Latest Coverage
+            </div>
+
+            <h2>
+              Latest Articles
+            </h2>
           </div>
 
           <p>
-            Massachusetts high school distance running coverage, previews,
-            rankings, features and analysis.
+            Massachusetts high school distance running coverage,
+            previews, rankings, features and analysis.
           </p>
+
         </div>
 
         <div class="article-grid">
 
+          <!-- CATHOLIC CONFERENCE -->
+
           <article class="article-card">
+
+            <a href="articles/catholic-conference-what-to-expect.html">
+              <img
+                src="assets/catholic-conference-feature.jpeg"
+                alt="BC High and St. John’s Prep runners competing in a dual meet"
+              />
+            </a>
+
+            <div class="card-body">
+
+              <div class="card-category">
+                XC · 2026 League Preview
+              </div>
+
+              <h3>
+                <a href="articles/catholic-conference-what-to-expect.html">
+                  Catholic Conference: What to Expect
+                </a>
+              </h3>
+
+              <p>
+                BC High and St. John’s Prep headline a loaded Catholic
+                Conference entering the 2026 season.
+              </p>
+
+              <a
+                class="text-link"
+                href="articles/catholic-conference-what-to-expect.html"
+              >
+                Read Article →
+              </a>
+
+            </div>
+
+          </article>
+
+          <!-- MIDDLESEX -->
+
+          <article class="article-card">
+
             <a href="articles/middlesex-league-what-to-expect.html">
               <img
                 src="assets/middlesex-league-feature.jpeg"
@@ -644,7 +789,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · 2026 League Preview</div>
+
+              <div class="card-category">
+                XC · 2026 League Preview
+              </div>
 
               <h3>
                 <a href="articles/middlesex-league-what-to-expect.html">
@@ -653,8 +801,8 @@
               </h3>
 
               <p>
-                Lexington and Reading headline another deep season in the
-                Middlesex League.
+                Lexington and Reading headline another deep season
+                in the Middlesex League.
               </p>
 
               <a
@@ -663,10 +811,15 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
+          <!-- BAY STATE -->
+
           <article class="article-card">
+
             <a href="articles/bay-state-conference-what-to-expect.html">
               <img
                 src="assets/bay-state-conference-feature.jpeg"
@@ -675,7 +828,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · 2026 League Preview</div>
+
+              <div class="card-category">
+                XC · 2026 League Preview
+              </div>
 
               <h3>
                 <a href="articles/bay-state-conference-what-to-expect.html">
@@ -684,8 +840,8 @@
               </h3>
 
               <p>
-                A look at the teams and individuals that could define the Bay
-                State Conference this fall.
+                A look at the teams and individuals that could define
+                the Bay State Conference this fall.
               </p>
 
               <a
@@ -694,10 +850,15 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
+          <!-- HOCKOMOCK -->
+
           <article class="article-card">
+
             <a href="articles/hockomock-league-what-to-expect.html">
               <img
                 src="assets/hockomock-league-feature.jpeg"
@@ -706,7 +867,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · 2026 League Preview</div>
+
+              <div class="card-category">
+                XC · 2026 League Preview
+              </div>
 
               <h3>
                 <a href="articles/hockomock-league-what-to-expect.html">
@@ -715,8 +879,8 @@
               </h3>
 
               <p>
-                Oliver Ames leads the way as the Hockomock League prepares for
-                another season.
+                Oliver Ames leads the way as the Hockomock League
+                prepares for another season.
               </p>
 
               <a
@@ -725,10 +889,15 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
+          <!-- RANKINGS 10-1 -->
+
           <article class="article-card">
+
             <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
               <img
                 src="assets/brookline-preseason-rankings-feature.jpeg"
@@ -737,7 +906,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · 2026 Preseason Rankings</div>
+
+              <div class="card-category">
+                XC · 2026 Preseason Rankings
+              </div>
 
               <h3>
                 <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
@@ -755,10 +927,15 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
+          <!-- RANKINGS 15-11 -->
+
           <article class="article-card">
+
             <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
               <img
                 src="assets/longmeadow-preseason-rankings-feature.jpeg"
@@ -767,7 +944,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · 2026 Preseason Rankings</div>
+
+              <div class="card-category">
+                XC · 2026 Preseason Rankings
+              </div>
 
               <h3>
                 <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
@@ -785,10 +965,15 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
+          <!-- ALL STATE -->
+
           <article class="article-card">
+
             <a href="articles/who-will-be-the-next-all-state-champion.html">
               <img
                 src="assets/all-state-champion-feature.jpeg"
@@ -797,7 +982,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · 2026 Preview</div>
+
+              <div class="card-category">
+                XC · 2026 Preview
+              </div>
 
               <h3>
                 <a href="articles/who-will-be-the-next-all-state-champion.html">
@@ -816,10 +1004,15 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
+          <!-- NEWTON NORTH -->
+
           <article class="article-card">
+
             <a href="articles/newton-north-bay-state-sleeper-team.html">
               <img
                 src="assets/newton-north-feature.jpeg"
@@ -828,7 +1021,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · Team Feature</div>
+
+              <div class="card-category">
+                XC · Team Feature
+              </div>
 
               <h3>
                 <a href="articles/newton-north-bay-state-sleeper-team.html">
@@ -837,8 +1033,8 @@
               </h3>
 
               <p>
-                Why Newton North could surprise Massachusetts cross country
-                this season.
+                Why Newton North could surprise Massachusetts cross
+                country this season.
               </p>
 
               <a
@@ -847,10 +1043,15 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
+          <!-- BROOKLINE -->
+
           <article class="article-card">
+
             <a href="articles/brookline-5-for-5.html">
               <img
                 src="assets/brookline-feature.jpeg"
@@ -859,7 +1060,10 @@
             </a>
 
             <div class="card-body">
-              <div class="card-category">XC · Team Feature</div>
+
+              <div class="card-category">
+                XC · Team Feature
+              </div>
 
               <h3>
                 <a href="articles/brookline-5-for-5.html">
@@ -868,7 +1072,8 @@
               </h3>
 
               <p>
-                Brookline enters another season chasing championship history.
+                Brookline enters another season chasing championship
+                history.
               </p>
 
               <a
@@ -877,28 +1082,78 @@
               >
                 Read Article →
               </a>
+
             </div>
+
           </article>
 
         </div>
       </div>
     </section>
 
+    <!-- RACE PHOTOS -->
+
     <section id="photos" class="section section-light">
       <div class="container">
 
         <div class="section-heading">
+
           <div>
-            <div class="eyebrow">Race Photography</div>
-            <h2>Race Photos</h2>
+            <div class="eyebrow">
+              Race Photography
+            </div>
+
+            <h2>
+              Race Photos
+            </h2>
           </div>
 
           <p>
-            Full race galleries from Massachusetts track and cross country meets.
+            Full race galleries from Massachusetts track and cross
+            country meets.
           </p>
+
         </div>
 
         <div class="photo-grid">
+
+          <!-- WESTON TWILIGHT -->
+
+          <a
+            class="photo-card"
+            href="https://photos.app.goo.gl/Ug1RS9rfkFx1hWRd7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <img
+              src="assets/weston-twilight-2026-cover.jpeg"
+              alt="Weston Twilight 2026"
+            />
+
+            <div class="photo-card-content">
+
+              <div class="card-category">
+                Outdoor Track · 2026
+              </div>
+
+              <h3>
+                Weston Twilight 2026
+              </h3>
+
+              <p>
+                View the full gallery.
+              </p>
+
+              <span class="text-link">
+                View Gallery →
+              </span>
+
+            </div>
+
+          </a>
+
+          <!-- OUTDOOR MOC -->
 
           <a
             class="photo-card"
@@ -906,18 +1161,35 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <img
               src="assets/outdoor-moc-2026-cover.jpeg"
               alt="Outdoor Track Meet of Champions 2026"
             />
 
             <div class="photo-card-content">
-              <div class="card-category">Outdoor Track · 2026</div>
-              <h3>Outdoor Track Meet of Champions 2026</h3>
-              <p>View the full gallery.</p>
-              <span class="text-link">View Gallery →</span>
+
+              <div class="card-category">
+                Outdoor Track · 2026
+              </div>
+
+              <h3>
+                Outdoor Track Meet of Champions 2026
+              </h3>
+
+              <p>
+                View the full gallery.
+              </p>
+
+              <span class="text-link">
+                View Gallery →
+              </span>
+
             </div>
+
           </a>
+
+          <!-- INDOOR MOC -->
 
           <a
             class="photo-card"
@@ -925,18 +1197,35 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <img
               src="assets/indoor-moc-2026-cover.jpeg"
               alt="Indoor Track Meet of Champions 2026"
             />
 
             <div class="photo-card-content">
-              <div class="card-category">Indoor Track · 2026</div>
-              <h3>Indoor Track Meet of Champions 2026</h3>
-              <p>View the full gallery.</p>
-              <span class="text-link">View Gallery →</span>
+
+              <div class="card-category">
+                Indoor Track · 2026
+              </div>
+
+              <h3>
+                Indoor Track Meet of Champions 2026
+              </h3>
+
+              <p>
+                View the full gallery.
+              </p>
+
+              <span class="text-link">
+                View Gallery →
+              </span>
+
             </div>
+
           </a>
+
+          <!-- DIVISION 1 RELAYS -->
 
           <a
             class="photo-card"
@@ -944,30 +1233,54 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
             <img
               src="assets/outdoor-division-1-relays-2026-cover.jpeg"
               alt="Outdoor Track Division 1 Relays 2026"
             />
 
             <div class="photo-card-content">
-              <div class="card-category">Outdoor Track · 2026</div>
-              <h3>Outdoor Track Division 1 Relays 2026</h3>
-              <p>View the full gallery.</p>
-              <span class="text-link">View Gallery →</span>
+
+              <div class="card-category">
+                Outdoor Track · 2026
+              </div>
+
+              <h3>
+                Outdoor Track Division 1 Relays 2026
+              </h3>
+
+              <p>
+                View the full gallery.
+              </p>
+
+              <span class="text-link">
+                View Gallery →
+              </span>
+
             </div>
+
           </a>
 
         </div>
+
       </div>
     </section>
+
+    <!-- INTERVIEWS -->
 
     <section id="interviews" class="section">
       <div class="container">
 
         <div class="section-heading">
+
           <div>
-            <div class="eyebrow">After the Finish</div>
-            <h2>Interviews</h2>
+            <div class="eyebrow">
+              After the Finish
+            </div>
+
+            <h2>
+              Interviews
+            </h2>
           </div>
 
           <a
@@ -978,69 +1291,102 @@
           >
             YouTube channel →
           </a>
+
         </div>
 
         <div class="interview-box">
-          <h3>Coming Soon</h3>
+
+          <h3>
+            Coming Soon
+          </h3>
 
           <p>
-            Athlete interviews, race reactions and conversations from across
-            Massachusetts distance running.
+            Athlete interviews, race reactions and conversations
+            from across Massachusetts distance running.
           </p>
+
         </div>
 
       </div>
     </section>
 
+    <!-- ABOUT -->
+
     <section id="about" class="section">
+
       <div class="container about-grid">
 
         <div class="about-copy">
-          <div class="eyebrow">About MDP</div>
 
-          <h2>Massachusetts Running, Covered Differently.</h2>
+          <div class="eyebrow">
+            About MDP
+          </div>
+
+          <h2>
+            Massachusetts Running, Covered Differently.
+          </h2>
 
           <p>
-            Massachusetts Distance Project is an independent running media
-            project focused on high school cross country and distance running
-            throughout Massachusetts.
+            Massachusetts Distance Project is an independent running
+            media project focused on high school cross country and
+            distance running throughout Massachusetts.
           </p>
 
           <p>
-            MDP covers teams, athletes, races and stories through articles,
-            rankings, photography and interviews — all with the goal of giving
-            Massachusetts runners more coverage and more recognition.
+            MDP covers teams, athletes, races and stories through
+            articles, rankings, photography and interviews — all with
+            the goal of giving Massachusetts runners more coverage
+            and more recognition.
           </p>
+
         </div>
 
         <div class="about-card">
-          <strong>Independent. Local. Free.</strong>
+
+          <strong>
+            Independent. Local. Free.
+          </strong>
 
           <p>
-            Built for the Massachusetts running community and focused on the
-            athletes, teams and stories that make the sport special.
+            Built for the Massachusetts running community and focused
+            on the athletes, teams and stories that make the sport special.
           </p>
+
         </div>
 
       </div>
+
     </section>
+
+    <!-- CONTACT -->
 
     <section id="contact" class="section section-light">
       <div class="container">
 
         <div class="section-heading">
+
           <div>
-            <div class="eyebrow">Get in Touch</div>
-            <h2>Contact &amp; Socials</h2>
+
+            <div class="eyebrow">
+              Get in Touch
+            </div>
+
+            <h2>
+              Contact &amp; Socials
+            </h2>
+
           </div>
 
           <p>
-            Reach out for coverage, photography, interviews, story ideas or
-            other MDP inquiries.
+            Reach out for coverage, photography, interviews,
+            story ideas or other MDP inquiries.
           </p>
+
         </div>
 
         <div class="contact-grid">
+
+          <!-- PERSONAL -->
 
           <article class="contact-card personal">
 
@@ -1050,9 +1396,14 @@
             />
 
             <div>
-              <div class="contact-label">Founder</div>
 
-              <h3>Ethan Barossi</h3>
+              <div class="contact-label">
+                Founder
+              </div>
+
+              <h3>
+                Ethan Barossi
+              </h3>
 
               <div class="contact-role">
                 Founder, writer &amp; photographer
@@ -1081,9 +1432,12 @@
                 </a>
 
               </div>
+
             </div>
 
           </article>
+
+          <!-- BUSINESS -->
 
           <article class="contact-card">
 
@@ -1091,7 +1445,9 @@
               Massachusetts Distance Project
             </div>
 
-            <h3>Business &amp; Media</h3>
+            <h3>
+              Business &amp; Media
+            </h3>
 
             <div class="contact-role">
               Coverage, photography, interviews &amp; inquiries
@@ -1124,17 +1480,28 @@
           </article>
 
         </div>
+
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
+
   <footer>
+
     <div class="container footer-wrap">
 
       <div>
-        <strong>Massachusetts Distance Project</strong><br />
+
+        <strong>
+          Massachusetts Distance Project
+        </strong>
+
+        <br />
+
         Independent Massachusetts high school distance running coverage.
+
       </div>
 
       <div>
@@ -1142,6 +1509,7 @@
       </div>
 
     </div>
+
   </footer>
 
   <script src="script.js"></script>
