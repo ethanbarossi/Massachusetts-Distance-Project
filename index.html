@@ -121,40 +121,70 @@
       color: var(--blue);
     }
 
-    /* NEW HOMEPAGE HERO */
+    /* HERO */
 
     .hero {
       min-height: 680px;
-
       display: flex;
       align-items: center;
-
       position: relative;
-
-      background:
-        linear-gradient(
-          rgba(0, 0, 0, 0.45),
-          rgba(0, 0, 0, 0.78)
-        ),
-        url("assets/mdp-homepage-collage.jpeg")
-        center / cover no-repeat;
-
+      overflow: hidden;
+      background: #000;
       border-bottom: 1px solid var(--border);
     }
 
+    /*
+      COLLAGE
+      52% moves the image slightly downward.
+      It fades in at the same time as the title.
+    */
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        url("assets/mdp-homepage-collage.jpeg");
+
+      background-size: cover;
+
+      /* MOVED DOWN SLIGHTLY */
+      background-position: center 52%;
+
+      background-repeat: no-repeat;
+
+      opacity: 0;
+      transform: translateY(30px);
+
+      animation: heroImageFadeUp 1.1s ease forwards;
+
+      z-index: 0;
+    }
+
+    /*
+      LIGHTER OVERLAY
+      This keeps the white text readable while allowing
+      more of the original photos to show through.
+    */
+
     .hero::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
       background:
         linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.72),
-          rgba(0, 0, 0, 0.18)
+          rgba(0, 0, 0, 0.54),
+          rgba(0, 0, 0, 0.08)
+        ),
+        linear-gradient(
+          rgba(0, 0, 0, 0.16),
+          rgba(0, 0, 0, 0.52)
         );
 
+      z-index: 1;
       pointer-events: none;
     }
 
@@ -171,59 +201,54 @@
     .hero-title {
       font-size: clamp(3.2rem, 8vw, 7.4rem);
       line-height: 0.9;
-
       text-transform: uppercase;
-
       letter-spacing: -0.055em;
-
       margin-bottom: 24px;
 
       opacity: 0;
-
       transform: translateY(30px);
 
-      animation:
-        heroFadeUp 1.1s ease forwards;
-    }
-
-    .hero-description {
-      max-width: 720px;
-
-      color: #e0e0e0;
-
-      font-size: clamp(1rem, 2vw, 1.3rem);
-
-      line-height: 1.55;
-
-      opacity: 0;
-
-      transform: translateY(24px);
-
-      animation:
-        heroFadeUp 1.1s ease forwards;
-
-      animation-delay: 0.45s;
+      animation: heroFadeUp 1.1s ease forwards;
     }
 
     .hero-line {
       width: 90px;
       height: 5px;
-
       background: var(--blue);
-
       margin-bottom: 24px;
 
       opacity: 0;
+      transform: translateY(30px);
 
-      transform: translateY(20px);
+      animation: heroFadeUp 1.1s ease forwards;
+    }
 
-      animation:
-        heroFadeUp 1s ease forwards;
+    .hero-description {
+      max-width: 720px;
+      color: #f0f0f0;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      line-height: 1.55;
 
-      animation-delay: 0.2s;
+      opacity: 0;
+      transform: translateY(24px);
+
+      animation: heroFadeUp 1.1s ease forwards;
+      animation-delay: 0.45s;
     }
 
     @keyframes heroFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes heroImageFadeUp {
       from {
         opacity: 0;
         transform: translateY(30px);
@@ -250,9 +275,7 @@
     .quick-link {
       padding: 22px 18px;
       border-right: 1px solid var(--border);
-
       text-align: center;
-
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -322,7 +345,6 @@
       background: var(--soft-black);
       border: 1px solid var(--border);
       overflow: hidden;
-
       transition:
         transform 0.2s ease,
         border-color 0.2s ease;
@@ -344,13 +366,10 @@
 
     .card-category {
       color: var(--blue);
-
       font-size: 0.72rem;
       font-weight: 800;
-
       text-transform: uppercase;
       letter-spacing: 0.1em;
-
       margin-bottom: 9px;
     }
 
@@ -368,10 +387,8 @@
 
     .text-link {
       color: var(--blue);
-
       font-size: 0.82rem;
       font-weight: 800;
-
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
@@ -386,11 +403,8 @@
 
     .photo-card {
       position: relative;
-
       min-height: 390px;
-
       overflow: hidden;
-
       border: 1px solid var(--border);
       background: #111;
     }
@@ -398,16 +412,13 @@
     .photo-card img {
       position: absolute;
       inset: 0;
-
       width: 100%;
       height: 100%;
-
       object-fit: cover;
     }
 
     .photo-card::after {
       content: "";
-
       position: absolute;
       inset: 0;
 
@@ -421,9 +432,7 @@
 
     .photo-card-content {
       position: absolute;
-
       z-index: 2;
-
       left: 20px;
       right: 20px;
       bottom: 20px;
@@ -431,10 +440,8 @@
 
     .photo-card h3 {
       color: #ffffff;
-
       font-size: 1.35rem;
       line-height: 1.15;
-
       margin-bottom: 8px;
     }
 
@@ -462,35 +469,23 @@
 
     .moment-card {
       position: relative;
-
       display: block;
-
       width: 100%;
-
       padding: 0;
       margin: 0 0 18px;
-
       break-inside: avoid;
-
       border: 1px solid var(--border);
-
       background: #111;
-
       overflow: hidden;
-
       cursor: zoom-in;
-
       text-align: left;
     }
 
     .moment-card img {
       width: 100%;
       height: auto;
-
       display: block;
-
-      transition:
-        transform 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .moment-card:hover img {
@@ -499,13 +494,10 @@
 
     .moment-overlay {
       position: absolute;
-
       left: 0;
       right: 0;
       bottom: 0;
-
       padding: 55px 18px 18px;
-
       color: #ffffff;
 
       background:
@@ -516,7 +508,6 @@
         );
 
       opacity: 0;
-
       transform: translateY(8px);
 
       transition:
@@ -532,9 +523,7 @@
 
     .moment-overlay p {
       margin: 0;
-
       color: #ffffff;
-
       font-size: 0.92rem;
       line-height: 1.4;
       font-weight: 700;
@@ -544,17 +533,11 @@
 
     .lightbox {
       display: none;
-
       position: fixed;
-
       z-index: 1000;
-
       inset: 0;
-
       padding: 28px;
-
       background: rgba(0, 0, 0, 0.94);
-
       align-items: center;
       justify-content: center;
     }
@@ -566,43 +549,31 @@
     .lightbox-inner {
       max-width: min(1100px, 94vw);
       max-height: 92vh;
-
       text-align: center;
     }
 
     .lightbox img {
       width: auto;
-
       max-width: 100%;
       max-height: 80vh;
-
       margin: 0 auto;
-
       object-fit: contain;
     }
 
     .lightbox-caption {
       margin-top: 14px;
-
       color: #ffffff;
-
       font-size: 0.95rem;
     }
 
     .lightbox-close {
       position: fixed;
-
       top: 18px;
       right: 24px;
-
       border: none;
-
       background: transparent;
-
       color: #ffffff;
-
       font-size: 2.3rem;
-
       cursor: pointer;
     }
 
@@ -610,29 +581,21 @@
 
     .interview-box {
       border: 1px solid var(--border);
-
       padding: 52px 24px;
-
       text-align: center;
-
       background: var(--soft-black);
     }
 
     .interview-box h3 {
       font-size: clamp(2.2rem, 6vw, 4.6rem);
-
       text-transform: uppercase;
-
       letter-spacing: -0.03em;
-
       margin-bottom: 14px;
     }
 
     .interview-box p {
       color: var(--gray);
-
       margin: 0 auto 20px;
-
       max-width: 560px;
     }
 
@@ -640,49 +603,35 @@
 
     .about-grid {
       display: grid;
-
       grid-template-columns: 1.15fr 0.85fr;
-
       gap: 50px;
-
       align-items: start;
     }
 
     .about-copy h2 {
       font-size: clamp(2.2rem, 5vw, 4.5rem);
-
       line-height: 0.98;
-
       text-transform: uppercase;
-
       margin-bottom: 20px;
-
       letter-spacing: -0.035em;
     }
 
     .about-copy p {
       color: #d0d0d0;
-
       margin-bottom: 14px;
-
       max-width: 720px;
     }
 
     .about-card {
       border-left: 4px solid var(--blue);
-
       padding: 24px;
-
       background: var(--soft-black);
     }
 
     .about-card strong {
       display: block;
-
       font-size: 1.1rem;
-
       margin-bottom: 10px;
-
       text-transform: uppercase;
     }
 
@@ -694,82 +643,61 @@
 
     .contact-grid {
       display: grid;
-
       grid-template-columns: repeat(2, 1fr);
-
       gap: 24px;
     }
 
     .contact-card {
       border: 1px solid #d5d5d5;
-
       background: var(--white);
-
       padding: 28px;
     }
 
     .contact-card.personal {
       display: grid;
-
       grid-template-columns: 145px 1fr;
-
       gap: 24px;
-
       align-items: center;
     }
 
     .contact-card.personal img {
       width: 145px;
       height: 145px;
-
       object-fit: cover;
-
       border-radius: 50%;
-
       border: 4px solid var(--blue);
     }
 
     .contact-label {
       color: var(--blue);
-
       font-size: 0.72rem;
       font-weight: 800;
-
       text-transform: uppercase;
       letter-spacing: 0.11em;
-
       margin-bottom: 8px;
     }
 
     .contact-card h3 {
       font-size: 1.7rem;
-
       line-height: 1.05;
-
       margin-bottom: 7px;
     }
 
     .contact-role {
       color: #676767;
-
       margin-bottom: 18px;
-
       font-size: 0.92rem;
     }
 
     .contact-links {
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 10px 18px;
     }
 
     .contact-links a {
       color: var(--blue-dark);
-
       font-weight: 800;
-
       font-size: 0.88rem;
     }
 
@@ -781,21 +709,15 @@
 
     footer {
       padding: 32px 0;
-
       background: #030303;
-
       color: #8e8e8e;
-
       font-size: 0.84rem;
     }
 
     .footer-wrap {
       display: flex;
-
       justify-content: space-between;
-
       gap: 20px;
-
       align-items: center;
     }
 
@@ -806,12 +728,9 @@
     /* TABLET */
 
     @media (max-width: 900px) {
-
       .nav-wrap {
         align-items: flex-start;
-
         flex-direction: column;
-
         padding: 14px 0;
       }
 
@@ -842,7 +761,6 @@
     /* MOBILE */
 
     @media (max-width: 640px) {
-
       .container {
         width: min(100% - 26px, var(--max-width));
       }
@@ -853,8 +771,10 @@
 
       .hero {
         min-height: 560px;
+      }
 
-        background-position: center;
+      .hero::before {
+        background-position: center 52%;
       }
 
       .hero-content {
@@ -887,7 +807,6 @@
 
       .section-heading {
         align-items: flex-start;
-
         flex-direction: column;
       }
 
@@ -911,7 +830,6 @@
 
       .footer-wrap {
         flex-direction: column;
-
         align-items: flex-start;
       }
     }
@@ -919,10 +837,10 @@
     /* ACCESSIBILITY */
 
     @media (prefers-reduced-motion: reduce) {
-
       .hero-title,
       .hero-description,
-      .hero-line {
+      .hero-line,
+      .hero::before {
         opacity: 1;
         transform: none;
         animation: none;
@@ -960,17 +878,11 @@
       <nav aria-label="Main navigation">
 
         <a href="#home">Home</a>
-
         <a href="#articles">Articles</a>
-
         <a href="#photos">Photos</a>
-
         <a href="#moments">Moments</a>
-
         <a href="#interviews">Interviews</a>
-
         <a href="#about">About</a>
-
         <a href="#contact">Contact</a>
 
       </nav>
@@ -981,7 +893,7 @@
 
   <main id="home">
 
-    <!-- NEW OPENING HERO -->
+    <!-- OPENING HERO -->
 
     <section class="hero">
 
@@ -1082,11 +994,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/catholic-conference-what-to-expect.html">
                   Catholic Conference: What to Expect
                 </a>
-
               </h3>
 
               <p>
@@ -1125,11 +1035,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/middlesex-league-what-to-expect.html">
                   Middlesex League: What to Expect
                 </a>
-
               </h3>
 
               <p>
@@ -1168,11 +1076,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/bay-state-conference-what-to-expect.html">
                   Bay State Conference: What to Expect
                 </a>
-
               </h3>
 
               <p>
@@ -1211,11 +1117,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/hockomock-league-what-to-expect.html">
                   Hockomock League: What to Expect
                 </a>
-
               </h3>
 
               <p>
@@ -1254,11 +1158,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
                   Massachusetts Top 15 Preseason Rankings: No. 10–1
                 </a>
-
               </h3>
 
               <p>
@@ -1296,11 +1198,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
                   Massachusetts Top 15 Preseason Rankings: No. 15–11
                 </a>
-
               </h3>
 
               <p>
@@ -1338,11 +1238,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/who-will-be-the-next-all-state-champion.html">
                   Who Will Be the Next All-State Champion?
                 </a>
-
               </h3>
 
               <p>
@@ -1381,11 +1279,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/newton-north-bay-state-sleeper-team.html">
                   Newton North: Bay State Sleeper Team
                 </a>
-
               </h3>
 
               <p>
@@ -1424,11 +1320,9 @@
               </div>
 
               <h3>
-
                 <a href="articles/brookline-5-for-5.html">
                   Will The Brookline Boys Go 5 for 5?
                 </a>
-
               </h3>
 
               <p>
@@ -1482,8 +1376,6 @@
 
         <div class="photo-grid">
 
-          <!-- WESTON -->
-
           <a
             class="photo-card"
             href="https://photos.app.goo.gl/Ug1RS9rfkFx1hWRd7"
@@ -1517,8 +1409,6 @@
             </div>
 
           </a>
-
-          <!-- OUTDOOR MOC -->
 
           <a
             class="photo-card"
@@ -1554,8 +1444,6 @@
 
           </a>
 
-          <!-- INDOOR MOC -->
-
           <a
             class="photo-card"
             href="https://photos.app.goo.gl/gqg4AEzyMbehhKGJA"
@@ -1589,8 +1477,6 @@
             </div>
 
           </a>
-
-          <!-- DIVISION 1 RELAYS -->
 
           <a
             class="photo-card"
@@ -1662,15 +1548,12 @@
 
         <div class="moments-grid">
 
-          <!-- 1 -->
-
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-01-seamus-egan.jpeg"
             data-caption="Seamus Egan smiling after his third-place finish in the All-State two-mile."
-            onclick="openMoment('assets/moment-01-seamus-egan.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-01-seamus-egan.jpeg"
               alt="Seamus Egan smiling after his third-place finish in the All-State two-mile."
@@ -1678,25 +1561,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Seamus Egan smiling after his third-place finish in
-                the All-State two-mile.
+                Seamus Egan smiling after his third-place finish in the All-State two-mile.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 2 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-02-harry-flint.jpeg"
             data-caption="Harry Flint claiming the state record in the 800m in 1:50.33."
-            onclick="openMoment('assets/moment-02-harry-flint.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-02-harry-flint.jpeg"
               alt="Harry Flint claiming the state record in the 800m in 1:50.33."
@@ -1704,25 +1580,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Harry Flint claiming the state record in the 800m
-                in 1:50.33.
+                Harry Flint claiming the state record in the 800m in 1:50.33.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 3 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-03-greg-mcgrath-all-state.jpeg"
             data-caption="Greg McGrath after winning the All-State two-mile in 9:08.15."
-            onclick="openMoment('assets/moment-03-greg-mcgrath-all-state.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-03-greg-mcgrath-all-state.jpeg"
               alt="Greg McGrath after winning the All-State two-mile in 9:08.15."
@@ -1730,25 +1599,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Greg McGrath after winning the All-State two-mile
-                in 9:08.15.
+                Greg McGrath after winning the All-State two-mile in 9:08.15.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 4 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-04-john-bianchi.jpeg"
             data-caption="John Bianchi claiming his first-ever state title."
-            onclick="openMoment('assets/moment-04-john-bianchi.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-04-john-bianchi.jpeg"
               alt="John Bianchi claiming his first-ever state title."
@@ -1756,24 +1618,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
                 John Bianchi claiming his first-ever state title.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 5 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-05-landon-sarney.jpeg"
             data-caption="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
-            onclick="openMoment('assets/moment-05-landon-sarney.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-05-landon-sarney.jpeg"
               alt="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
@@ -1781,25 +1637,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Landon Sarney upsetting the favorites to become the
-                Division 1 All-State champion.
+                Landon Sarney upsetting the favorites to become the Division 1 All-State champion.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 6 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-06-boston-latin-academy.jpeg"
             data-caption="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
-            onclick="openMoment('assets/moment-06-boston-latin-academy.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-06-boston-latin-academy.jpeg"
               alt="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
@@ -1807,25 +1656,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Boston Latin Academy comes from behind to win the
-                Division 2 All-State meet by one point.
+                Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 7 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-07-brookline.jpeg"
             data-caption="Brookline boys claim their fourth straight title."
-            onclick="openMoment('assets/moment-07-brookline.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-07-brookline.jpeg"
               alt="Brookline boys claim their fourth straight title."
@@ -1833,24 +1675,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
                 Brookline boys claim their fourth straight title.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 8 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-08-michael-mahoric.jpeg"
             data-caption="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
-            onclick="openMoment('assets/moment-08-michael-mahoric.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-08-michael-mahoric.jpeg"
               alt="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
@@ -1858,24 +1694,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
                 Michael Mahoric wins the BSR Elite Mile in 4:05.77.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 9 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-09-ryan-costello.jpeg"
             data-caption="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
-            onclick="openMoment('assets/moment-09-ryan-costello.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-09-ryan-costello.jpeg"
               alt="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
@@ -1883,25 +1713,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Ryan Costello on his way to running a 9:12 two-mile
-                at the Weston Twilight Invitational.
+                Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 10 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-10-silas-gartner.jpeg"
             data-caption="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
-            onclick="openMoment('assets/moment-10-silas-gartner.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-10-silas-gartner.jpeg"
               alt="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
@@ -1909,25 +1732,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Silas Gartner becoming back-to-back cross country
-                Division 2 State Champion.
+                Silas Gartner becoming back-to-back cross country Division 2 State Champion.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 11 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-11-greg-mcgrath-sub9.jpeg"
             data-caption="Greg McGrath on his way to running his first sub-nine-minute two-mile."
-            onclick="openMoment('assets/moment-11-greg-mcgrath-sub9.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-11-greg-mcgrath-sub9.jpeg"
               alt="Greg McGrath on his way to running his first sub-nine-minute two-mile."
@@ -1935,25 +1751,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Greg McGrath on his way to running his first
-                sub-nine-minute two-mile.
+                Greg McGrath on his way to running his first sub-nine-minute two-mile.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 12 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-12-liam-hartmann.jpeg"
             data-caption="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
-            onclick="openMoment('assets/moment-12-liam-hartmann.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-12-liam-hartmann.jpeg"
               alt="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
@@ -1961,25 +1770,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Liam Hartmann upsetting the favorites to win the
-                Twilight Invitational in 15:04.
+                Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 13 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-13-tim-connolly.jpeg"
             data-caption="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
-            onclick="openMoment('assets/moment-13-tim-connolly.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-13-tim-connolly.jpeg"
               alt="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
@@ -1987,25 +1789,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Tim Connolly coming down the final stretch to win the
-                M12 League meet in a MA No. 1 15:03.
+                Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 14 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-14-bianchi-van-der-velden.jpeg"
             data-caption="John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28."
-            onclick="openMoment('assets/moment-14-bianchi-van-der-velden.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-14-bianchi-van-der-velden.jpeg"
               alt="John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28."
@@ -2013,25 +1808,18 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                John Bianchi and Freddie Van Der Velden celebrating
-                after defeating Brookline 27–28.
+                John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28.
               </p>
-
             </div>
-
           </button>
-
-          <!-- 15 -->
 
           <button
             class="moment-card"
             type="button"
+            data-src="assets/moment-15-concord-carlisle.jpeg"
             data-caption="Concord-Carlisle destroying the competition at the Bay State Invitational."
-            onclick="openMoment('assets/moment-15-concord-carlisle.jpeg', this.dataset.caption)"
           >
-
             <img
               src="assets/moment-15-concord-carlisle.jpeg"
               alt="Concord-Carlisle destroying the competition at the Bay State Invitational."
@@ -2039,14 +1827,10 @@
             />
 
             <div class="moment-overlay">
-
               <p>
-                Concord-Carlisle destroying the competition at the
-                Bay State Invitational.
+                Concord-Carlisle destroying the competition at the Bay State Invitational.
               </p>
-
             </div>
-
           </button>
 
         </div>
@@ -2060,22 +1844,19 @@
     <div
       class="lightbox"
       id="momentLightbox"
-      onclick="closeMoment(event)"
+      aria-hidden="true"
     >
 
       <button
         class="lightbox-close"
+        id="lightboxClose"
         type="button"
         aria-label="Close photo"
-        onclick="closeMoment(event, true)"
       >
         ×
       </button>
 
-      <div
-        class="lightbox-inner"
-        onclick="event.stopPropagation()"
-      >
+      <div class="lightbox-inner">
 
         <img
           id="momentLightboxImage"
@@ -2217,8 +1998,6 @@
 
         <div class="contact-grid">
 
-          <!-- PERSONAL -->
-
           <article class="contact-card personal">
 
             <img
@@ -2267,8 +2046,6 @@
             </div>
 
           </article>
-
-          <!-- BUSINESS -->
 
           <article class="contact-card">
 
@@ -2344,65 +2121,107 @@
 
   </footer>
 
-  <script src="script.js"></script>
-
-  <!-- MEMORABLE MOMENTS LIGHTBOX -->
-
   <script>
+
+    const lightbox =
+      document.getElementById("momentLightbox");
+
+    const lightboxImage =
+      document.getElementById("momentLightboxImage");
+
+    const lightboxCaption =
+      document.getElementById("momentLightboxCaption");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+    const momentCards =
+      document.querySelectorAll(".moment-card");
+
 
     function openMoment(src, caption) {
 
-      const lightbox =
-        document.getElementById("momentLightbox");
+      lightboxImage.src = src;
 
-      const image =
-        document.getElementById("momentLightboxImage");
+      lightboxImage.alt = caption;
 
-      const captionText =
-        document.getElementById("momentLightboxCaption");
-
-      image.src = src;
-
-      image.alt = caption;
-
-      captionText.textContent = caption;
+      lightboxCaption.textContent = caption;
 
       lightbox.classList.add("open");
 
-      document.body.style.overflow = "hidden";
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
 
     }
 
-    function closeMoment(event, forceClose) {
 
-      if (
-        forceClose ||
-        event.target.id === "momentLightbox"
-      ) {
+    function closeMoment() {
 
-        document
-          .getElementById("momentLightbox")
-          .classList
-          .remove("open");
+      lightbox.classList.remove("open");
 
-        document.body.style.overflow = "";
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    momentCards.forEach(function(card) {
+
+      card.addEventListener(
+        "click",
+        function() {
+
+          openMoment(
+            card.dataset.src,
+            card.dataset.caption
+          );
+
+        }
+      );
+
+    });
+
+
+    lightboxClose.addEventListener(
+      "click",
+      closeMoment
+    );
+
+
+    lightbox.addEventListener(
+      "click",
+      function(event) {
+
+        if (event.target === lightbox) {
+
+          closeMoment();
+
+        }
 
       }
+    );
 
-    }
 
     document.addEventListener(
       "keydown",
       function(event) {
 
-        if (event.key === "Escape") {
+        if (
+          event.key === "Escape" &&
+          lightbox.classList.contains("open")
+        ) {
 
-          document
-            .getElementById("momentLightbox")
-            .classList
-            .remove("open");
-
-          document.body.style.overflow = "";
+          closeMoment();
 
         }
 
