@@ -137,32 +137,20 @@
       content: "";
       position: absolute;
       inset: 0;
-
-      background-image:
-        url("assets/mdp-homepage-collage.jpeg");
-
+      background-image: url("assets/mdp-homepage-collage.jpeg");
       background-size: cover;
-
-      /* MOVED DOWN TO SHOW MORE OF TOP-ROW FACES */
       background-position: center 46%;
-
       background-repeat: no-repeat;
-
       opacity: 0;
       transform: translateY(30px);
-
       animation: heroImageFadeUp 1.1s ease forwards;
-
       z-index: 0;
     }
-
-    /* LIGHTER OVERLAY */
 
     .hero::after {
       content: "";
       position: absolute;
       inset: 0;
-
       background:
         linear-gradient(
           to right,
@@ -173,7 +161,6 @@
           rgba(0, 0, 0, 0.16),
           rgba(0, 0, 0, 0.52)
         );
-
       z-index: 1;
       pointer-events: none;
     }
@@ -194,10 +181,8 @@
       text-transform: uppercase;
       letter-spacing: -0.055em;
       margin-bottom: 24px;
-
       opacity: 0;
       transform: translateY(30px);
-
       animation: heroFadeUp 1.1s ease forwards;
     }
 
@@ -206,10 +191,8 @@
       height: 5px;
       background: var(--blue);
       margin-bottom: 24px;
-
       opacity: 0;
       transform: translateY(30px);
-
       animation: heroFadeUp 1.1s ease forwards;
     }
 
@@ -218,10 +201,8 @@
       color: #f0f0f0;
       font-size: clamp(1rem, 2vw, 1.3rem);
       line-height: 1.55;
-
       opacity: 0;
       transform: translateY(24px);
-
       animation: heroFadeUp 1.1s ease forwards;
       animation-delay: 0.45s;
     }
@@ -335,7 +316,6 @@
       background: var(--soft-black);
       border: 1px solid var(--border);
       overflow: hidden;
-
       transition:
         transform 0.2s ease,
         border-color 0.2s ease;
@@ -384,6 +364,53 @@
       letter-spacing: 0.06em;
     }
 
+    /* RACE CALENDAR */
+
+    .calendar-section {
+      background: #0b0b0b;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 14px;
+    }
+
+    .calendar-day {
+      min-height: 180px;
+      background: var(--soft-black);
+      border: 1px solid var(--border);
+      padding: 18px;
+    }
+
+    .calendar-day.has-meets {
+      border-color: var(--blue);
+    }
+
+    .calendar-date {
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .calendar-meet {
+      color: #ffffff;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .calendar-empty {
+      color: #6f6f6f;
+      font-size: 0.84rem;
+      font-style: italic;
+    }
+
     /* RACE PHOTOS */
 
     .photo-grid {
@@ -412,7 +439,6 @@
       content: "";
       position: absolute;
       inset: 0;
-
       background:
         linear-gradient(
           to top,
@@ -490,17 +516,14 @@
       bottom: 0;
       padding: 55px 18px 18px;
       color: #ffffff;
-
       background:
         linear-gradient(
           to top,
           rgba(0, 0, 0, 0.95),
           rgba(0, 0, 0, 0)
         );
-
       opacity: 0;
       transform: translateY(8px);
-
       transition:
         opacity 0.2s ease,
         transform 0.2s ease;
@@ -718,6 +741,12 @@
 
     /* TABLET */
 
+    @media (max-width: 1000px) {
+      .calendar-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
     @media (max-width: 900px) {
       .nav-wrap {
         align-items: flex-start;
@@ -765,7 +794,7 @@
       }
 
       .hero::before {
-        background-position: center 60%;
+        background-position: center 46%;
       }
 
       .hero-content {
@@ -783,7 +812,8 @@
       .quick-links .container,
       .article-grid,
       .photo-grid,
-      .contact-grid {
+      .contact-grid,
+      .calendar-grid {
         grid-template-columns: 1fr;
       }
 
@@ -825,8 +855,6 @@
       }
     }
 
-    /* ACCESSIBILITY */
-
     @media (prefers-reduced-motion: reduce) {
       .hero-title,
       .hero-description,
@@ -846,14 +874,10 @@
 
 <body>
 
-  <!-- HEADER -->
-
   <header class="site-header">
-
     <div class="container nav-wrap">
 
       <a class="brand" href="#home">
-
         <img
           src="assets/mdp-logo.png"
           alt="Massachusetts Distance Project logo"
@@ -863,33 +887,28 @@
           Massachusetts<br />
           Distance Project
         </div>
-
       </a>
 
       <nav aria-label="Main navigation">
-
         <a href="#home">Home</a>
         <a href="#articles">Articles</a>
+        <a href="#calendar">Calendar</a>
         <a href="#photos">Photos</a>
         <a href="#moments">Moments</a>
         <a href="#interviews">Interviews</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
-
       </nav>
 
     </div>
-
   </header>
 
   <main id="home">
 
-    <!-- OPENING HERO -->
+    <!-- HERO -->
 
     <section class="hero">
-
       <div class="container">
-
         <div class="hero-content">
 
           <div class="hero-line"></div>
@@ -905,19 +924,20 @@
           </p>
 
         </div>
-
       </div>
-
     </section>
 
     <!-- QUICK LINKS -->
 
     <section class="quick-links">
-
       <div class="container">
 
         <a class="quick-link" href="#articles">
           Latest Articles
+        </a>
+
+        <a class="quick-link" href="#calendar">
+          Race Calendar
         </a>
 
         <a class="quick-link" href="#photos">
@@ -928,24 +948,16 @@
           Memorable Moments
         </a>
 
-        <a class="quick-link" href="#about">
-          About MDP
-        </a>
-
       </div>
-
     </section>
 
     <!-- LATEST ARTICLES -->
 
     <section id="articles" class="section">
-
       <div class="container">
 
         <div class="section-heading">
-
           <div>
-
             <div class="eyebrow">
               Latest Coverage
             </div>
@@ -953,14 +965,12 @@
             <h2>
               Latest Articles
             </h2>
-
           </div>
 
           <p>
             Massachusetts high school distance running coverage,
             previews, rankings, features and analysis.
           </p>
-
         </div>
 
         <div class="article-grid">
@@ -968,18 +978,14 @@
           <!-- PATRIOT LEAGUE -->
 
           <article class="article-card">
-
             <a href="articles/patriot-league-what-to-expect.html">
-
               <img
                 src="assets/patriot-league-feature.jpeg"
                 alt="Pembroke's Nate Palmieri"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 League Preview
               </div>
@@ -1002,26 +1008,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- CATHOLIC -->
 
           <article class="article-card">
-
             <a href="articles/catholic-conference-what-to-expect.html">
-
               <img
                 src="assets/catholic-conference-feature.jpeg"
                 alt="BC High and St. John’s Prep runners"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 League Preview
               </div>
@@ -1043,26 +1043,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- MIDDLESEX -->
 
           <article class="article-card">
-
             <a href="articles/middlesex-league-what-to-expect.html">
-
               <img
                 src="assets/middlesex-league-feature.jpeg"
                 alt="Lexington and Reading runners"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 League Preview
               </div>
@@ -1084,26 +1078,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- BAY STATE -->
 
           <article class="article-card">
-
             <a href="articles/bay-state-conference-what-to-expect.html">
-
               <img
                 src="assets/bay-state-conference-feature.jpeg"
                 alt="Bay State Conference runners"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 League Preview
               </div>
@@ -1125,26 +1113,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- HOCKOMOCK -->
 
           <article class="article-card">
-
             <a href="articles/hockomock-league-what-to-expect.html">
-
               <img
                 src="assets/hockomock-league-feature.jpeg"
                 alt="Oliver Ames boys cross country team"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 League Preview
               </div>
@@ -1166,26 +1148,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- RANKINGS 10-1 -->
 
           <article class="article-card">
-
             <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
-
               <img
                 src="assets/brookline-preseason-rankings-feature.jpeg"
                 alt="Brookline boys cross country"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 Preseason Rankings
               </div>
@@ -1206,26 +1182,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- RANKINGS 15-11 -->
 
           <article class="article-card">
-
             <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
-
               <img
                 src="assets/longmeadow-preseason-rankings-feature.jpeg"
                 alt="Longmeadow boys cross country"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 Preseason Rankings
               </div>
@@ -1246,26 +1216,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- ALL STATE -->
 
           <article class="article-card">
-
             <a href="articles/who-will-be-the-next-all-state-champion.html">
-
               <img
                 src="assets/all-state-champion-feature.jpeg"
                 alt="Massachusetts cross country runners"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · 2026 Preview
               </div>
@@ -1287,26 +1251,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- NEWTON NORTH -->
 
           <article class="article-card">
-
             <a href="articles/newton-north-bay-state-sleeper-team.html">
-
               <img
                 src="assets/newton-north-feature.jpeg"
                 alt="Newton North boys distance runners"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · Team Feature
               </div>
@@ -1328,26 +1286,20 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
           <!-- BROOKLINE -->
 
           <article class="article-card">
-
             <a href="articles/brookline-5-for-5.html">
-
               <img
                 src="assets/brookline-feature.jpeg"
                 alt="Brookline boys cross country"
               />
-
             </a>
 
             <div class="card-body">
-
               <div class="card-category">
                 XC · Team Feature
               </div>
@@ -1369,27 +1321,125 @@
               >
                 Read Article →
               </a>
-
             </div>
-
           </article>
 
         </div>
-
       </div>
+    </section>
 
+    <!-- RACE CALENDAR -->
+
+    <section id="calendar" class="section calendar-section">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">
+              This Week
+            </div>
+
+            <h2>
+              Race Calendar
+            </h2>
+          </div>
+
+          <p>
+            Meets happening around Massachusetts this week.
+          </p>
+        </div>
+
+        <div class="calendar-grid">
+
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Monday | 9/7
+            </div>
+
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
+
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Tuesday | 9/8
+            </div>
+
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
+
+          <article class="calendar-day has-meets">
+            <div class="calendar-date">
+              Wednesday | 9/9
+            </div>
+
+            <div class="calendar-meet">
+              Newton North v Walpole @ Natick
+            </div>
+
+            <div class="calendar-meet">
+              Brookline @ Needham
+            </div>
+
+            <div class="calendar-meet">
+              Wellesley v Framingham @ Weymouth
+            </div>
+          </article>
+
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Thursday | 9/10
+            </div>
+
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
+
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Friday | 9/11
+            </div>
+
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
+
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Saturday | 9/12
+            </div>
+
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
+
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Sunday | 9/13
+            </div>
+
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
+
+        </div>
+      </div>
     </section>
 
     <!-- RACE PHOTOS -->
 
     <section id="photos" class="section section-light">
-
       <div class="container">
 
         <div class="section-heading">
-
           <div>
-
             <div class="eyebrow">
               Race Photography
             </div>
@@ -1397,14 +1447,12 @@
             <h2>
               Race Photos
             </h2>
-
           </div>
 
           <p>
             Full race galleries from Massachusetts track and cross
             country meets.
           </p>
-
         </div>
 
         <div class="photo-grid">
@@ -1415,14 +1463,12 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-
             <img
               src="assets/weston-twilight-2026-cover.jpeg"
               alt="Weston Twilight 2026"
             />
 
             <div class="photo-card-content">
-
               <div class="card-category">
                 Outdoor Track · 2026
               </div>
@@ -1438,9 +1484,7 @@
               <span class="text-link">
                 View Gallery →
               </span>
-
             </div>
-
           </a>
 
           <a
@@ -1449,14 +1493,12 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-
             <img
               src="assets/outdoor-moc-2026-cover.jpeg"
               alt="Outdoor Track Meet of Champions 2026"
             />
 
             <div class="photo-card-content">
-
               <div class="card-category">
                 Outdoor Track · 2026
               </div>
@@ -1472,9 +1514,7 @@
               <span class="text-link">
                 View Gallery →
               </span>
-
             </div>
-
           </a>
 
           <a
@@ -1483,14 +1523,12 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-
             <img
               src="assets/indoor-moc-2026-cover.jpeg"
               alt="Indoor Track Meet of Champions 2026"
             />
 
             <div class="photo-card-content">
-
               <div class="card-category">
                 Indoor Track · 2026
               </div>
@@ -1506,9 +1544,7 @@
               <span class="text-link">
                 View Gallery →
               </span>
-
             </div>
-
           </a>
 
           <a
@@ -1517,14 +1553,12 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-
             <img
               src="assets/outdoor-division-1-relays-2026-cover.jpeg"
               alt="Outdoor Track Division 1 Relays 2026"
             />
 
             <div class="photo-card-content">
-
               <div class="card-category">
                 Outdoor Track · 2026
               </div>
@@ -1540,27 +1574,20 @@
               <span class="text-link">
                 View Gallery →
               </span>
-
             </div>
-
           </a>
 
         </div>
-
       </div>
-
     </section>
 
     <!-- MEMORABLE MOMENTS -->
 
     <section id="moments" class="section moments-section">
-
       <div class="container">
 
         <div class="section-heading">
-
           <div>
-
             <div class="eyebrow">
               Season in Photos
             </div>
@@ -1568,7 +1595,6 @@
             <h2>
               Memorable Moments From the 2025/2026 Season
             </h2>
-
           </div>
 
           <p>
@@ -1576,7 +1602,6 @@
             championship moments that defined the 2025/2026
             Massachusetts distance running season.
           </p>
-
         </div>
 
         <div class="moments-grid">
@@ -1587,7 +1612,6 @@
             data-src="assets/moment-01-seamus-egan.jpeg"
             data-caption="Seamus Egan smiling after his third-place finish in the All-State two-mile."
           >
-
             <img
               src="assets/moment-01-seamus-egan.jpeg"
               alt="Seamus Egan smiling after his third-place finish in the All-State two-mile."
@@ -1599,7 +1623,6 @@
                 Seamus Egan smiling after his third-place finish in the All-State two-mile.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1608,7 +1631,6 @@
             data-src="assets/moment-02-harry-flint.jpeg"
             data-caption="Harry Flint claiming the state record in the 800m in 1:50.33."
           >
-
             <img
               src="assets/moment-02-harry-flint.jpeg"
               alt="Harry Flint claiming the state record in the 800m in 1:50.33."
@@ -1620,7 +1642,6 @@
                 Harry Flint claiming the state record in the 800m in 1:50.33.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1629,7 +1650,6 @@
             data-src="assets/moment-03-greg-mcgrath-all-state.jpeg"
             data-caption="Greg McGrath after winning the All-State two-mile in 9:08.15."
           >
-
             <img
               src="assets/moment-03-greg-mcgrath-all-state.jpeg"
               alt="Greg McGrath after winning the All-State two-mile in 9:08.15."
@@ -1641,7 +1661,6 @@
                 Greg McGrath after winning the All-State two-mile in 9:08.15.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1650,7 +1669,6 @@
             data-src="assets/moment-04-john-bianchi.jpeg"
             data-caption="John Bianchi claiming his first-ever state title."
           >
-
             <img
               src="assets/moment-04-john-bianchi.jpeg"
               alt="John Bianchi claiming his first-ever state title."
@@ -1662,7 +1680,6 @@
                 John Bianchi claiming his first-ever state title.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1671,7 +1688,6 @@
             data-src="assets/moment-05-landon-sarney.jpeg"
             data-caption="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
           >
-
             <img
               src="assets/moment-05-landon-sarney.jpeg"
               alt="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
@@ -1683,7 +1699,6 @@
                 Landon Sarney upsetting the favorites to become the Division 1 All-State champion.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1692,7 +1707,6 @@
             data-src="assets/moment-06-boston-latin-academy.jpeg"
             data-caption="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
           >
-
             <img
               src="assets/moment-06-boston-latin-academy.jpeg"
               alt="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
@@ -1704,7 +1718,6 @@
                 Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1713,7 +1726,6 @@
             data-src="assets/moment-07-brookline.jpeg"
             data-caption="Brookline boys claim their fourth straight title."
           >
-
             <img
               src="assets/moment-07-brookline.jpeg"
               alt="Brookline boys claim their fourth straight title."
@@ -1725,7 +1737,6 @@
                 Brookline boys claim their fourth straight title.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1734,7 +1745,6 @@
             data-src="assets/moment-08-michael-mahoric.jpeg"
             data-caption="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
           >
-
             <img
               src="assets/moment-08-michael-mahoric.jpeg"
               alt="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
@@ -1746,7 +1756,6 @@
                 Michael Mahoric wins the BSR Elite Mile in 4:05.77.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1755,7 +1764,6 @@
             data-src="assets/moment-09-ryan-costello.jpeg"
             data-caption="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
           >
-
             <img
               src="assets/moment-09-ryan-costello.jpeg"
               alt="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
@@ -1767,7 +1775,6 @@
                 Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1776,7 +1783,6 @@
             data-src="assets/moment-10-silas-gartner.jpeg"
             data-caption="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
           >
-
             <img
               src="assets/moment-10-silas-gartner.jpeg"
               alt="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
@@ -1788,7 +1794,6 @@
                 Silas Gartner becoming back-to-back cross country Division 2 State Champion.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1797,7 +1802,6 @@
             data-src="assets/moment-11-greg-mcgrath-sub9.jpeg"
             data-caption="Greg McGrath on his way to running his first sub-nine-minute two-mile."
           >
-
             <img
               src="assets/moment-11-greg-mcgrath-sub9.jpeg"
               alt="Greg McGrath on his way to running his first sub-nine-minute two-mile."
@@ -1809,7 +1813,6 @@
                 Greg McGrath on his way to running his first sub-nine-minute two-mile.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1818,7 +1821,6 @@
             data-src="assets/moment-12-liam-hartmann.jpeg"
             data-caption="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
           >
-
             <img
               src="assets/moment-12-liam-hartmann.jpeg"
               alt="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
@@ -1830,7 +1832,6 @@
                 Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1839,7 +1840,6 @@
             data-src="assets/moment-13-tim-connolly.jpeg"
             data-caption="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
           >
-
             <img
               src="assets/moment-13-tim-connolly.jpeg"
               alt="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
@@ -1851,7 +1851,6 @@
                 Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1860,7 +1859,6 @@
             data-src="assets/moment-14-bianchi-van-der-velden.jpeg"
             data-caption="John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28."
           >
-
             <img
               src="assets/moment-14-bianchi-van-der-velden.jpeg"
               alt="John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28."
@@ -1872,7 +1870,6 @@
                 John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28.
               </p>
             </div>
-
           </button>
 
           <button
@@ -1881,7 +1878,6 @@
             data-src="assets/moment-15-concord-carlisle.jpeg"
             data-caption="Concord-Carlisle destroying the competition at the Bay State Invitational."
           >
-
             <img
               src="assets/moment-15-concord-carlisle.jpeg"
               alt="Concord-Carlisle destroying the competition at the Bay State Invitational."
@@ -1893,13 +1889,10 @@
                 Concord-Carlisle destroying the competition at the Bay State Invitational.
               </p>
             </div>
-
           </button>
 
         </div>
-
       </div>
-
     </section>
 
     <!-- LIGHTBOX -->
@@ -1909,7 +1902,6 @@
       id="momentLightbox"
       aria-hidden="true"
     >
-
       <button
         class="lightbox-close"
         id="lightboxClose"
@@ -1920,7 +1912,6 @@
       </button>
 
       <div class="lightbox-inner">
-
         <img
           id="momentLightboxImage"
           src=""
@@ -1931,21 +1922,16 @@
           class="lightbox-caption"
           id="momentLightboxCaption"
         ></p>
-
       </div>
-
     </div>
 
     <!-- INTERVIEWS -->
 
     <section id="interviews" class="section">
-
       <div class="container">
 
         <div class="section-heading">
-
           <div>
-
             <div class="eyebrow">
               After the Finish
             </div>
@@ -1953,7 +1939,6 @@
             <h2>
               Interviews
             </h2>
-
           </div>
 
           <a
@@ -1964,11 +1949,9 @@
           >
             YouTube Channel →
           </a>
-
         </div>
 
         <div class="interview-box">
-
           <h3>
             Coming Soon
           </h3>
@@ -1977,21 +1960,17 @@
             Athlete interviews, race reactions and conversations
             from across Massachusetts distance running.
           </p>
-
         </div>
 
       </div>
-
     </section>
 
     <!-- ABOUT -->
 
     <section id="about" class="section">
-
       <div class="container about-grid">
 
         <div class="about-copy">
-
           <div class="eyebrow">
             About MDP
           </div>
@@ -2012,11 +1991,9 @@
             the goal of giving Massachusetts runners more coverage
             and more recognition.
           </p>
-
         </div>
 
         <div class="about-card">
-
           <strong>
             Independent. Local. Free.
           </strong>
@@ -2025,23 +2002,18 @@
             Built for the Massachusetts running community and focused
             on the athletes, teams and stories that make the sport special.
           </p>
-
         </div>
 
       </div>
-
     </section>
 
     <!-- CONTACT -->
 
     <section id="contact" class="section section-light">
-
       <div class="container">
 
         <div class="section-heading">
-
           <div>
-
             <div class="eyebrow">
               Get in Touch
             </div>
@@ -2049,27 +2021,23 @@
             <h2>
               Contact &amp; Socials
             </h2>
-
           </div>
 
           <p>
             Reach out for coverage, photography, interviews,
             story ideas or other MDP inquiries.
           </p>
-
         </div>
 
         <div class="contact-grid">
 
           <article class="contact-card personal">
-
             <img
               src="assets/ethan-barossi-profile.jpeg"
               alt="Massachusetts Distance Project founder"
             />
 
             <div>
-
               <div class="contact-label">
                 Founder
               </div>
@@ -2083,7 +2051,6 @@
               </div>
 
               <div class="contact-links">
-
                 <a href="mailto:ethanbarossi@gmail.com">
                   Email
                 </a>
@@ -2103,15 +2070,11 @@
                 >
                   Strava
                 </a>
-
               </div>
-
             </div>
-
           </article>
 
           <article class="contact-card">
-
             <div class="contact-label">
               Massachusetts Distance Project
             </div>
@@ -2125,7 +2088,6 @@
             </div>
 
             <div class="contact-links">
-
               <a href="mailto:massachusettsdistanceproject@gmail.com">
                 Email
               </a>
@@ -2145,15 +2107,11 @@
               >
                 YouTube
               </a>
-
             </div>
-
           </article>
 
         </div>
-
       </div>
-
     </section>
 
   </main>
@@ -2161,11 +2119,9 @@
   <!-- FOOTER -->
 
   <footer>
-
     <div class="container footer-wrap">
 
       <div>
-
         <strong>
           Massachusetts Distance Project
         </strong>
@@ -2173,7 +2129,6 @@
         <br />
 
         Independent Massachusetts high school distance running coverage.
-
       </div>
 
       <div>
@@ -2181,11 +2136,9 @@
       </div>
 
     </div>
-
   </footer>
 
   <script>
-
     const lightbox =
       document.getElementById("momentLightbox");
 
@@ -2202,11 +2155,8 @@
       document.querySelectorAll(".moment-card");
 
     function openMoment(src, caption) {
-
       lightboxImage.src = src;
-
       lightboxImage.alt = caption;
-
       lightboxCaption.textContent = caption;
 
       lightbox.classList.add("open");
@@ -2221,7 +2171,6 @@
     }
 
     function closeMoment() {
-
       lightbox.classList.remove("open");
 
       lightbox.setAttribute(
@@ -2234,19 +2183,15 @@
     }
 
     momentCards.forEach(function(card) {
-
       card.addEventListener(
         "click",
         function() {
-
           openMoment(
             card.dataset.src,
             card.dataset.caption
           );
-
         }
       );
-
     });
 
     lightboxClose.addEventListener(
@@ -2257,30 +2202,23 @@
     lightbox.addEventListener(
       "click",
       function(event) {
-
         if (event.target === lightbox) {
           closeMoment();
         }
-
       }
     );
 
     document.addEventListener(
       "keydown",
       function(event) {
-
         if (
           event.key === "Escape" &&
           lightbox.classList.contains("open")
         ) {
-
           closeMoment();
-
         }
-
       }
     );
-
   </script>
 
 </body>
