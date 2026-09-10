@@ -519,28 +519,41 @@
       background:
         linear-gradient(
           to top,
-          rgba(0, 0, 0, 0.92),
+          rgba(0, 0, 0, 0.95),
           rgba(0, 0, 0, 0)
         );
+      opacity: 0;
+      transform: translateY(8px);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .moment-card:hover .moment-overlay,
+    .moment-card:focus .moment-overlay {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .moment-overlay p {
-      font-size: 0.88rem;
-      font-weight: 700;
+      margin: 0;
+      color: #ffffff;
+      font-size: 0.92rem;
       line-height: 1.4;
+      font-weight: 700;
     }
 
     /* LIGHTBOX */
 
     .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
       display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      padding: 28px;
+      background: rgba(0, 0, 0, 0.94);
       align-items: center;
       justify-content: center;
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.94);
     }
 
     .lightbox.open {
@@ -548,36 +561,33 @@
     }
 
     .lightbox-inner {
-      max-width: 1100px;
-      max-height: 90vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      max-width: min(1100px, 94vw);
+      max-height: 92vh;
+      text-align: center;
     }
 
-    .lightbox-inner img {
+    .lightbox img {
       width: auto;
       max-width: 100%;
-      max-height: 78vh;
+      max-height: 80vh;
+      margin: 0 auto;
       object-fit: contain;
     }
 
     .lightbox-caption {
-      margin-top: 15px;
+      margin-top: 14px;
       color: #ffffff;
-      text-align: center;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
     }
 
     .lightbox-close {
-      position: absolute;
+      position: fixed;
       top: 18px;
       right: 24px;
-      border: 0;
+      border: none;
       background: transparent;
       color: #ffffff;
-      font-size: 2.4rem;
-      line-height: 1;
+      font-size: 2.3rem;
       cursor: pointer;
     }
 
@@ -585,54 +595,58 @@
 
     .interview-box {
       border: 1px solid var(--border);
-      background: var(--soft-black);
-      padding: 45px;
+      padding: 52px 24px;
       text-align: center;
+      background: var(--soft-black);
     }
 
     .interview-box h3 {
-      font-size: 2rem;
-      margin-bottom: 8px;
+      font-size: clamp(2.2rem, 6vw, 4.6rem);
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
     }
 
     .interview-box p {
       color: var(--gray);
+      margin: 0 auto 20px;
+      max-width: 560px;
     }
 
     /* ABOUT */
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 60px;
-      align-items: center;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: start;
     }
 
     .about-copy h2 {
       font-size: clamp(2.2rem, 5vw, 4.5rem);
-      line-height: 0.95;
+      line-height: 0.98;
       text-transform: uppercase;
-      letter-spacing: -0.04em;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      letter-spacing: -0.035em;
     }
 
     .about-copy p {
-      color: #bdbdbd;
-      margin-bottom: 16px;
+      color: #d0d0d0;
+      margin-bottom: 14px;
       max-width: 720px;
     }
 
     .about-card {
-      border: 1px solid var(--border);
+      border-left: 4px solid var(--blue);
+      padding: 24px;
       background: var(--soft-black);
-      padding: 34px;
     }
 
     .about-card strong {
       display: block;
-      color: var(--blue);
-      font-size: 1.45rem;
+      font-size: 1.1rem;
       margin-bottom: 10px;
+      text-transform: uppercase;
     }
 
     .about-card p {
@@ -641,10 +655,6 @@
 
     /* CONTACT */
 
-    .section-light .section-heading p {
-      color: #5e5e5e;
-    }
-
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -652,49 +662,51 @@
     }
 
     .contact-card {
-      border: 1px solid #d9d9d9;
-      background: #ffffff;
-      padding: 30px;
+      border: 1px solid #d5d5d5;
+      background: var(--white);
+      padding: 28px;
     }
 
     .contact-card.personal {
       display: grid;
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: 145px 1fr;
       gap: 24px;
       align-items: center;
     }
 
     .contact-card.personal img {
-      width: 150px;
-      height: 150px;
+      width: 145px;
+      height: 145px;
       object-fit: cover;
       border-radius: 50%;
+      border: 4px solid var(--blue);
     }
 
     .contact-label {
-      color: var(--blue-dark);
-      font-size: 0.74rem;
+      color: var(--blue);
+      font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.11em;
       margin-bottom: 8px;
     }
 
     .contact-card h3 {
-      font-size: 1.55rem;
-      margin-bottom: 4px;
+      font-size: 1.7rem;
+      line-height: 1.05;
+      margin-bottom: 7px;
     }
 
     .contact-role {
-      color: #686868;
+      color: #676767;
+      margin-bottom: 18px;
       font-size: 0.92rem;
-      margin-bottom: 16px;
     }
 
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 10px 18px;
     }
 
     .contact-links a {
@@ -703,81 +715,77 @@
       font-size: 0.88rem;
     }
 
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
     /* FOOTER */
 
     footer {
-      background: #050505;
-      padding: 34px 0;
-      color: #888888;
-      font-size: 0.85rem;
+      padding: 32px 0;
+      background: #030303;
+      color: #8e8e8e;
+      font-size: 0.84rem;
     }
 
     .footer-wrap {
       display: flex;
       justify-content: space-between;
-      gap: 25px;
+      gap: 20px;
+      align-items: center;
     }
 
-    footer strong {
-      color: #ffffff;
+    .footer-wrap strong {
+      color: var(--white);
     }
 
-    /* RESPONSIVE */
+    /* TABLET */
 
     @media (max-width: 1000px) {
       .calendar-grid {
         grid-template-columns: repeat(4, 1fr);
       }
     }
-        @media (max-width: 900px) {
+
+    @media (max-width: 900px) {
       .nav-wrap {
-        flex-direction: column;
         align-items: flex-start;
-        padding: 16px 0;
+        flex-direction: column;
+        padding: 14px 0;
       }
 
       nav {
-        justify-content: flex-start;
+        gap: 14px;
       }
 
       .hero {
         min-height: 600px;
       }
 
+      .quick-links .container,
       .article-grid,
-      .photo-grid {
+      .photo-grid,
+      .contact-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
       .about-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .moments-grid {
+        columns: 2 260px;
       }
     }
 
-    @media (max-width: 700px) {
-      .container {
-        width: min(var(--max-width), calc(100% - 28px));
-      }
+    /* MOBILE */
 
-      .brand img {
-        width: 50px;
-        height: 50px;
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 26px, var(--max-width));
       }
 
       .brand-text {
-        font-size: 0.82rem;
-      }
-
-      nav {
-        gap: 12px 16px;
-      }
-
-      nav a {
         font-size: 0.78rem;
       }
 
@@ -790,41 +798,46 @@
       }
 
       .hero-content {
-        padding: 65px 0;
+        padding: 70px 0;
       }
 
-      .quick-links .container {
-        grid-template-columns: repeat(2, 1fr);
+      .hero-title {
+        font-size: 3.3rem;
       }
 
-      .quick-link {
-        border-bottom: 1px solid var(--border);
+      .hero-description {
+        font-size: 1rem;
       }
 
-      .section {
-        padding: 55px 0;
-      }
-
-      .section-heading {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
+      .quick-links .container,
       .article-grid,
-      .photo-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .photo-grid,
+      .contact-grid,
       .calendar-grid {
         grid-template-columns: 1fr;
       }
 
-      .calendar-day {
-        min-height: auto;
+      .quick-link {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
       }
 
-      .photo-card {
-        min-height: 350px;
+      .section {
+        padding: 52px 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .moments-grid {
+        columns: 1;
+      }
+
+      .moment-overlay {
+        opacity: 1;
+        transform: none;
       }
 
       .contact-card.personal {
@@ -838,6 +851,22 @@
 
       .footer-wrap {
         flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-title,
+      .hero-description,
+      .hero-line,
+      .hero::before {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
+      html {
+        scroll-behavior: auto;
       }
     }
   </style>
@@ -845,14 +874,12 @@
 
 <body>
 
-  <!-- HEADER -->
-
   <header class="site-header">
     <div class="container nav-wrap">
 
       <a class="brand" href="#home">
         <img
-          src="assets/favicon.png"
+          src="assets/mdp-logo.png"
           alt="Massachusetts Distance Project logo"
         />
 
@@ -862,7 +889,7 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Main navigation">
         <a href="#home">Home</a>
         <a href="#articles">Articles</a>
         <a href="#calendar">Calendar</a>
@@ -876,20 +903,19 @@
     </div>
   </header>
 
-  <main>
+  <main id="home">
 
     <!-- HERO -->
 
-    <section id="home" class="hero">
+    <section class="hero">
       <div class="container">
         <div class="hero-content">
 
-          <h1 class="hero-title">
-            Massachusetts<br />
-            Distance Project
-          </h1>
-
           <div class="hero-line"></div>
+
+          <h1 class="hero-title">
+            Massachusetts Distance Project
+          </h1>
 
           <p class="hero-description">
             Independent coverage of Massachusetts high school cross
@@ -942,15 +968,30 @@
           </div>
 
           <p>
-            Rankings, previews, analysis and stories from
-            Massachusetts high school distance running.
+            Massachusetts high school distance running coverage,
+            previews, rankings, features and analysis.
           </p>
         </div>
 
         <div class="article-grid">
 
-          <!-- THIS WEEK IN MASS XC -->
+          <!-- WEEK IN REVIEW: SEPTEMBER 7–13 -->
+          <article class="article-card">
+            <a href="articles/week-in-review-september-7-13.html">
+              <img
+                src="assets/week-in-review-sept-7-13-feature.jpeg"
+                alt="Newton North boys cross country team huddle"
+              />
+            </a>
+            <div class="card-body">
+              <div class="card-category">XC · Week in Review</div>
+              <h3><a href="articles/week-in-review-september-7-13.html">Week in Review: September 7–13</a></h3>
+              <p>Newton North makes a statement, Walpole exceeds expectations, and some of the state’s top teams and individuals open their seasons.</p>
+              <a class="text-link" href="articles/week-in-review-september-7-13.html">Read Article →</a>
+            </div>
+          </article>
 
+          <!-- THIS WEEK IN MASS XC: SEPTEMBER 7–13 -->
           <article class="article-card">
             <a href="articles/this-week-in-mass-xc-september-7-13.html">
               <img
@@ -971,9 +1012,9 @@
               </h3>
 
               <p>
-                The Bay State League gets underway with Newton North,
-                Natick, Walpole, Brookline, Needham, Wellesley,
-                Framingham and Weymouth all in action.
+                The Bay State League gets underway with Newton North, Natick,
+                Walpole, Brookline, Needham, Wellesley, Framingham and Weymouth
+                all in action.
               </p>
 
               <a
@@ -986,7 +1027,6 @@
           </article>
 
           <!-- DON'T SLEEP ON THESE TEAMS -->
-
           <article class="article-card">
             <a href="articles/dont-sleep-on-these-teams-in-2026.html">
               <img
@@ -1007,8 +1047,8 @@
               </h3>
 
               <p>
-                A look at teams outside MDP’s Top 15 that could still
-                make serious noise across Massachusetts this fall.
+                A look at teams outside MDP’s Top 15 that could still make
+                serious noise across Massachusetts this fall.
               </p>
 
               <a
@@ -1020,13 +1060,14 @@
             </div>
           </article>
 
+
           <!-- PATRIOT LEAGUE -->
 
           <article class="article-card">
             <a href="articles/patriot-league-what-to-expect.html">
               <img
                 src="assets/patriot-league-feature.jpeg"
-                alt="Patriot League cross country"
+                alt="Pembroke's Nate Palmieri"
               />
             </a>
 
@@ -1056,13 +1097,13 @@
             </div>
           </article>
 
-          <!-- CATHOLIC CONFERENCE -->
+          <!-- CATHOLIC -->
 
           <article class="article-card">
             <a href="articles/catholic-conference-what-to-expect.html">
               <img
                 src="assets/catholic-conference-feature.jpeg"
-                alt="Catholic Conference cross country"
+                alt="BC High and St. John’s Prep runners"
               />
             </a>
 
@@ -1078,8 +1119,8 @@
               </h3>
 
               <p>
-                A look at the teams and athletes to watch in the
-                Catholic Conference this cross country season.
+                BC High and St. John’s Prep headline a loaded Catholic
+                Conference entering the 2026 season.
               </p>
 
               <a
@@ -1091,13 +1132,13 @@
             </div>
           </article>
 
-          <!-- MIDDLESEX LEAGUE -->
+          <!-- MIDDLESEX -->
 
           <article class="article-card">
             <a href="articles/middlesex-league-what-to-expect.html">
               <img
                 src="assets/middlesex-league-feature.jpeg"
-                alt="Middlesex League cross country"
+                alt="Lexington and Reading runners"
               />
             </a>
 
@@ -1113,8 +1154,8 @@
               </h3>
 
               <p>
-                The teams, contenders and storylines to watch across
-                the Middlesex League in 2026.
+                Lexington and Reading headline another deep season
+                in the Middlesex League.
               </p>
 
               <a
@@ -1126,13 +1167,13 @@
             </div>
           </article>
 
-          <!-- BAY STATE CONFERENCE -->
+          <!-- BAY STATE -->
 
           <article class="article-card">
             <a href="articles/bay-state-conference-what-to-expect.html">
               <img
                 src="assets/bay-state-conference-feature.jpeg"
-                alt="Bay State Conference cross country"
+                alt="Bay State Conference runners"
               />
             </a>
 
@@ -1148,8 +1189,8 @@
               </h3>
 
               <p>
-                A preview of the teams, athletes and matchups that
-                could define the Bay State Conference this fall.
+                A look at the teams and individuals that could define
+                the Bay State Conference this fall.
               </p>
 
               <a
@@ -1161,13 +1202,13 @@
             </div>
           </article>
 
-          <!-- HOCKOMOCK LEAGUE -->
+          <!-- HOCKOMOCK -->
 
           <article class="article-card">
             <a href="articles/hockomock-league-what-to-expect.html">
               <img
                 src="assets/hockomock-league-feature.jpeg"
-                alt="Hockomock League cross country"
+                alt="Oliver Ames boys cross country team"
               />
             </a>
 
@@ -1183,8 +1224,8 @@
               </h3>
 
               <p>
-                A look ahead at the teams and athletes to watch in
-                the Hockomock League this season.
+                Oliver Ames leads the way as the Hockomock League
+                prepares for another season.
               </p>
 
               <a
@@ -1196,19 +1237,19 @@
             </div>
           </article>
 
-          <!-- PRESEASON RANKINGS 10-1 -->
+          <!-- RANKINGS 10-1 -->
 
           <article class="article-card">
             <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
               <img
                 src="assets/brookline-preseason-rankings-feature.jpeg"
-                alt="Massachusetts cross country preseason rankings"
+                alt="Brookline boys cross country"
               />
             </a>
 
             <div class="card-body">
               <div class="card-category">
-                XC · Preseason Rankings
+                XC · 2026 Preseason Rankings
               </div>
 
               <h3>
@@ -1218,8 +1259,7 @@
               </h3>
 
               <p>
-                MDP counts down the top ten teams entering the 2026
-                Massachusetts cross country season.
+                The final ten teams in MDP's 2026 preseason countdown.
               </p>
 
               <a
@@ -1231,19 +1271,19 @@
             </div>
           </article>
 
-          <!-- PRESEASON RANKINGS 15-11 -->
+          <!-- RANKINGS 15-11 -->
 
           <article class="article-card">
             <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
               <img
                 src="assets/longmeadow-preseason-rankings-feature.jpeg"
-                alt="Massachusetts cross country preseason rankings"
+                alt="Longmeadow boys cross country"
               />
             </a>
 
             <div class="card-body">
               <div class="card-category">
-                XC · Preseason Rankings
+                XC · 2026 Preseason Rankings
               </div>
 
               <h3>
@@ -1253,8 +1293,7 @@
               </h3>
 
               <p>
-                The countdown begins with teams No. 15 through No. 11
-                in MDP’s 2026 preseason rankings.
+                The first five teams in MDP's preseason top 15.
               </p>
 
               <a
@@ -1266,19 +1305,19 @@
             </div>
           </article>
 
-          <!-- ALL-STATE CHAMPION -->
+          <!-- ALL STATE -->
 
           <article class="article-card">
             <a href="articles/who-will-be-the-next-all-state-champion.html">
               <img
                 src="assets/all-state-champion-feature.jpeg"
-                alt="Massachusetts cross country All-State championship"
+                alt="Massachusetts cross country runners"
               />
             </a>
 
             <div class="card-body">
               <div class="card-category">
-                XC · Analysis
+                XC · 2026 Preview
               </div>
 
               <h3>
@@ -1288,8 +1327,8 @@
               </h3>
 
               <p>
-                Breaking down some of the biggest contenders for
-                Massachusetts cross country’s top individual prize.
+                A look at the runners who could contend for the biggest
+                individual title in Massachusetts.
               </p>
 
               <a
@@ -1307,13 +1346,13 @@
             <a href="articles/newton-north-bay-state-sleeper-team.html">
               <img
                 src="assets/newton-north-feature.jpeg"
-                alt="Newton North cross country"
+                alt="Newton North boys distance runners"
               />
             </a>
 
             <div class="card-body">
               <div class="card-category">
-                XC · Team Preview
+                XC · Team Feature
               </div>
 
               <h3>
@@ -1323,8 +1362,8 @@
               </h3>
 
               <p>
-                Why Newton North could emerge as one of the most
-                dangerous teams in the Bay State Conference.
+                Why Newton North could surprise Massachusetts cross
+                country this season.
               </p>
 
               <a
@@ -1348,7 +1387,7 @@
 
             <div class="card-body">
               <div class="card-category">
-                XC · Team Preview
+                XC · Team Feature
               </div>
 
               <h3>
@@ -1358,9 +1397,8 @@
               </h3>
 
               <p>
-                Brookline enters another season with a chance to
-                continue one of the strongest championship runs in
-                Massachusetts.
+                Brookline enters another season chasing championship
+                history.
               </p>
 
               <a
@@ -1378,10 +1416,7 @@
 
     <!-- RACE CALENDAR -->
 
-    <section
-      id="calendar"
-      class="section calendar-section"
-    >
+    <section id="calendar" class="section calendar-section">
       <div class="container">
 
         <div class="section-heading">
@@ -1396,14 +1431,13 @@
           </div>
 
           <p>
-            Massachusetts high school cross country meets
-            taking place this week.
+            Meets happening around Massachusetts this week.
           </p>
         </div>
 
         <div class="calendar-grid">
 
-          <div class="calendar-day">
+          <article class="calendar-day">
             <div class="calendar-date">
               Monday | 9/7
             </div>
@@ -1411,9 +1445,9 @@
             <div class="calendar-empty">
               No meets listed
             </div>
-          </div>
+          </article>
 
-          <div class="calendar-day">
+          <article class="calendar-day">
             <div class="calendar-date">
               Tuesday | 9/8
             </div>
@@ -1421,73 +1455,65 @@
             <div class="calendar-empty">
               No meets listed
             </div>
-          </div>
+          </article>
 
-      <div class="calendar-day">
-  <div class="calendar-date">
-    Wednesday | 9/9
-  </div>
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Wednesday | 9/9
+            </div>
 
-  <div class="calendar-meet">
-    Newton North v Walpole @ Natick
-  </div>
+            <div class="calendar-meet">
+              Newton North v Walpole @ Natick
+            </div>
 
-  <div class="calendar-meet">
-    Needham @ Brookline
-  </div>
+            <div class="calendar-meet">
+              Needham @ Brookline
+            </div>
 
-  <div class="calendar-meet">
-    Wellesley v Framingham @ Weymouth
-  </div>
-</div>
+            <div class="calendar-meet">
+              Wellesley v Framingham @ Weymouth
+            </div>
+          </article>
 
-<div class="calendar-day">
-  <div class="calendar-date">
-    Thursday | 9/10
-  </div>
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Thursday | 9/10
+            </div>
 
-  <div class="calendar-empty">
-    No meets listed
-  </div>
-</div>
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
 
-<div class="calendar-day">
-  <div class="calendar-date">
-    Friday | 9/11
-  </div>
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Friday | 9/11
+            </div>
 
-  <div class="calendar-empty">
-    No meets listed
-  </div>
-</div>
+            <div class="calendar-empty">
+              No meets listed
+            </div>
+          </article>
 
-<div class="calendar-day">
-  <div class="calendar-date">
-    Saturday | 9/12
-  </div>
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Saturday | 9/12
+            </div>
 
-  <div class="calendar-meet">
-    2026 MSTCA XC Relays
-  </div>
+            <div class="calendar-meet">
+              2026 MSTCA XC Relays
+            </div>
+          </article>
 
-    <div class="calendar-meet">
-    2026 Highland Park Invitational
-  </div>
-</div>
+          <article class="calendar-day">
+            <div class="calendar-date">
+              Sunday | 9/13
+            </div>
 
-<div class="calendar-day">
-  <div class="calendar-date">
-    Sunday | 9/13
-  </div>
-
-  <div class="calendar-meet">
-    2026 MSTCA Ted Dutkiewicz Invitational
-  </div>
-
-   <div class="calendar-meet">
-    2026 Marshvegas Classic
-  </div>
-</div>
+            <div class="calendar-meet">
+              2026 MSTCA Ted Dutkiewicz Invitational
+            </div>
+          </article>
 
         </div>
       </div>
@@ -1495,13 +1521,13 @@
 
     <!-- RACE PHOTOS -->
 
-    <section id="photos" class="section">
+    <section id="photos" class="section section-light">
       <div class="container">
 
         <div class="section-heading">
           <div>
             <div class="eyebrow">
-              Photography
+              Race Photography
             </div>
 
             <h2>
@@ -1510,8 +1536,8 @@
           </div>
 
           <p>
-            Photo galleries from Massachusetts cross country
-            and track meets.
+            Full race galleries from Massachusetts track and cross
+            country meets.
           </p>
         </div>
 
@@ -1557,7 +1583,8 @@
               src="assets/outdoor-moc-2026-cover.jpeg"
               alt="Outdoor Track Meet of Champions 2026"
             />
-                        <div class="photo-card-content">
+
+            <div class="photo-card-content">
               <div class="card-category">
                 Outdoor Track · 2026
               </div>
@@ -1642,16 +1669,13 @@
 
     <!-- MEMORABLE MOMENTS -->
 
-    <section
-      id="moments"
-      class="section moments-section"
-    >
+    <section id="moments" class="section moments-section">
       <div class="container">
 
         <div class="section-heading">
           <div>
             <div class="eyebrow">
-              The Season in Photos
+              Season in Photos
             </div>
 
             <h2>
@@ -1660,323 +1684,295 @@
           </div>
 
           <p>
-            Some of the biggest performances, championship moments
-            and memories from the past year of Massachusetts
-            distance running.
+            A look back at some of the performances, finishes and
+            championship moments that defined the 2025/2026
+            Massachusetts distance running season.
           </p>
         </div>
 
         <div class="moments-grid">
 
-          <!-- MOMENT 1 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-01-seamus-egan.jpeg"
+            data-src="assets/moment-01-seamus-egan.jpeg"
             data-caption="Seamus Egan smiling after his third-place finish in the All-State two-mile."
           >
             <img
               src="assets/moment-01-seamus-egan.jpeg"
-              alt="Seamus Egan after his third-place finish in the All-State two-mile"
+              alt="Seamus Egan smiling after his third-place finish in the All-State two-mile."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Seamus Egan smiling after his third-place finish
-                in the All-State two-mile.
+                Seamus Egan smiling after his third-place finish in the All-State two-mile.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 2 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-02-harry-flint.jpeg"
-            data-caption="Harry Flint runs a state-record 1:50.33 in the 800m."
+            data-src="assets/moment-02-harry-flint.jpeg"
+            data-caption="Harry Flint claiming the state record in the 800m in 1:50.33."
           >
             <img
               src="assets/moment-02-harry-flint.jpeg"
-              alt="Harry Flint"
+              alt="Harry Flint claiming the state record in the 800m in 1:50.33."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Harry Flint runs a state-record 1:50.33
-                in the 800m.
+                Harry Flint claiming the state record in the 800m in 1:50.33.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 3 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-03-greg-mcgrath-all-state.jpeg"
-            data-caption="Greg McGrath wins the All-State two-mile in 9:08.15."
+            data-src="assets/moment-03-greg-mcgrath-all-state.jpeg"
+            data-caption="Greg McGrath after winning the All-State two-mile in 9:08.15."
           >
             <img
               src="assets/moment-03-greg-mcgrath-all-state.jpeg"
-              alt="Greg McGrath winning the All-State two-mile"
+              alt="Greg McGrath after winning the All-State two-mile in 9:08.15."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Greg McGrath wins the All-State two-mile
-                in 9:08.15.
+                Greg McGrath after winning the All-State two-mile in 9:08.15.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 4 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-04-john-bianchi.jpeg"
-            data-caption="John Bianchi wins his first All-State title."
+            data-src="assets/moment-04-john-bianchi.jpeg"
+            data-caption="John Bianchi claiming his first-ever state title."
           >
             <img
               src="assets/moment-04-john-bianchi.jpeg"
-              alt="John Bianchi"
+              alt="John Bianchi claiming his first-ever state title."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                John Bianchi wins his first All-State title.
+                John Bianchi claiming his first-ever state title.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 5 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-05-landon-sarney.jpeg"
-            data-caption="Landon Sarney upsets the favorites to become the Division 1 All-State champion."
+            data-src="assets/moment-05-landon-sarney.jpeg"
+            data-caption="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
           >
             <img
               src="assets/moment-05-landon-sarney.jpeg"
-              alt="Landon Sarney"
+              alt="Landon Sarney upsetting the favorites to become the Division 1 All-State champion."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Landon Sarney upsets the favorites to become
-                the Division 1 All-State champion.
+                Landon Sarney upsetting the favorites to become the Division 1 All-State champion.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 6 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-06-boston-latin-academy.jpeg"
-            data-caption="Boston Latin Academy completes a comeback to win the Division 2 All-State title by one point."
+            data-src="assets/moment-06-boston-latin-academy.jpeg"
+            data-caption="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
           >
             <img
               src="assets/moment-06-boston-latin-academy.jpeg"
-              alt="Boston Latin Academy boys cross country"
+              alt="Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Boston Latin Academy completes a comeback to win
-                the Division 2 All-State title by one point.
+                Boston Latin Academy comes from behind to win the Division 2 All-State meet by one point.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 7 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-07-brookline.jpeg"
-            data-caption="Brookline wins its fourth straight title."
+            data-src="assets/moment-07-brookline.jpeg"
+            data-caption="Brookline boys claim their fourth straight title."
           >
             <img
               src="assets/moment-07-brookline.jpeg"
-              alt="Brookline boys cross country"
+              alt="Brookline boys claim their fourth straight title."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Brookline wins its fourth straight title.
+                Brookline boys claim their fourth straight title.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 8 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-08-michael-mahoric.jpeg"
-            data-caption="Michael Mahoric runs 4:05.77 in the BSR Elite Mile."
+            data-src="assets/moment-08-michael-mahoric.jpeg"
+            data-caption="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
           >
             <img
               src="assets/moment-08-michael-mahoric.jpeg"
-              alt="Michael Mahoric"
+              alt="Michael Mahoric wins the BSR Elite Mile in 4:05.77."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Michael Mahoric runs 4:05.77 in the
-                BSR Elite Mile.
+                Michael Mahoric wins the BSR Elite Mile in 4:05.77.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 9 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-09-ryan-costello.jpeg"
-            data-caption="Ryan Costello runs 9:12 for two miles at Weston Twilight."
+            data-src="assets/moment-09-ryan-costello.jpeg"
+            data-caption="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
           >
             <img
               src="assets/moment-09-ryan-costello.jpeg"
-              alt="Ryan Costello"
+              alt="Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Ryan Costello runs 9:12 for two miles
-                at Weston Twilight.
+                Ryan Costello on his way to running a 9:12 two-mile at the Weston Twilight Invitational.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 10 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-10-silas-gartner.jpeg"
-            data-caption="Silas Gartner becomes a back-to-back Division 2 cross country state champion."
+            data-src="assets/moment-10-silas-gartner.jpeg"
+            data-caption="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
           >
             <img
               src="assets/moment-10-silas-gartner.jpeg"
-              alt="Silas Gartner"
+              alt="Silas Gartner becoming back-to-back cross country Division 2 State Champion."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Silas Gartner becomes a back-to-back Division 2
-                cross country state champion.
+                Silas Gartner becoming back-to-back cross country Division 2 State Champion.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 11 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-11-greg-mcgrath-sub9.jpeg"
-            data-caption="Greg McGrath runs his first sub-nine-minute two-mile."
+            data-src="assets/moment-11-greg-mcgrath-sub9.jpeg"
+            data-caption="Greg McGrath on his way to running his first sub-nine-minute two-mile."
           >
             <img
               src="assets/moment-11-greg-mcgrath-sub9.jpeg"
-              alt="Greg McGrath"
+              alt="Greg McGrath on his way to running his first sub-nine-minute two-mile."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Greg McGrath runs his first sub-nine-minute
-                two-mile.
+                Greg McGrath on his way to running his first sub-nine-minute two-mile.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 12 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-12-liam-hartmann.jpeg"
-            data-caption="Liam Hartmann runs 15:04 at the Twilight Invitational."
+            data-src="assets/moment-12-liam-hartmann.jpeg"
+            data-caption="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
           >
             <img
               src="assets/moment-12-liam-hartmann.jpeg"
-              alt="Liam Hartmann"
+              alt="Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Liam Hartmann runs 15:04 at the
-                Twilight Invitational.
+                Liam Hartmann upsetting the favorites to win the Twilight Invitational in 15:04.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 13 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-13-tim-connolly.jpeg"
-            data-caption="Tim Connolly runs a Massachusetts No. 1 time of 15:03 at the M12 League meet."
+            data-src="assets/moment-13-tim-connolly.jpeg"
+            data-caption="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
           >
             <img
               src="assets/moment-13-tim-connolly.jpeg"
-              alt="Tim Connolly"
+              alt="Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Tim Connolly runs a Massachusetts No. 1 time
-                of 15:03 at the M12 League meet.
+                Tim Connolly coming down the final stretch to win the M12 League meet in a MA No. 1 15:03.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 14 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-14-bianchi-van-der-velden.jpeg"
-            data-caption="John Bianchi and Freddie Van Der Velden celebrate after defeating Brookline 27–28."
+            data-src="assets/moment-14-bianchi-van-der-velden.jpeg"
+            data-caption="John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28."
           >
             <img
               src="assets/moment-14-bianchi-van-der-velden.jpeg"
-              alt="John Bianchi and Freddie Van Der Velden"
+              alt="John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                John Bianchi and Freddie Van Der Velden celebrate
-                after defeating Brookline 27–28.
+                John Bianchi and Freddie Van Der Velden celebrating after defeating Brookline 27–28.
               </p>
             </div>
           </button>
 
-          <!-- MOMENT 15 -->
-
           <button
             class="moment-card"
             type="button"
-            data-image="assets/moment-15-concord-carlisle.jpeg"
-            data-caption="Concord-Carlisle dominates the competition at the Bay State Invitational."
+            data-src="assets/moment-15-concord-carlisle.jpeg"
+            data-caption="Concord-Carlisle destroying the competition at the Bay State Invitational."
           >
             <img
               src="assets/moment-15-concord-carlisle.jpeg"
-              alt="Concord-Carlisle cross country"
+              alt="Concord-Carlisle destroying the competition at the Bay State Invitational."
+              loading="lazy"
             />
 
             <div class="moment-overlay">
               <p>
-                Concord-Carlisle dominates the competition
-                at the Bay State Invitational.
+                Concord-Carlisle destroying the competition at the Bay State Invitational.
               </p>
             </div>
           </button>
@@ -1989,44 +1985,41 @@
 
     <div
       class="lightbox"
-      id="lightbox"
+      id="momentLightbox"
       aria-hidden="true"
     >
       <button
         class="lightbox-close"
         id="lightboxClose"
         type="button"
-        aria-label="Close image"
+        aria-label="Close photo"
       >
         ×
       </button>
 
       <div class="lightbox-inner">
         <img
-          id="lightboxImage"
+          id="momentLightboxImage"
           src=""
           alt=""
         />
 
         <p
           class="lightbox-caption"
-          id="lightboxCaption"
+          id="momentLightboxCaption"
         ></p>
       </div>
     </div>
 
     <!-- INTERVIEWS -->
 
-    <section
-      id="interviews"
-      class="section"
-    >
+    <section id="interviews" class="section">
       <div class="container">
 
         <div class="section-heading">
           <div>
             <div class="eyebrow">
-              Conversations
+              After the Finish
             </div>
 
             <h2>
@@ -2034,20 +2027,24 @@
             </h2>
           </div>
 
-          <p>
-            Conversations with athletes and people from around
-            Massachusetts distance running.
-          </p>
+          <a
+            class="text-link"
+            href="https://www.youtube.com/@MassachusettsDistanceProject"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            YouTube Channel →
+          </a>
         </div>
 
         <div class="interview-box">
           <h3>
-            Interviews Coming Soon
+            Coming Soon
           </h3>
 
           <p>
-            Athlete interviews and more MDP video content
-            will be added throughout the season.
+            Athlete interviews, race reactions and conversations
+            from across Massachusetts distance running.
           </p>
         </div>
 
@@ -2056,60 +2053,49 @@
 
     <!-- ABOUT -->
 
-    <section
-      id="about"
-      class="section"
-    >
-      <div class="container">
+    <section id="about" class="section">
+      <div class="container about-grid">
 
-        <div class="about-grid">
-
-          <div class="about-copy">
-
-            <div class="eyebrow">
-              About MDP
-            </div>
-
-            <h2>
-              Massachusetts Distance Project
-            </h2>
-
-            <p>
-              Massachusetts Distance Project is an independent media
-              project covering high school cross country and distance
-              running throughout Massachusetts.
-            </p>
-
-            <p>
-              MDP focuses on the athletes, teams, races and stories
-              that make Massachusetts distance running special through
-              articles, rankings, photography, interviews and
-              race coverage.
-            </p>
-
+        <div class="about-copy">
+          <div class="eyebrow">
+            About MDP
           </div>
 
-          <div class="about-card">
-            <strong>
-              Massachusetts Running.
-            </strong>
+          <h2>
+            Massachusetts Running, Covered Differently.
+          </h2>
 
-            <p>
-              Independent coverage built around the athletes,
-              teams and moments that define the sport.
-            </p>
-          </div>
+          <p>
+            Massachusetts Distance Project is an independent running
+            media project focused on high school cross country and
+            distance running throughout Massachusetts.
+          </p>
 
+          <p>
+            MDP covers teams, athletes, races and stories through
+            articles, rankings, photography and interviews — all with
+            the goal of giving Massachusetts runners more coverage
+            and more recognition.
+          </p>
         </div>
+
+        <div class="about-card">
+          <strong>
+            Independent. Local. Free.
+          </strong>
+
+          <p>
+            Built for the Massachusetts running community and focused
+            on the athletes, teams and stories that make the sport special.
+          </p>
+        </div>
+
       </div>
     </section>
 
     <!-- CONTACT -->
 
-    <section
-      id="contact"
-      class="section section-light"
-    >
+    <section id="contact" class="section section-light">
       <div class="container">
 
         <div class="section-heading">
@@ -2119,26 +2105,22 @@
             </div>
 
             <h2>
-              Contact
+              Contact &amp; Socials
             </h2>
           </div>
 
           <p>
-            Get in touch for coverage, photography,
-            interviews or other Massachusetts Distance
-            Project inquiries.
+            Reach out for coverage, photography, interviews,
+            story ideas or other MDP inquiries.
           </p>
         </div>
 
         <div class="contact-grid">
 
-          <!-- PERSONAL -->
-
-          <div class="contact-card personal">
-
+          <article class="contact-card personal">
             <img
               src="assets/ethan-barossi-profile.jpeg"
-              alt="Ethan Barossi"
+              alt="Massachusetts Distance Project founder"
             />
 
             <div>
@@ -2155,7 +2137,6 @@
               </div>
 
               <div class="contact-links">
-
                 <a href="mailto:ethanbarossi@gmail.com">
                   Email
                 </a>
@@ -2175,21 +2156,17 @@
                 >
                   Strava
                 </a>
-
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- BUSINESS -->
-
-          <div class="contact-card">
-
+          <article class="contact-card">
             <div class="contact-label">
-              Business &amp; Media
+              Massachusetts Distance Project
             </div>
 
             <h3>
-              Massachusetts Distance Project
+              Business &amp; Media
             </h3>
 
             <div class="contact-role">
@@ -2197,10 +2174,7 @@
             </div>
 
             <div class="contact-links">
-
-              <a
-                href="mailto:massachusettsdistanceproject@gmail.com"
-              >
+              <a href="mailto:massachusettsdistanceproject@gmail.com">
                 Email
               </a>
 
@@ -2219,10 +2193,8 @@
               >
                 YouTube
               </a>
-
             </div>
-
-          </div>
+          </article>
 
         </div>
       </div>
@@ -2239,66 +2211,100 @@
         <strong>
           Massachusetts Distance Project
         </strong>
+
+        <br />
+
+        Independent Massachusetts high school distance running coverage.
       </div>
 
       <div>
-        Independent Massachusetts high school distance running coverage.
+        © 2026 Massachusetts Distance Project
       </div>
 
     </div>
   </footer>
 
-  <!-- LIGHTBOX SCRIPT -->
-
   <script>
-    const momentCards = document.querySelectorAll(".moment-card");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxCaption = document.getElementById("lightboxCaption");
-    const lightboxClose = document.getElementById("lightboxClose");
+    const lightbox =
+      document.getElementById("momentLightbox");
 
-    momentCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const image = card.dataset.image;
-        const caption = card.dataset.caption;
+    const lightboxImage =
+      document.getElementById("momentLightboxImage");
 
-        lightboxImage.src = image;
-        lightboxImage.alt = caption;
-        lightboxCaption.textContent = caption;
+    const lightboxCaption =
+      document.getElementById("momentLightboxCaption");
 
-        lightbox.classList.add("open");
-        lightbox.setAttribute("aria-hidden", "false");
+    const lightboxClose =
+      document.getElementById("lightboxClose");
 
-        document.body.style.overflow = "hidden";
-      });
-    });
+    const momentCards =
+      document.querySelectorAll(".moment-card");
 
-    function closeLightbox() {
-      lightbox.classList.remove("open");
-      lightbox.setAttribute("aria-hidden", "true");
+    function openMoment(src, caption) {
+      lightboxImage.src = src;
+      lightboxImage.alt = caption;
+      lightboxCaption.textContent = caption;
 
-      lightboxImage.src = "";
-      lightboxCaption.textContent = "";
+      lightbox.classList.add("open");
 
-      document.body.style.overflow = "";
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
     }
 
-    lightboxClose.addEventListener("click", closeLightbox);
+    function closeMoment() {
+      lightbox.classList.remove("open");
 
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow =
+        "";
+    }
+
+    momentCards.forEach(function(card) {
+      card.addEventListener(
+        "click",
+        function() {
+          openMoment(
+            card.dataset.src,
+            card.dataset.caption
+          );
+        }
+      );
     });
 
-    document.addEventListener("keydown", (event) => {
-      if (
-        event.key === "Escape" &&
-        lightbox.classList.contains("open")
-      ) {
-        closeLightbox();
+    lightboxClose.addEventListener(
+      "click",
+      closeMoment
+    );
+
+    lightbox.addEventListener(
+      "click",
+      function(event) {
+        if (event.target === lightbox) {
+          closeMoment();
+        }
       }
-    });
+    );
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+        if (
+          event.key === "Escape" &&
+          lightbox.classList.contains("open")
+        ) {
+          closeMoment();
+        }
+      }
+    );
   </script>
 
 </body>
