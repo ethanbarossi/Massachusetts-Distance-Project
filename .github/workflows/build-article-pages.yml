@@ -1,1 +1,47 @@
+name: Build article archive pages
 
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "articles/**.html"
+      - "scripts/build_article_pages.py"
+      - ".github/workflows/build-article-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Generate article archive pages
+        run: python scripts/build_article_pages.py
+
+      - name: Commit generated pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add articles.html
+          git add articles-page-*.html 2>/dev/null || true
+
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Auto-update article archive [skip ci]"
+            git push
+          fi
