@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Week 1 Power Rankings",
+    "deck": "MDP expands its Massachusetts boys cross country power rankings to a Top 20 after Week 1, with BC High, Newton North and North Andover making major statements.",
+    "category": "Cross Country · Week 1 Power Rankings",
+    "href": "articles/week-1-power-rankings.html",
+    "image": "https://massachusettsdistanceproject.com/assets/week-1-power-rankings-feature.png",
+    "alt": "Week 1 Power Rankings"
+  },
+  {
     "title": "Weekend in Review: September 12–13",
     "deck": "Read the latest Massachusetts high school distance running coverage.",
     "category": "XC · Weekend in Review",
@@ -12,7 +20,7 @@ window.MDP_ARTICLES = [
     "deck": "Newton North makes a statement, Walpole exceeds expectations, and some of the state’s top teams and individuals open their seasons.",
     "category": "XC · Week in Review",
     "href": "articles/week-in-review-september-7-13.html",
-    "image": "assets/week-in-review-sept-7-13-feature.jpeg",
+    "image": "assets/week-in-review-sept-7-13-feature.png",
     "alt": "Newton North cross country team before its race"
   },
   {
