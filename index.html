@@ -364,6 +364,61 @@
       letter-spacing: 0.06em;
     }
 
+    .article-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      margin-top: 34px;
+    }
+
+    .article-page-button {
+      min-width: 42px;
+      height: 42px;
+      padding: 0 13px;
+      border: 1px solid var(--border);
+      background: var(--soft-black);
+      color: #ffffff;
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition:
+        border-color 0.2s ease,
+        color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .article-page-button:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .article-page-button.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #ffffff;
+    }
+
+    .article-page-button:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .article-page-button:disabled:hover {
+      border-color: var(--border);
+      color: #ffffff;
+    }
+
+    .article-page-status {
+      width: 100%;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.82rem;
+      margin-top: 4px;
+    }
+
     /* RACE CALENDAR */
 
     .calendar-section {
@@ -891,7 +946,7 @@
 
       <nav aria-label="Main navigation">
         <a href="#home">Home</a>
-        <a href="articles.html">Articles</a>
+        <a href="#articles">Articles</a>
         <a href="#calendar">Calendar</a>
         <a href="#photos">Photos</a>
         <a href="#moments">Moments</a>
@@ -973,460 +1028,18 @@
           </p>
         </div>
 
-        <div class="article-grid">
+        <div
+          class="article-grid"
+          id="articleGrid"
+          aria-live="polite"
+        ></div>
+
+        <nav
+          class="article-pagination"
+          id="articlePagination"
+          aria-label="Article pages"
+        ></nav>
 
-          <!-- WEEKEND IN REVIEW: SEPTEMBER 12–13 -->
-          <article class="article-card">
-            <a href="articles/weekend-in-review-september-12-13.html">
-              <img
-                src="assets/weekend-review-sept-12-13-feature.jpeg"
-                alt="Needham boys celebrating after the MSTCA XC Relays"
-              />
-            </a>
-            <div class="card-body">
-              <div class="card-category">XC · Weekend in Review</div>
-              <h3><a href="articles/weekend-in-review-september-12-13.html">Weekend in Review: September 12–13</a></h3>
-              <p>A look back at the biggest performances, upsets and storylines from a packed weekend of Massachusetts cross country.</p>
-              <a class="text-link" href="articles/weekend-in-review-september-12-13.html">Read Article →</a>
-            </div>
-          </article>
-
-          <!-- WEEK IN REVIEW: SEPTEMBER 7–13 -->
-          <article class="article-card">
-            <a href="articles/week-in-review-september-7-13.html">
-              <img
-                src="assets/week-in-review-sept-7-13-feature.jpeg"
-                alt="Newton North boys cross country team huddle"
-              />
-            </a>
-            <div class="card-body">
-              <div class="card-category">XC · Week in Review</div>
-              <h3><a href="articles/week-in-review-september-7-13.html">Week in Review: September 7–13</a></h3>
-              <p>Newton North makes a statement, Walpole exceeds expectations, and some of the state’s top teams and individuals open their seasons.</p>
-              <a class="text-link" href="articles/week-in-review-september-7-13.html">Read Article →</a>
-            </div>
-          </article>
-
-          <!-- THIS WEEK IN MASS XC: SEPTEMBER 7–13 -->
-          <article class="article-card">
-            <a href="articles/this-week-in-mass-xc-september-7-13.html">
-              <img
-                src="assets/this-week-in-mass-xc-september-7-13-feature.jpeg"
-                alt="Runners at the 2025 Natick, Newton North and Walpole cross country tri-meet"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · Weekly Preview
-              </div>
-
-              <h3>
-                <a href="articles/this-week-in-mass-xc-september-7-13.html">
-                  This Week in Mass XC: September 7–13
-                </a>
-              </h3>
-
-              <p>
-                The Bay State League gets underway with Newton North, Natick,
-                Walpole, Brookline, Needham, Wellesley, Framingham and Weymouth
-                all in action.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/this-week-in-mass-xc-september-7-13.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- DON'T SLEEP ON THESE TEAMS -->
-          <article class="article-card">
-            <a href="articles/dont-sleep-on-these-teams-in-2026.html">
-              <img
-                src="assets/dont-sleep-on-these-teams-feature.jpeg"
-                alt="Massachusetts high school cross country teams and runners"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 Team Preview
-              </div>
-
-              <h3>
-                <a href="articles/dont-sleep-on-these-teams-in-2026.html">
-                  Don’t Sleep on These Teams in 2026
-                </a>
-              </h3>
-
-              <p>
-                A look at teams outside MDP’s Top 15 that could still make
-                serious noise across Massachusetts this fall.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/dont-sleep-on-these-teams-in-2026.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-
-          <!-- PATRIOT LEAGUE -->
-
-          <article class="article-card">
-            <a href="articles/patriot-league-what-to-expect.html">
-              <img
-                src="assets/patriot-league-feature.jpeg"
-                alt="Pembroke's Nate Palmieri"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 League Preview
-              </div>
-
-              <h3>
-                <a href="articles/patriot-league-what-to-expect.html">
-                  Patriot League: What to Expect
-                </a>
-              </h3>
-
-              <p>
-                Marshfield, Plymouth South, Plymouth North and more
-                enter what could be one of the tightest conference
-                battles in Massachusetts this fall.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/patriot-league-what-to-expect.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- CATHOLIC -->
-
-          <article class="article-card">
-            <a href="articles/catholic-conference-what-to-expect.html">
-              <img
-                src="assets/catholic-conference-feature.jpeg"
-                alt="BC High and St. John’s Prep runners"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 League Preview
-              </div>
-
-              <h3>
-                <a href="articles/catholic-conference-what-to-expect.html">
-                  Catholic Conference: What to Expect
-                </a>
-              </h3>
-
-              <p>
-                BC High and St. John’s Prep headline a loaded Catholic
-                Conference entering the 2026 season.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/catholic-conference-what-to-expect.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- MIDDLESEX -->
-
-          <article class="article-card">
-            <a href="articles/middlesex-league-what-to-expect.html">
-              <img
-                src="assets/middlesex-league-feature.jpeg"
-                alt="Lexington and Reading runners"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 League Preview
-              </div>
-
-              <h3>
-                <a href="articles/middlesex-league-what-to-expect.html">
-                  Middlesex League: What to Expect
-                </a>
-              </h3>
-
-              <p>
-                Lexington and Reading headline another deep season
-                in the Middlesex League.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/middlesex-league-what-to-expect.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- BAY STATE -->
-
-          <article class="article-card">
-            <a href="articles/bay-state-conference-what-to-expect.html">
-              <img
-                src="assets/bay-state-conference-feature.jpeg"
-                alt="Bay State Conference runners"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 League Preview
-              </div>
-
-              <h3>
-                <a href="articles/bay-state-conference-what-to-expect.html">
-                  Bay State Conference: What to Expect
-                </a>
-              </h3>
-
-              <p>
-                A look at the teams and individuals that could define
-                the Bay State Conference this fall.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/bay-state-conference-what-to-expect.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- HOCKOMOCK -->
-
-          <article class="article-card">
-            <a href="articles/hockomock-league-what-to-expect.html">
-              <img
-                src="assets/hockomock-league-feature.jpeg"
-                alt="Oliver Ames boys cross country team"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 League Preview
-              </div>
-
-              <h3>
-                <a href="articles/hockomock-league-what-to-expect.html">
-                  Hockomock League: What to Expect
-                </a>
-              </h3>
-
-              <p>
-                Oliver Ames leads the way as the Hockomock League
-                prepares for another season.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/hockomock-league-what-to-expect.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- RANKINGS 10-1 -->
-
-          <article class="article-card">
-            <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
-              <img
-                src="assets/brookline-preseason-rankings-feature.jpeg"
-                alt="Brookline boys cross country"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 Preseason Rankings
-              </div>
-
-              <h3>
-                <a href="articles/massachusetts-top-15-preseason-rankings-10-1.html">
-                  Massachusetts Top 15 Preseason Rankings: No. 10–1
-                </a>
-              </h3>
-
-              <p>
-                The final ten teams in MDP's 2026 preseason countdown.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/massachusetts-top-15-preseason-rankings-10-1.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- RANKINGS 15-11 -->
-
-          <article class="article-card">
-            <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
-              <img
-                src="assets/longmeadow-preseason-rankings-feature.jpeg"
-                alt="Longmeadow boys cross country"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 Preseason Rankings
-              </div>
-
-              <h3>
-                <a href="articles/massachusetts-top-15-preseason-rankings-15-11.html">
-                  Massachusetts Top 15 Preseason Rankings: No. 15–11
-                </a>
-              </h3>
-
-              <p>
-                The first five teams in MDP's preseason top 15.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/massachusetts-top-15-preseason-rankings-15-11.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- ALL STATE -->
-
-          <article class="article-card">
-            <a href="articles/who-will-be-the-next-all-state-champion.html">
-              <img
-                src="assets/all-state-champion-feature.jpeg"
-                alt="Massachusetts cross country runners"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · 2026 Preview
-              </div>
-
-              <h3>
-                <a href="articles/who-will-be-the-next-all-state-champion.html">
-                  Who Will Be the Next All-State Champion?
-                </a>
-              </h3>
-
-              <p>
-                A look at the runners who could contend for the biggest
-                individual title in Massachusetts.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/who-will-be-the-next-all-state-champion.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- NEWTON NORTH -->
-
-          <article class="article-card">
-            <a href="articles/newton-north-bay-state-sleeper-team.html">
-              <img
-                src="assets/newton-north-feature.jpeg"
-                alt="Newton North boys distance runners"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · Team Feature
-              </div>
-
-              <h3>
-                <a href="articles/newton-north-bay-state-sleeper-team.html">
-                  Newton North: Bay State Sleeper Team
-                </a>
-              </h3>
-
-              <p>
-                Why Newton North could surprise Massachusetts cross
-                country this season.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/newton-north-bay-state-sleeper-team.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-          <!-- BROOKLINE -->
-
-          <article class="article-card">
-            <a href="articles/brookline-5-for-5.html">
-              <img
-                src="assets/brookline-feature.jpeg"
-                alt="Brookline boys cross country"
-              />
-            </a>
-
-            <div class="card-body">
-              <div class="card-category">
-                XC · Team Feature
-              </div>
-
-              <h3>
-                <a href="articles/brookline-5-for-5.html">
-                  Will The Brookline Boys Go 5 for 5?
-                </a>
-              </h3>
-
-              <p>
-                Brookline enters another season chasing championship
-                history.
-              </p>
-
-              <a
-                class="text-link"
-                href="articles/brookline-5-for-5.html"
-              >
-                Read Article →
-              </a>
-            </div>
-          </article>
-
-        </div>
       </div>
     </section>
 
@@ -2268,7 +1881,118 @@
     </div>
   </footer>
 
+  <script src="assets/articles-data.js"></script>
+
   <script>
+    const ARTICLES_PER_PAGE = 9;
+
+    function escapeArticleText(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, '&#039;');
+    }
+
+    function getRequestedArticlePage() {
+      const params = new URLSearchParams(window.location.search);
+      const requested = Number.parseInt(params.get("articlesPage"), 10);
+      return Number.isFinite(requested) && requested > 0 ? requested : 1;
+    }
+
+    function updateArticlePageUrl(page) {
+      const url = new URL(window.location.href);
+      if (page <= 1) {
+        url.searchParams.delete("articlesPage");
+      } else {
+        url.searchParams.set("articlesPage", String(page));
+      }
+      url.hash = "articles";
+      history.pushState({ articlePage: page }, "", url);
+    }
+
+    function renderArticleCard(article) {
+      const title = escapeArticleText(article.title);
+      const deck = escapeArticleText(article.deck);
+      const category = escapeArticleText(article.category);
+      const href = escapeArticleText(article.href);
+      const image = escapeArticleText(article.image);
+      const alt = escapeArticleText(article.alt || article.title);
+
+      return `
+        <article class="article-card">
+          <a href="${href}">
+            <img src="${image}" alt="${alt}" loading="lazy" />
+          </a>
+          <div class="card-body">
+            <div class="card-category">${category}</div>
+            <h3><a href="${href}">${title}</a></h3>
+            <p>${deck}</p>
+            <a class="text-link" href="${href}">Read Article →</a>
+          </div>
+        </article>`;
+    }
+
+    function renderArticlePagination(page, totalPages) {
+      const pagination = document.getElementById("articlePagination");
+      if (!pagination) return;
+
+      if (totalPages <= 1) {
+        pagination.innerHTML = "";
+        return;
+      }
+
+      let controls = "";
+      controls += `<button class="article-page-button" data-page="${page - 1}" ${page === 1 ? "disabled" : ""}>← Previous</button>`;
+
+      for (let i = 1; i <= totalPages; i += 1) {
+        controls += `<button class="article-page-button ${i === page ? "active" : ""}" data-page="${i}" ${i === page ? 'aria-current="page"' : ""}>${i}</button>`;
+      }
+
+      controls += `<button class="article-page-button" data-page="${page + 1}" ${page === totalPages ? "disabled" : ""}>Next →</button>`;
+      controls += `<div class="article-page-status">Page ${page} of ${totalPages}</div>`;
+      pagination.innerHTML = controls;
+
+      pagination.querySelectorAll("button[data-page]:not([disabled])").forEach(function(button) {
+        button.addEventListener("click", function() {
+          const nextPage = Number.parseInt(button.dataset.page, 10);
+          showArticlePage(nextPage, true);
+        });
+      });
+    }
+
+    function showArticlePage(requestedPage, updateUrl) {
+      const grid = document.getElementById("articleGrid");
+      const articles = Array.isArray(window.MDP_ARTICLES) ? window.MDP_ARTICLES : [];
+
+      if (!grid) return;
+      if (articles.length === 0) {
+        grid.innerHTML = `<p style="color: var(--gray);">Articles are loading. Refresh the page in a moment.</p>`;
+        document.getElementById("articlePagination").innerHTML = "";
+        return;
+      }
+
+      const totalPages = Math.max(1, Math.ceil(articles.length / ARTICLES_PER_PAGE));
+      const page = Math.min(Math.max(1, requestedPage), totalPages);
+      const startIndex = (page - 1) * ARTICLES_PER_PAGE;
+      const pageArticles = articles.slice(startIndex, startIndex + ARTICLES_PER_PAGE);
+
+      grid.innerHTML = pageArticles.map(renderArticleCard).join("");
+      renderArticlePagination(page, totalPages);
+
+      if (updateUrl) {
+        updateArticlePageUrl(page);
+        document.getElementById("articles").scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+
+    window.addEventListener("popstate", function() {
+      showArticlePage(getRequestedArticlePage(), false);
+    });
+
+    showArticlePage(getRequestedArticlePage(), false);
+
     const lightbox =
       document.getElementById("momentLightbox");
 
