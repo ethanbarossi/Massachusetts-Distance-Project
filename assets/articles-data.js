@@ -12,7 +12,7 @@ window.MDP_ARTICLES = [
     "deck": "Newton North makes a statement, Walpole exceeds expectations, and some of the state’s top teams and individuals open their seasons.",
     "category": "XC · Week in Review",
     "href": "articles/week-in-review-september-7-13.html",
-    "image": "assets/week-in-review-sept-7-13-feature.jpeg",
+    "image": "assets/week-in-review-sept-7-13-feature.png",
     "alt": "Newton North cross country team before its race"
   },
   {
@@ -93,7 +93,7 @@ window.MDP_ARTICLES = [
     "category": "XC",
     "href": "articles/massachusetts-top-15-preseason-rankings-10-1.html",
     "image": "assets/brookline-preseason-rankings-feature.jpeg",
-    "alt": "2025 Brookline boys cross country team after winning its fourth straight state title"
+    "alt": "Brookline boys after winning the Division 1A title in 2025"
   },
   {
     "title": "Massachusetts Top 15 Preseason Rankings: No. 15–11",
