@@ -1,4 +1,4 @@
-name: Build article archive pages
+name: Build homepage article pagination
 
 on:
   push:
@@ -29,19 +29,18 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: Generate article archive pages
+      - name: Rebuild homepage article data
         run: python scripts/build_article_pages.py
 
-      - name: Commit generated pages
+      - name: Commit generated article data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add articles.html
-          git add articles-page-*.html 2>/dev/null || true
+          git add assets/articles-data.js
 
           if git diff --cached --quiet; then
-            echo "No changes."
+            echo "No article-data changes."
           else
-            git commit -m "Auto-update article archive [skip ci]"
+            git commit -m "Auto-update homepage article pagination [skip ci]"
             git push
           fi
