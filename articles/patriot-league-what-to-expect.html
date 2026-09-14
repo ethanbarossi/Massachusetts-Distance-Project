@@ -7,10 +7,100 @@
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <style>
 :root{--blue:#178cff;--black:#080808;--gray:#666;--light:#f4f4f4;--border:#ddd;--max:1180px}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#111;line-height:1.72}a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 40px));margin:auto}.header{background:#070707;color:#fff;border-bottom:1px solid #242424}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{font-weight:900;text-transform:uppercase;letter-spacing:.04em}.brand span{color:var(--blue)}nav{display:flex;gap:20px;flex-wrap:wrap}nav a{font-size:.84rem;font-weight:700;text-transform:uppercase;color:#ddd}.article-head{padding:70px 0 35px}.category{color:var(--blue);font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}h1{font-size:clamp(2.8rem,6vw,5.4rem);line-height:.98;letter-spacing:-.045em;margin:0 0 18px;max-width:1000px}.deck{font-size:1.18rem;color:#555;max-width:800px;margin:0 0 18px}.meta{font-size:.9rem;color:#777}.hero{width:100%;max-height:700px;object-fit:cover}.caption{font-size:.82rem;color:#777;margin-top:8px}.layout{display:grid;grid-template-columns:minmax(0,760px) 280px;gap:60px;padding:45px 0 80px}.article p{margin:0 0 24px;font-size:1.05rem}.article h2{font-size:1.9rem;line-height:1.15;margin:42px 0 18px}.article strong{font-weight:800}.key-list,.ranking{margin:0 0 30px;padding-left:22px}.key-list li,.ranking li{margin:6px 0}.ranking li{font-weight:800}.sidebar{border-left:1px solid var(--border);padding-left:25px}.side-block{margin-bottom:30px}.side-title{font-size:.75rem;color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}.side-text{font-size:.92rem;color:#555}.closing{font-size:1.35rem!important;font-weight:900;margin-top:36px!important}.footer{background:#070707;color:#999;padding:30px 0;font-size:.84rem}.footer strong{color:#fff}@media(max-width:850px){.nav{align-items:flex-start;flex-direction:column;padding:16px 0}.layout{grid-template-columns:1fr;gap:25px}.sidebar{border-left:0;border-top:1px solid var(--border);padding:25px 0 0}.article-head{padding-top:45px}}@media(max-width:600px){.container{width:calc(100% - 26px)}h1{font-size:2.7rem}}
+
+  /* MDP STANDARD ARTICLE HEADER — Middlesex style */
+  .mdp-standard-header{
+    background:#050505!important;
+    color:#fff!important;
+    border-bottom:4px solid #1478ff!important;
+    width:100%;
+    position:relative;
+    z-index:1000;
+  }
+  .mdp-standard-topbar{
+    max-width:1180px;
+    margin:0 auto;
+    padding:18px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    box-sizing:border-box;
+  }
+  .mdp-standard-brand{
+    display:flex!important;
+    align-items:center!important;
+    gap:14px!important;
+    color:#fff!important;
+    text-decoration:none!important;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-weight:800!important;
+    letter-spacing:.04em!important;
+    flex-shrink:0;
+  }
+  .mdp-standard-brand img{
+    width:70px!important;
+    height:auto!important;
+    display:block!important;
+    max-width:none!important;
+  }
+  .mdp-standard-brand span{
+    color:#fff!important;
+    font-size:18px!important;
+    line-height:1.1!important;
+    white-space:nowrap;
+  }
+  .mdp-standard-nav{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:20px!important;
+    flex-wrap:wrap!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .mdp-standard-nav a{
+    color:#fff!important;
+    text-decoration:none!important;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-size:13px!important;
+    font-weight:700!important;
+    text-transform:uppercase!important;
+    letter-spacing:.08em!important;
+    line-height:1.2!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:none!important;
+  }
+  .mdp-standard-nav a:hover{color:#1478ff!important;}
+  @media (max-width:900px){
+    .mdp-standard-topbar{align-items:flex-start;flex-direction:column;gap:14px;padding:14px 18px 16px;}
+    .mdp-standard-brand img{width:58px!important;}
+    .mdp-standard-brand span{font-size:15px!important;white-space:normal;}
+    .mdp-standard-nav{justify-content:flex-start!important;gap:14px 16px!important;}
+    .mdp-standard-nav a{font-size:11px!important;}
+  }
+
 </style>
 </head>
 <body>
-<header class="header"><div class="container nav"><a class="brand" href="../index.html">Massachusetts <span>Distance Project</span></a><nav><a href="../index.html">Home</a><a href="../index.html#articles">Articles</a><a href="../index.html#photos">Photos</a><a href="../index.html#interviews">Interviews</a><a href="../index.html#about">About</a></nav></div></header>
+<header class="mdp-standard-header">
+  <div class="mdp-standard-topbar">
+    <a class="mdp-standard-brand" href="../index.html">
+      <img src="../assets/mdp-logo.png" alt="MDP logo">
+      <span>MASSACHUSETTS DISTANCE PROJECT</span>
+    </a>
+    <nav class="mdp-standard-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#articles">Articles</a>
+      <a href="../index.html#calendar">Calendar</a>
+      <a href="../index.html#photos">Photos</a>
+      <a href="../index.html#interviews">Interviews</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
 <main>
 <section class="article-head"><div class="container"><div class="category">Cross Country · 2026 League Preview</div><h1>Patriot League: What to Expect</h1><p class="deck">Marshfield, Plymouth South, and Plymouth North headline one of the tightest conference races in Massachusetts entering the 2026 season.</p><div class="meta">By Ethan Barossi · September 3, 2026</div></div></section>
 <div class="container"><img class="hero" src="../assets/patriot-league-feature.jpeg" alt="Pembroke runner at an indoor track meet"><div class="caption">Pembroke’s Nate Palmieri looking to his left.</div></div>

@@ -1,8 +1,98 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Who Will Be the Next All-State Champion? | Massachusetts Distance Project</title>
 <style>
 :root{--b:#0878ee;--d:#080b12;--t:#151922;--m:#606775;--l:#dce3ec}*{box-sizing:border-box}body{margin:0;color:var(--t);font-family:Arial,sans-serif;line-height:1.62}a{text-decoration:none;color:inherit}header{border-bottom:3px solid var(--b)}nav,main,.foot{max-width:1180px;margin:auto}nav{padding:18px 24px;display:flex;justify-content:space-between;align-items:center}.brand{font-weight:900;text-transform:uppercase}.brand b{color:var(--b)}.links{display:flex;gap:28px;font-size:13px;font-weight:800}main{padding:48px 24px 70px}.eye{color:var(--b);font-weight:900;font-size:13px;letter-spacing:.09em;text-transform:uppercase}h1{font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-.045em;margin:10px 0 18px;max-width:950px;color:#05070b}.deck{font-size:20px;max-width:800px;color:#363c47}.by{margin:20px 0 28px;font-size:14px}.by strong{color:var(--b)}.hero{width:100%;height:min(56vw,620px);object-fit:cover;object-position:center 35%;display:block}.grid{display:grid;grid-template-columns:minmax(0,2.1fr) minmax(250px,.85fr);gap:58px;margin-top:34px}article{font-family:Georgia,serif;font-size:19px;line-height:1.75}article p{margin:0 0 24px}article h2{font-family:Arial,sans-serif;font-size:25px;margin:38px 0 12px}.closing{font-family:Arial,sans-serif;font-size:25px;font-weight:900;border-left:5px solid var(--b);padding:8px 0 8px 18px;margin-top:38px}aside{border-left:3px solid var(--b);padding-left:28px;font-size:14px}.side{padding:4px 0 24px;margin-bottom:24px;border-bottom:1px solid var(--l)}.label{font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin-bottom:7px}.related a{display:block;color:#0064d2;font-weight:700;margin:11px 0}.quote{font-family:Georgia,serif;font-style:italic;font-size:22px}.back{display:inline-block;margin-top:42px;color:#0064d2;font-weight:800;font-family:Arial,sans-serif;font-size:14px}footer{background:#080b12;color:#fff;border-top:3px solid var(--b)}.foot{padding:30px 24px;display:flex;justify-content:space-between}.tag{color:#9ecbff;font-size:13px}@media(max-width:800px){.links{display:none}h1{font-size:44px}.hero{height:62vw}.grid{grid-template-columns:1fr}.grid aside{border-left:0;border-top:3px solid var(--b);padding:24px 0 0}article{font-size:18px}}
+
+  /* MDP STANDARD ARTICLE HEADER — Middlesex style */
+  .mdp-standard-header{
+    background:#050505!important;
+    color:#fff!important;
+    border-bottom:4px solid #1478ff!important;
+    width:100%;
+    position:relative;
+    z-index:1000;
+  }
+  .mdp-standard-topbar{
+    max-width:1180px;
+    margin:0 auto;
+    padding:18px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    box-sizing:border-box;
+  }
+  .mdp-standard-brand{
+    display:flex!important;
+    align-items:center!important;
+    gap:14px!important;
+    color:#fff!important;
+    text-decoration:none!important;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-weight:800!important;
+    letter-spacing:.04em!important;
+    flex-shrink:0;
+  }
+  .mdp-standard-brand img{
+    width:70px!important;
+    height:auto!important;
+    display:block!important;
+    max-width:none!important;
+  }
+  .mdp-standard-brand span{
+    color:#fff!important;
+    font-size:18px!important;
+    line-height:1.1!important;
+    white-space:nowrap;
+  }
+  .mdp-standard-nav{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:20px!important;
+    flex-wrap:wrap!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  .mdp-standard-nav a{
+    color:#fff!important;
+    text-decoration:none!important;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-size:13px!important;
+    font-weight:700!important;
+    text-transform:uppercase!important;
+    letter-spacing:.08em!important;
+    line-height:1.2!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:none!important;
+  }
+  .mdp-standard-nav a:hover{color:#1478ff!important;}
+  @media (max-width:900px){
+    .mdp-standard-topbar{align-items:flex-start;flex-direction:column;gap:14px;padding:14px 18px 16px;}
+    .mdp-standard-brand img{width:58px!important;}
+    .mdp-standard-brand span{font-size:15px!important;white-space:normal;}
+    .mdp-standard-nav{justify-content:flex-start!important;gap:14px 16px!important;}
+    .mdp-standard-nav a{font-size:11px!important;}
+  }
+
 </style></head><body>
-<header><nav><a class="brand" href="../index.html">Massachusetts <b>Distance Project</b></a><div class="links"><a href="../index.html">HOME</a><a href="../index.html#articles">ARTICLES</a><a href="../index.html#photos">PHOTOS</a><a href="../index.html#interviews">INTERVIEWS</a><a href="../index.html#about">ABOUT</a></div></nav></header>
+<header class="mdp-standard-header">
+  <div class="mdp-standard-topbar">
+    <a class="mdp-standard-brand" href="../index.html">
+      <img src="../assets/mdp-logo.png" alt="MDP logo">
+      <span>MASSACHUSETTS DISTANCE PROJECT</span>
+    </a>
+    <nav class="mdp-standard-nav" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#articles">Articles</a>
+      <a href="../index.html#calendar">Calendar</a>
+      <a href="../index.html#photos">Photos</a>
+      <a href="../index.html#interviews">Interviews</a>
+      <a href="../index.html#about">About</a>
+    </nav>
+  </div>
+</header>
 <main><div class="eye">Cross Country · 2026 Individual Preview</div><h1>Who Will Be the Next All-State Champion?</h1><p class="deck">With no clear favorite entering the fall, Massachusetts has a deep group of contenders capable of taking the individual title in November.</p><div class="by">By <strong>Ethan Barossi</strong> &nbsp; | &nbsp; Massachusetts Distance Project</div>
 <img class="hero" src="../assets/all-state-champion-feature.jpeg" alt="Massachusetts high school distance runner">
 <div class="grid"><article>
