@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Week 1 Power Rankings",
+    "deck": "BC High and Newton North climb, North Andover makes a statement, and MDP expands its rankings to a Top 20.",
+    "category": "XC · Power Rankings",
+    "href": "articles/week-1-power-rankings.html",
+    "image": "assets/week-1-power-rankings-feature.png",
+    "alt": "Boston Latin Academy's Brandon Spiess wins the MSTCA XC Relays"
+  },
+  {
     "title": "Weekend in Review: September 12–13",
     "deck": "A look back at the biggest performances, upsets and storylines from a packed weekend of Massachusetts cross country.",
     "category": "XC · Weekend in Review",
