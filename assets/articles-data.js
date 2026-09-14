@@ -12,7 +12,7 @@ window.MDP_ARTICLES = [
     "deck": "Newton North makes a statement, Walpole exceeds expectations, and some of the state’s top teams and individuals open their seasons.",
     "category": "XC · Week in Review",
     "href": "articles/week-in-review-september-7-13.html",
-    "image": "assets/week-in-review-sept-7-13-feature.png",
+    "image": "assets/week-in-review-sept-7-13-feature.jpeg",
     "alt": "Newton North cross country team before its race"
   },
   {
