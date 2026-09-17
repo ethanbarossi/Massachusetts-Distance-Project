@@ -19,7 +19,7 @@ window.MDP_ARTICLES = [
     "title": "Weekend in Review: September 12–13",
     "deck": "Read the latest Massachusetts high school distance running coverage.",
     "category": "XC · Weekend in Review",
-    "href": "articles/weekend-in-review-september-12-13-zach-credits.html",
+    "href": "articles/weekend-in-review-september-12-13.html",
     "image": "assets/weekend-review-sept-12-13-feature.jpeg",
     "alt": "Needham boys celebrating after the MSTCA XC Relays"
   },
