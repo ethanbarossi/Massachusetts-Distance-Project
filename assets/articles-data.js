@@ -3,7 +3,7 @@ window.MDP_ARTICLES = [
     "title": "Week in Review: September 14–20",
     "deck": "A look at the biggest Massachusetts high school cross country performances and storylines from September 14–20.",
     "category": "XC · Week in Review",
-    "href": "articles/week-in-review-september-14-20-patrick-photo.html",
+    "href": "articles/week-in-review-september-14-20.html",
     "image": "assets/week-review-sept-14-20-feature.jpeg",
     "alt": "Reading boys cross country pack"
   },
