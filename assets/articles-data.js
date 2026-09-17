@@ -16,14 +16,6 @@ window.MDP_ARTICLES = [
     "alt": "Week 1 Power Rankings"
   },
   {
-    "title": "Weekend in Review: September 12–13",
-    "deck": "Read the latest Massachusetts high school distance running coverage.",
-    "category": "XC · Weekend in Review",
-    "href": "articles/weekend-in-review-september-12-13.html",
-    "image": "assets/weekend-review-sept-12-13-feature.jpeg",
-    "alt": "Needham boys celebrating after the MSTCA XC Relays"
-  },
-  {
     "title": "Week in Review: September 7–13",
     "deck": "Newton North makes a statement, Walpole exceeds expectations, and some of the state’s top teams and individuals open their seasons.",
     "category": "XC · Week in Review",
