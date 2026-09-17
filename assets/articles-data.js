@@ -1,13 +1,5 @@
 window.MDP_ARTICLES = [
   {
-    "title": "Week in Review: September 14–20",
-    "deck": "A look at the biggest Massachusetts high school cross country performances and storylines from September 14–20.",
-    "category": "XC · Week in Review",
-    "href": "articles/week-in-review-september-14-20.html",
-    "image": "assets/week-review-sept-14-20-feature.jpeg",
-    "alt": "Reading boys cross country pack"
-  },
-  {
     "title": "Week 1 Power Rankings",
     "deck": "MDP expands its Massachusetts boys cross country power rankings to a Top 20 after Week 1, with BC High, Newton North and North Andover making major statements.",
     "category": "Cross Country · Week 1 Power Rankings",
