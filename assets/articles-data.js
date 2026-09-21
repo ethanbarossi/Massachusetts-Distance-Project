@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Week 2 Power Rankings",
+    "deck": "Week 2 Massachusetts high school cross country power rankings from Massachusetts Distance Project.",
+    "category": "XC",
+    "href": "articles/week-2-power-rankings.html",
+    "image": "assets/week-2-power-rankings-feature.jpeg",
+    "alt": "North Andover boys after winning the Amherst Invitational"
+  },
+  {
     "title": "Week in Review: September 14–20",
     "deck": "A look at the biggest Massachusetts high school cross country performances and storylines from September 14–20.",
     "category": "XC · Week in Review",
