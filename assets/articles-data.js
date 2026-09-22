@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Ocean State Invitational: What to Expect",
+    "deck": "Massachusetts' best collide at Ocean State as top teams, Division 2 contenders, and some of the state's fastest individuals prepare for a major early-season test.",
+    "category": "XC",
+    "href": "articles/ocean-state-invitational-MDP-version.html",
+    "image": "assets/ocean-state-invitational-what-to-expect-feature.jpeg",
+    "alt": "2023 Ocean State Invitational"
+  },
+  {
     "title": "Week 2 Power Rankings",
     "deck": "Week 2 Massachusetts high school cross country power rankings from Massachusetts Distance Project.",
     "category": "XC",
