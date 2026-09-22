@@ -3,7 +3,7 @@ window.MDP_ARTICLES = [
     "title": "Ocean State Invitational: What to Expect",
     "deck": "Massachusetts' best collide at Ocean State as top teams, Division 2 contenders, and some of the state's fastest individuals prepare for a major early-season test.",
     "category": "XC",
-    "href": "articles/ocean-state-invitational-MDP-version.html",
+    "href": "articles/ocean-state-invitational-what-to-expect.html",
     "image": "assets/ocean-state-invitational-what-to-expect-feature.jpeg",
     "alt": "2023 Ocean State Invitational"
   },
