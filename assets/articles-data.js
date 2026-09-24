@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Week in Review: September 21–27",
+    "deck": "Three major upsets shake up the rankings as Massachusetts teams gear up for October and championship season.",
+    "category": "XC · Week in Review",
+    "href": "articles/week-in-review-september-21-27.html",
+    "image": "assets/week-review-sept-21-27-feature.jpeg",
+    "alt": "Braintree and Natick runners at the start of a tri-meet"
+  },
+  {
     "title": "Ocean State Invitational: What to Expect",
     "deck": "Massachusetts' best collide at Ocean State as top teams, Division 2 contenders, and some of the state's fastest individuals prepare for a major early-season test.",
     "category": "XC",
