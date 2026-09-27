@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Week 3 Power Rankings",
+    "deck": "Week 3 Massachusetts high school cross country power rankings from Massachusetts Distance Project.",
+    "category": "XC",
+    "href": "articles/week-3-power-rankings.html",
+    "image": "assets/st-johns-prep-bc-high-week-3.png",
+    "alt": "St. John's Prep huddling before its dual meet with BC High"
+  },
+  {
     "title": "Week in Review: September 21–27",
     "deck": "Three major upsets shake up the rankings as Massachusetts teams gear up for October and championship season.",
     "category": "XC · Week in Review",
