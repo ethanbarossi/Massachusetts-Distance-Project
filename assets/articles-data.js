@@ -1,13 +1,5 @@
 window.MDP_ARTICLES = [
   {
-    "title": "Week in Review: End of September",
-    "deck": "Upsets, breakout performances, and some of the deepest team showings of the season close out September across Massachusetts.",
-    "category": "Week in Review",
-    "href": "articles/MDP-Week-in-Review-End-of-September.html",
-    "image": "natick-hava-doyle-needham-site.jpg",
-    "alt": "Natick runners Declan Hava and Callum Doyle"
-  },
-  {
     "title": "Week 3 Power Rankings",
     "deck": "Week 3 Massachusetts high school cross country power rankings from Massachusetts Distance Project.",
     "category": "XC",
