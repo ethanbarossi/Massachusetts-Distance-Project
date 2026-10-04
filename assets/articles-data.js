@@ -8,6 +8,14 @@ window.MDP_ARTICLES = [
     "alt": "Start of the 2023 D2A race"
   },
   {
+    "title": "Chaos at Wrentham: Weekend in Review",
+    "deck": "Major upsets, breakout performances, and our best look yet at some of the top teams and individuals in Massachusetts.",
+    "category": "XC",
+    "href": "articles/chaos-at-wrentham-weekend-in-review.html",
+    "image": "assets/chaos-at-wrentham-weekend-in-review.jpg",
+    "alt": "North Andover boys after a big win in the Varsity B race"
+  },
+  {
     "title": "Week in Review: End of September",
     "deck": "Upsets, breakout performances, and some of the deepest team showings of the season close out September across Massachusetts.",
     "category": "Week in Review",
