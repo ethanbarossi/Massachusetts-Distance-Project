@@ -669,6 +669,124 @@
       margin-bottom: 12px;
     }
 
+    /* MEMORABLE MOMENTS */
+
+    .moments-section {
+      background: #080808;
+    }
+
+    .moments-grid {
+      columns: 3 300px;
+      column-gap: 18px;
+    }
+
+    .moment-card {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0 0 18px;
+      break-inside: avoid;
+      border: 1px solid var(--border);
+      background: #111;
+      overflow: hidden;
+      cursor: zoom-in;
+      text-align: left;
+    }
+
+    .moment-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .moment-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .moment-overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 55px 18px 18px;
+      color: #ffffff;
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.95),
+          rgba(0, 0, 0, 0)
+        );
+      opacity: 0;
+      transform: translateY(8px);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .moment-card:hover .moment-overlay,
+    .moment-card:focus .moment-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .moment-overlay p {
+      margin: 0;
+      color: #ffffff;
+      font-size: 0.92rem;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    /* LIGHTBOX */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      padding: 28px;
+      background: rgba(0, 0, 0, 0.94);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      max-width: min(1100px, 94vw);
+      max-height: 92vh;
+      text-align: center;
+    }
+
+    .lightbox img {
+      width: auto;
+      max-width: 100%;
+      max-height: 80vh;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      margin-top: 14px;
+      color: #ffffff;
+      font-size: 0.95rem;
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      border: none;
+      background: transparent;
+      color: #ffffff;
+      font-size: 2.3rem;
+      cursor: pointer;
+    }
+
     /* INTERVIEWS */
 
     .interview-box {
@@ -1109,7 +1227,7 @@
 
           <div class="weekly-picks">
             <article class="weekly-pick">
-              <img src="assets/jack-weintraub-week3.jpg" alt="Xaverian runner Jack Weintraub after his race" loading="lazy" />
+              <img src="assets/jack-weintraub-runner-of-week.jpeg" alt="Xaverian runner Jack Weintraub after his race" loading="lazy" />
               <div class="weekly-pick-content">
                 <div class="week-card-label">Runner of the Week</div>
                 <h3>Jack Weintraub</h3>
@@ -1119,7 +1237,7 @@
             </article>
 
             <article class="weekly-pick">
-              <img src="assets/belmont-week3.jpg" alt="Belmont boys cross country team huddling before a race" loading="lazy" />
+              <img src="assets/belmont-team-of-week.jpeg" alt="Belmont boys cross country team huddling before a race" loading="lazy" />
               <div class="weekly-pick-content">
                 <div class="week-card-label">Team of the Week</div>
                 <h3>Belmont</h3>
@@ -1642,6 +1760,86 @@
 
     showArticlePage(getRequestedArticlePage(), false);
 
+    const lightbox =
+      document.getElementById("momentLightbox");
+
+    const lightboxImage =
+      document.getElementById("momentLightboxImage");
+
+    const lightboxCaption =
+      document.getElementById("momentLightboxCaption");
+
+    const lightboxClose =
+      document.getElementById("lightboxClose");
+
+    const momentCards =
+      document.querySelectorAll(".moment-card");
+
+    function openMoment(src, caption) {
+      lightboxImage.src = src;
+      lightboxImage.alt = caption;
+      lightboxCaption.textContent = caption;
+
+      lightbox.classList.add("open");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      document.body.style.overflow =
+        "hidden";
+    }
+
+    function closeMoment() {
+      lightbox.classList.remove("open");
+
+      lightbox.setAttribute(
+        "aria-hidden",
+        "true"
+      );
+
+      document.body.style.overflow =
+        "";
+    }
+
+    momentCards.forEach(function(card) {
+      card.addEventListener(
+        "click",
+        function() {
+          openMoment(
+            card.dataset.src,
+            card.dataset.caption
+          );
+        }
+      );
+    });
+
+    lightboxClose.addEventListener(
+      "click",
+      closeMoment
+    );
+
+    lightbox.addEventListener(
+      "click",
+      function(event) {
+        if (event.target === lightbox) {
+          closeMoment();
+        }
+      }
+    );
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+        if (
+          event.key === "Escape" &&
+          lightbox.classList.contains("open")
+        ) {
+          closeMoment();
+        }
+      }
+    );
   </script>
 
 </body>
