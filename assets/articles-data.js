@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Bay State Double Header: What to Expect",
+    "deck": "A look at the teams, individuals, and biggest matchups heading to Wrentham this weekend.",
+    "category": "XC",
+    "href": "articles/bay-state-double-header-what-to-expect-CORRECTED.html",
+    "image": "assets/bay-state-double-header-2026.jpg",
+    "alt": "Start of the 2023 D2A race"
+  },
+  {
     "title": "Week in Review: End of September",
     "deck": "Upsets, breakout performances, and some of the deepest team showings of the season close out September across Massachusetts.",
     "category": "Week in Review",
