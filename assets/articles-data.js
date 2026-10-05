@@ -1,11 +1,11 @@
 window.MDP_ARTICLES = [
   {
-    "title": "Chaos at Wrentham: Weekend in Review",
-    "deck": "Major upsets, breakout performances, and our best look yet at some of the top teams and individuals in Massachusetts.",
+    "title": "Week 4 Power Rankings",
+    "deck": "Week 4 Massachusetts high school cross country power rankings from Massachusetts Distance Project.",
     "category": "XC",
-    "href": "articles/chaos-at-wrentham-weekend-in-review.html",
-    "image": "assets/chaos-at-wrentham-weekend-in-review.jpg",
-    "alt": "North Andover boys after a big win in the Varsity B race"
+    "href": "articles/week-4-power-rankings.html",
+    "image": "assets/week-4-power-rankings-newton-south.jpeg",
+    "alt": "Newton South boys at the Bay State Invitational"
   },
   {
     "title": "Bay State Double Header: What to Expect",
@@ -14,6 +14,14 @@ window.MDP_ARTICLES = [
     "href": "articles/bay-state-double-header-what-to-expect.html",
     "image": "assets/bay-state-double-header-2026.jpg",
     "alt": "Start of the 2023 D2A race"
+  },
+  {
+    "title": "Chaos at Wrentham: Weekend in Review",
+    "deck": "Major upsets, breakout performances, and our best look yet at some of the top teams and individuals in Massachusetts.",
+    "category": "XC",
+    "href": "articles/chaos-at-wrentham-weekend-in-review.html",
+    "image": "assets/chaos-at-wrentham-weekend-in-review.jpg",
+    "alt": "North Andover boys after a big win in the Varsity B race"
   },
   {
     "title": "Week in Review: End of September",
