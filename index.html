@@ -849,6 +849,126 @@
       color: var(--gray);
     }
 
+
+    /* ABOUT ME */
+    .about-me-section {
+      background: #f7f7f5;
+      color: #0a0a0a;
+      border-top: 1px solid #d9d9d9;
+      border-bottom: 1px solid #d9d9d9;
+    }
+
+    .about-me-section .eyebrow {
+      color: var(--blue);
+    }
+
+    .about-photo-row {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 34px;
+    }
+
+    .about-photo-row.bottom {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      margin: 34px 0 0;
+    }
+
+    .about-photo-row img {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #111;
+      background: #ddd;
+    }
+
+    .about-me-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+      gap: 44px;
+      align-items: stretch;
+    }
+
+    .about-me-copy h2 {
+      color: #0a0a0a;
+      font-size: clamp(2.5rem, 5vw, 4.7rem);
+      line-height: .98;
+      text-transform: uppercase;
+      letter-spacing: -0.035em;
+      margin: 0 0 18px;
+    }
+
+    .about-me-rule {
+      width: 84px;
+      height: 5px;
+      background: var(--blue);
+      margin: 0 0 22px;
+    }
+
+    .about-me-copy p {
+      color: #242424;
+      font-size: 1.04rem;
+      line-height: 1.75;
+      margin: 0;
+      max-width: 820px;
+    }
+
+    .about-me-copy .about-final-line {
+      display: inline;
+      font-weight: 800;
+      color: #0a0a0a;
+    }
+
+    .about-parent-photo {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      display: block;
+      border: 1px solid #111;
+      background: #ddd;
+    }
+
+    @media (max-width: 1000px) {
+      .about-photo-row,
+      .about-photo-row.bottom {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 8px;
+        scroll-snap-type: x proximity;
+      }
+
+      .about-photo-row img {
+        flex: 0 0 220px;
+        height: 160px;
+        scroll-snap-align: start;
+      }
+
+      .about-me-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-parent-photo {
+        max-height: 620px;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-photo-row img {
+        flex-basis: 175px;
+        height: 135px;
+      }
+
+      .about-me-copy p {
+        font-size: .98rem;
+        line-height: 1.68;
+      }
+    }
+
     /* CONTACT */
 
     .contact-grid {
@@ -1517,43 +1637,46 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- ABOUT ME -->
 
-    <section id="about" class="section">
-      <div class="container about-grid">
+    <section id="about" class="section about-me-section">
+      <div class="container">
 
-        <div class="about-copy">
-          <div class="eyebrow">
-            About MDP
-          </div>
-
-          <h2>
-            Massachusetts Running, Covered Differently.
-          </h2>
-
-          <p>
-            Massachusetts Distance Project is an independent running
-            media project focused on high school cross country and
-            distance running throughout Massachusetts.
-          </p>
-
-          <p>
-            MDP covers teams, athletes, races and stories through
-            articles, rankings, photography and interviews — all with
-            the goal of giving Massachusetts runners more coverage
-            and more recognition.
-          </p>
+        <div class="about-photo-row" aria-label="Walpole cross country memories">
+          <img src="assets/about-walpole-celebration.png" alt="Walpole cross country team celebrating together" loading="lazy">
+          <img src="assets/about-walpole-team-lineup.png" alt="Walpole cross country team" loading="lazy">
+          <img src="assets/about-ethan-track.png" alt="Ethan Barossi racing for Walpole" loading="lazy">
+          <img src="assets/about-ethan-xc-pack.png" alt="Ethan Barossi racing cross country for Walpole" loading="lazy">
+          <img src="assets/about-ethan-trail.png" alt="Ethan Barossi racing on a cross country course" loading="lazy">
+          <img src="assets/about-walpole-race-team.png" alt="Walpole cross country runners after a race" loading="lazy">
+          <img src="assets/about-walpole-huddle.jpeg" alt="Walpole cross country team huddle" loading="lazy">
         </div>
 
-        <div class="about-card">
-          <strong>
-            Independent. Local. Free.
-          </strong>
+        <div class="about-me-grid">
+          <div class="about-me-copy">
+            <div class="eyebrow">About Me</div>
+            <h2>The Story Behind MDP</h2>
+            <div class="about-me-rule"></div>
 
-          <p>
-            Built for the Massachusetts running community and focused
-            on the athletes, teams and stories that make the sport special.
-          </p>
+            <p>
+              My name is Ethan Barossi, and I recently graduated from Walpole High School, where I was a distance runner, and now compete for Roger Williams University. For me, running has never just been about getting faster or becoming more fit. I love this sport because it gives people a place to belong. During my senior year, my high school team went through a season I’ll never forget. We lost four of our top six returning runners before the season really got going, and on paper, we weren’t supposed to be very good. Instead, we built something better. Through hard work, friendship, and genuinely caring about one another, we created a culture stronger than the team we thought we were going to have. We ran times we never dreamed of and accomplished things that once seemed impossible, because we weren’t just running for ourselves—we were running for each other. That experience is a huge part of why I created the <strong>Massachusetts Distance Project</strong>. MDP isn’t meant to only highlight the fastest runners or the biggest programs. It’s about telling the stories of the people who work hard, care about their teammates, and love this sport just as much as I do. It’s about the runners and teams who turn nothing into something. <span class="about-final-line">Because being a distance runner isn't cool—and that's the entire point of being a distance runner.</span>
+            </p>
+          </div>
+
+          <div>
+            <img class="about-parent-photo" src="assets/about-ethan-parents.png" alt="Ethan Barossi with his parents" loading="lazy">
+          </div>
+        </div>
+
+        <div class="about-photo-row bottom" aria-label="More Walpole cross country memories">
+          <img src="assets/about-walpole-banquet.jpeg" alt="Walpole cross country team at a team event" loading="lazy">
+          <img src="assets/about-walpole-tent.jpeg" alt="Walpole cross country team" loading="lazy">
+          <img src="assets/about-walpole-podium.jpeg" alt="Walpole runners on the podium" loading="lazy">
+          <img src="assets/about-ethan-trophy-bus.jpeg" alt="Ethan Barossi holding a team trophy" loading="lazy">
+          <img src="assets/about-walpole-senior-night.jpeg" alt="Walpole cross country senior night" loading="lazy">
+          <img src="assets/about-ethan-teammate.jpeg" alt="Ethan Barossi with a Walpole teammate" loading="lazy">
+          <img src="assets/about-walpole-road-race.jpeg" alt="Walpole runners after a road race" loading="lazy">
+          <img src="assets/about-walpole-team-gym.jpeg" alt="Walpole cross country team" loading="lazy">
         </div>
 
       </div>
