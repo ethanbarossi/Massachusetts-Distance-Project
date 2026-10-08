@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Bob Glennon Twilight Invitational: What to Expect",
+    "deck": "A preview of the Bob Glennon Twilight Invitational, including Massachusetts high school cross country team and individual matchups.",
+    "category": "Cross Country · 2026 Meet Preview",
+    "href": "articles/bob-glennon-twilight-invitational-what-to-expect.html",
+    "image": "assets/bob-glennon-twilight-feature.jpeg",
+    "alt": "Runners starting the Bay State Invitational JV B cross country race"
+  },
+  {
     "title": "Week 4 Power Rankings",
     "deck": "Week 4 Massachusetts high school cross country power rankings from Massachusetts Distance Project.",
     "category": "XC",
