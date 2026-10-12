@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Through the Storm: Weekend in Review",
+    "deck": "Massachusetts cross-country weekend recap: Bob Glennon Twilight, Wickham Park, Devens, and Manhattan Invitationals.",
+    "category": "Cross Country · Weekend in Review",
+    "href": "articles/through-the-storm-weekend-in-review.html",
+    "image": "assets/through-the-storm-quinn-cook.jpeg",
+    "alt": "Hopedale runner Quinn Cook approaches the finish at the Bob Glennon Twilight Invitational"
+  },
+  {
     "title": "Bob Glennon Twilight Invitational: What to Expect",
     "deck": "A preview of the Bob Glennon Twilight Invitational, including Massachusetts high school cross country team and individual matchups.",
     "category": "Cross Country · 2026 Meet Preview",
