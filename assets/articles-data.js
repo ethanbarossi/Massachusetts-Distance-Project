@@ -1,13 +1,5 @@
 window.MDP_ARTICLES = [
   {
-    "title": "Week 5 Power Rankings",
-    "deck": "Week 5 Massachusetts high school cross country power rankings: Groton-Dunstable, Hopedale, Weston and Amherst-Pelham.",
-    "category": "Cross Country · Power Rankings",
-    "href": "articles/week-5-power-rankings (2).html",
-    "image": "assets/favicon.png",
-    "alt": "Week 5 Power Rankings"
-  },
-  {
     "title": "Through the Storm: Weekend in Review",
     "deck": "Massachusetts cross-country weekend recap: Bob Glennon Twilight, Wickham Park, Devens, and Manhattan Invitationals.",
     "category": "Cross Country · Weekend in Review",
@@ -206,6 +198,14 @@ window.MDP_ARTICLES = [
     "href": "articles/massachusetts-top-15-preseason-rankings-15-11.html",
     "image": "assets/longmeadow-preseason-rankings-feature.jpeg",
     "alt": "2025 Longmeadow boys cross country team after winning the Western Massachusetts title"
+  },
+  {
+    "title": "Week 5 Power Rankings",
+    "deck": "Read the latest Massachusetts high school distance running coverage.",
+    "category": "XC",
+    "href": "articles/week-5-power-rankings.html",
+    "image": "assets/favicon.png",
+    "alt": "Week 5 Power Rankings"
   },
   {
     "title": "Will The Brookline Boys Go 5 for 5?",
