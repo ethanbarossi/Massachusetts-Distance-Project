@@ -3,9 +3,9 @@ window.MDP_ARTICLES = [
     "title": "Week 5 Power Rankings",
     "deck": "Week 5 Massachusetts high school cross country power rankings: Groton-Dunstable, Hopedale, Weston and Amherst-Pelham.",
     "category": "Cross Country · Power Rankings",
-    "href": "articles/week-5-power-rankings.html",
-    "image": "week-5-power-rankings-weston.png",
-    "alt": "Weston boys cross country team celebrating their victory at the Bob Glennon Twilight Invitational"
+    "href": "articles/week-5-power-rankings (2).html",
+    "image": "assets/favicon.png",
+    "alt": "Week 5 Power Rankings"
   },
   {
     "title": "Through the Storm: Weekend in Review",
