@@ -4,7 +4,7 @@ window.MDP_ARTICLES = [
     "deck": "MDP Week 6 Massachusetts high school cross country power rankings: Cambridge Rindge & Latin, Concord-Carlisle, BC High, Arlington, Longmeadow, and Oliver Ames.",
     "category": "Cross Country · Power Rankings",
     "href": "articles/week-6-power-rankings.html",
-    "image": "week-6-power-rankings.jpg",
+    "image": "assets/week-6-power-rankings.jpg",
     "alt": "BC High boys cross country team posing with medals after the Burnt Hills Invitational"
   },
   {
