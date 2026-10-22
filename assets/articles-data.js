@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Week in Review: October 19–23",
+    "deck": "Massachusetts high school cross country week in review, October 19–23, 2026: dual-meet results and analysis.",
+    "category": "Cross Country · Week in Review",
+    "href": "articles/week-in-review-october-19-23.html",
+    "image": "assets/week-in-review-october-19-23.jpg",
+    "alt": "Start of the Newton North vs. Brookline dual meet at Larz Anderson Park"
+  },
+  {
     "title": "Week 6 Power Rankings",
     "deck": "MDP Week 6 Massachusetts high school cross country power rankings: Cambridge Rindge & Latin, Concord-Carlisle, BC High, Arlington, Longmeadow, and Oliver Ames.",
     "category": "Cross Country · Power Rankings",
