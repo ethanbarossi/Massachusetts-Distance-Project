@@ -1,19 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <meta
-    name="description"
-    content="Massachusetts Distance Project — independent coverage of Massachusetts high school cross country and distance running."
-  />
-
-  <title>Massachusetts Distance Project</title>
-
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Massachusetts Distance Project — independent coverage of Massachusetts high school cross country and distance running." name="description"/>
+<title>Massachusetts Distance Project</title>
+<link href="assets/favicon.png" rel="icon" type="image/png"/>
+<style>
     :root {
       --blue: #178cff;
       --blue-dark: #0c6fd8;
@@ -852,10 +846,10 @@
 
     /* ABOUT ME */
     .about-me-section {
-      background: #080808;
-      color: #ffffff;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
+      background: #f7f7f5;
+      color: #0a0a0a;
+      border-top: 1px solid #d9d9d9;
+      border-bottom: 1px solid #d9d9d9;
     }
 
     .about-me-section .eyebrow {
@@ -891,7 +885,7 @@
     }
 
     .about-me-copy h2 {
-      color: #ffffff;
+      color: #0a0a0a;
       font-size: clamp(2.5rem, 5vw, 4.7rem);
       line-height: .98;
       text-transform: uppercase;
@@ -907,7 +901,7 @@
     }
 
     .about-me-copy p {
-      color: #ffffff;
+      color: #242424;
       font-size: 1.04rem;
       line-height: 1.75;
       margin: 0;
@@ -917,7 +911,7 @@
     .about-me-copy .about-final-line {
       display: inline;
       font-weight: 800;
-      color: #ffffff;
+      color: #0a0a0a;
     }
 
     .about-parent-photo {
@@ -1185,497 +1179,319 @@
         scroll-behavior: auto;
       }
     }
+  
+    .interview-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .interview-card{background:#111;border:1px solid #292929;overflow:hidden}
+    .interview-video{position:relative;padding-top:56.25%;background:#000}
+    .interview-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .interview-card-body{padding:20px}
+    .interview-card-body h3{margin:8px 0 10px}
+    @media(max-width:900px){.interview-grid{grid-template-columns:1fr}}
     
 </style>
-</head>
-
+<style>
+/* MDP black About section */
+#about.about-me-section{background:#08090b!important;color:#fff!important}
+#about.about-me-section h2,#about.about-me-section h3,#about.about-me-section p,#about.about-me-section .about-me-copy{color:#fff!important}
+#about.about-me-section .eyebrow{color:#079cfa!important}
+</style></head>
 <body>
-
-  <header class="site-header">
-    <div class="container nav-wrap">
-
-      <a class="brand" href="#home">
-        <img
-          src="assets/mdp-logo.png"
-          alt="Massachusetts Distance Project logo"
-        />
-
-        <div class="brand-text">
-          Massachusetts<br />
+<header class="site-header">
+<div class="container nav-wrap">
+<a class="brand" href="#home">
+<img alt="Massachusetts Distance Project logo" src="assets/mdp-logo.png"/>
+<div class="brand-text">
+          Massachusetts<br/>
           Distance Project
         </div>
-      </a>
+</a>
+<nav aria-label="Main navigation">
+<a href="#home">Home</a>
+<a href="#articles">Articles</a>
+<a href="#calendar">Calendar</a>
+<a href="#photos">Photos</a>
 
-      <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#articles">Articles</a>
-        <a href="#calendar">Calendar</a>
-        <a href="#photos">Photos</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-    </div>
-  </header>
-
-  <main id="home">
-
-    <!-- HERO -->
-
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-
-          <div class="hero-line"></div>
-
-          <h1 class="hero-title">
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
+</header>
+<main id="home">
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-line"></div>
+<h1 class="hero-title">
             Massachusetts Distance Project
           </h1>
-
-          <p class="hero-description">
+<p class="hero-description">
             Independent coverage of Massachusetts high school cross
             country and distance running — featuring articles,
             rankings, photography and more.
           </p>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- QUICK LINKS -->
-
-    <section class="quick-links">
-      <div class="container">
-
-        <a class="quick-link" href="#articles">
+</div>
+</div>
+</section>
+<!-- QUICK LINKS -->
+<section class="quick-links">
+<div class="container">
+<a class="quick-link" href="#articles">
           Latest Articles
         </a>
 
-        <a class="quick-link" href="#calendar">
+<a class="quick-link" href="#calendar">
           Race Calendar
         </a>
-
-        <a class="quick-link" href="#photos">
+<a class="quick-link" href="#photos">
           Race Photos
         </a>
-
-      </div>
-    </section>
-
-    <!-- LATEST ARTICLES -->
-
-    <section id="articles" class="section">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">
+</div>
+</section>
+<!-- LATEST ARTICLES -->
+<section class="section" id="articles">
+<div class="container">
+<div class="section-heading">
+<div>
+<div class="eyebrow">
               Latest Coverage
             </div>
-
-            <h2>
+<h2>
               Latest Articles
             </h2>
-          </div>
-
-          <p>
+</div>
+<p>
             Massachusetts high school distance running coverage,
             previews, rankings, features and analysis.
           </p>
-        </div>
-
-        <div
-          class="article-grid"
-          id="articleGrid"
-          aria-live="polite"
-        ></div>
-
-        <nav
-          class="article-pagination"
-          id="articlePagination"
-          aria-label="Article pages"
-        ></nav>
-
-      </div>
-    </section>
+</div>
+<div aria-live="polite" class="article-grid" id="articleGrid"></div>
+<nav aria-label="Article pages" class="article-pagination" id="articlePagination"></nav>
+</div>
+</section>
+<!-- RACE CALENDAR -->
+<section class="section calendar-section" id="calendar">
+<div class="container">
+<div class="section-heading">
+<div><div class="eyebrow">This Week</div><h2>Race Calendar</h2></div>
+<p>Meets happening around Massachusetts this week.</p>
+</div>
+<div class="calendar-grid">
 
 
 
-    <!-- RACE CALENDAR -->
 
-    <section id="calendar" class="section calendar-section">
-      <div class="container">
-        <div class="section-heading">
-          <div><div class="eyebrow">This Week</div><h2>Race Calendar</h2></div>
-          <p>Meets happening around Massachusetts this week.</p>
-        </div>
-        <div class="calendar-grid">
-          <article class="calendar-day">
-            <div class="calendar-date">Monday</div>
-            <div class="calendar-empty">No meets listed</div>
-          </article>
-          <article class="calendar-day has-meets">
-            <div class="calendar-date">Tuesday</div>
-            <div class="calendar-meet">Lexington @ Belmont</div>
-            <div class="calendar-meet">Reading @ Winchester</div>
-            <div class="calendar-meet">Woburn @ Arlington</div>
-            <div class="calendar-meet">Northampton vs. Longmeadow</div>
-            <div class="calendar-meet">Amherst-Pelham vs. West Springfield</div>
-          </article>
-          <article class="calendar-day has-meets">
-            <div class="calendar-date">Wednesday</div>
-            <div class="calendar-meet">Walpole @ Weymouth</div>
-            <div class="calendar-meet">Newton North @ Brookline</div>
-            <div class="calendar-meet">Natick @ Framingham</div>
-            <div class="calendar-meet">Wellesley @ Needham</div>
-            <div class="calendar-meet">Braintree @ Milton</div>
-            <div class="calendar-meet">Central Catholic &amp; North Andover @ Andover</div>
-            <div class="calendar-meet">Chelmsford &amp; Billerica @ Lowell</div>
-          </article>
-          <article class="calendar-day">
-            <div class="calendar-date">Thursday</div>
-            <div class="calendar-empty">No meets listed</div>
-          </article>
-          <article class="calendar-day">
-            <div class="calendar-date">Friday</div>
-            <div class="calendar-empty">No meets listed</div>
-          </article>
-          <article class="calendar-day">
-            <div class="calendar-date">Saturday</div>
-            <div class="calendar-empty">No meets listed</div>
-          </article>
-          <article class="calendar-day">
-            <div class="calendar-date">Sunday</div>
-            <div class="calendar-empty">No meets listed</div>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <!-- RACE PHOTOS -->
 
-    <section id="photos" class="section section-light">
-      <div class="container">
 
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">
+<article class="calendar-day has-meets"><div class="calendar-date">Monday</div><div class="calendar-meet">Middlesex League Championship</div></article><article class="calendar-day has-meets"><div class="calendar-date">Tuesday</div><div class="calendar-meet">Catholic Conference Championship</div><div class="calendar-meet">CMAC Championship</div><div class="calendar-meet">Brookline HOKA Postal Nationals</div></article><article class="calendar-day has-meets"><div class="calendar-date">Wednesday</div><div class="calendar-meet">Dual County League Championship</div></article><article class="calendar-day"><div class="calendar-date">Thursday</div><div class="calendar-empty">No meets listed</div></article><article class="calendar-day"><div class="calendar-date">Friday</div><div class="calendar-empty">No meets listed</div></article><article class="calendar-day has-meets"><div class="calendar-date">Saturday</div><div class="calendar-meet">Bay State Conference Championship</div><div class="calendar-meet">Hockomock League Meet</div><div class="calendar-meet">MVC Championship</div><div class="calendar-meet">Patriot League Championship</div></article><article class="calendar-day"><div class="calendar-date">Sunday</div><div class="calendar-empty">No meets listed</div></article></div>
+</div>
+</section>
+<!-- RACE PHOTOS -->
+<section class="section section-light" id="photos">
+<div class="container">
+<div class="section-heading">
+<div>
+<div class="eyebrow">
               Race Photography
             </div>
-
-            <h2>
+<h2>
               Race Photos
             </h2>
-          </div>
-
-          <p>
+</div>
+<p>
             Full race galleries from Massachusetts track and cross
             country meets.
           </p>
-        </div>
-
-        <div class="photo-grid">
-
-          <a
-            class="photo-card"
-            href="https://photos.app.goo.gl/V7HQ9xULmUfCKQUB9"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/frank-kelley-invitational-2026-cover.jpeg"
-              alt="Frank Kelley Invitational 2026"
-            />
-            <div class="photo-card-content">
-              <div class="card-category">Cross Country · 2026</div>
-              <h3>Frank Kelley Invitational 2026</h3>
-              <p>View the full gallery.</p>
-              <span class="text-link">View Gallery →</span>
-            </div>
-          </a>
-
-          <a
-            class="photo-card"
-            href="https://photos.app.goo.gl/Ug1RS9rfkFx1hWRd7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/weston-twilight-2026-cover.jpeg"
-              alt="Weston Twilight 2026"
-            />
-
-            <div class="photo-card-content">
-              <div class="card-category">
+</div>
+<div class="photo-grid">
+<a class="photo-card" href="https://photos.app.goo.gl/V7HQ9xULmUfCKQUB9" rel="noopener noreferrer" target="_blank">
+<img alt="Frank Kelley Invitational 2026" src="assets/frank-kelley-invitational-2026-cover.jpeg"/>
+<div class="photo-card-content">
+<div class="card-category">Cross Country · 2026</div>
+<h3>Frank Kelley Invitational 2026</h3>
+<p>View the full gallery.</p>
+<span class="text-link">View Gallery →</span>
+</div>
+</a>
+<a class="photo-card" href="https://photos.app.goo.gl/Ug1RS9rfkFx1hWRd7" rel="noopener noreferrer" target="_blank">
+<img alt="Weston Twilight 2026" src="assets/weston-twilight-2026-cover.jpeg"/>
+<div class="photo-card-content">
+<div class="card-category">
                 Outdoor Track · 2026
               </div>
-
-              <h3>
+<h3>
                 Weston Twilight 2026
               </h3>
-
-              <p>
+<p>
                 View the full gallery.
               </p>
-
-              <span class="text-link">
+<span class="text-link">
                 View Gallery →
               </span>
-            </div>
-          </a>
-
-          <a
-            class="photo-card"
-            href="https://photos.app.goo.gl/XnAMgFGcBgT7HtNj7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/outdoor-moc-2026-cover.jpeg"
-              alt="Outdoor Track Meet of Champions 2026"
-            />
-
-            <div class="photo-card-content">
-              <div class="card-category">
+</div>
+</a>
+<a class="photo-card" href="https://photos.app.goo.gl/XnAMgFGcBgT7HtNj7" rel="noopener noreferrer" target="_blank">
+<img alt="Outdoor Track Meet of Champions 2026" src="assets/outdoor-moc-2026-cover.jpeg"/>
+<div class="photo-card-content">
+<div class="card-category">
                 Outdoor Track · 2026
               </div>
-
-              <h3>
+<h3>
                 Outdoor Track Meet of Champions 2026
               </h3>
-
-              <p>
+<p>
                 View the full gallery.
               </p>
-
-              <span class="text-link">
+<span class="text-link">
                 View Gallery →
               </span>
-            </div>
-          </a>
-
-          <a
-            class="photo-card"
-            href="https://photos.app.goo.gl/gqg4AEzyMbehhKGJA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/indoor-moc-2026-cover.jpeg"
-              alt="Indoor Track Meet of Champions 2026"
-            />
-
-            <div class="photo-card-content">
-              <div class="card-category">
+</div>
+</a>
+<a class="photo-card" href="https://photos.app.goo.gl/gqg4AEzyMbehhKGJA" rel="noopener noreferrer" target="_blank">
+<img alt="Indoor Track Meet of Champions 2026" src="assets/indoor-moc-2026-cover.jpeg"/>
+<div class="photo-card-content">
+<div class="card-category">
                 Indoor Track · 2026
               </div>
-
-              <h3>
+<h3>
                 Indoor Track Meet of Champions 2026
               </h3>
-
-              <p>
+<p>
                 View the full gallery.
               </p>
-
-              <span class="text-link">
+<span class="text-link">
                 View Gallery →
               </span>
-            </div>
-          </a>
-
-          <a
-            class="photo-card"
-            href="https://photos.app.goo.gl/9a8a1psCy21snGrMA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="assets/outdoor-division-1-relays-2026-cover.jpeg"
-              alt="Outdoor Track Division 1 Relays 2026"
-            />
-
-            <div class="photo-card-content">
-              <div class="card-category">
+</div>
+</a>
+<a class="photo-card" href="https://photos.app.goo.gl/9a8a1psCy21snGrMA" rel="noopener noreferrer" target="_blank">
+<img alt="Outdoor Track Division 1 Relays 2026" src="assets/outdoor-division-1-relays-2026-cover.jpeg"/>
+<div class="photo-card-content">
+<div class="card-category">
                 Outdoor Track · 2026
               </div>
-
-              <h3>
+<h3>
                 Outdoor Track Division 1 Relays 2026
               </h3>
-
-              <p>
+<p>
                 View the full gallery.
               </p>
-
-              <span class="text-link">
+<span class="text-link">
                 View Gallery →
               </span>
-            </div>
-          </a>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- INTERVIEWS -->
 
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT ME -->
-
-    <section id="about" class="section about-me-section">
-      <div class="container">
-
-        <div class="about-me-grid">
-          <div class="about-me-copy">
-            <div class="eyebrow">About Me</div>
-            <h2>The Story Behind MDP</h2>
-            <div class="about-me-rule"></div>
-
-            <p>
+<!-- ABOUT ME -->
+<section class="section about-me-section" id="about">
+<div class="container">
+<div class="about-me-grid">
+<div class="about-me-copy">
+<div class="eyebrow">About Me</div>
+<h2>The Story Behind MDP</h2>
+<div class="about-me-rule"></div>
+<p>
               My name is Ethan Barossi, and I recently graduated from Walpole High School, where I was a distance runner, and now compete for Roger Williams University. For me, running has never just been about getting faster or becoming more fit. I love this sport because it gives people a place to belong. During my senior year, my high school team went through a season I’ll never forget. We lost four of our top six returning runners before the season really got going, and on paper, we weren’t supposed to be very good. Instead, we built something better. Through hard work, friendship, and genuinely caring about one another, we created a culture stronger than the team we thought we were going to have. We ran times we never dreamed of and accomplished things that once seemed impossible, because we weren’t just running for ourselves—we were running for each other. That experience is a huge part of why I created the <strong>Massachusetts Distance Project</strong>. MDP isn’t meant to only highlight the fastest runners or the biggest programs. It’s about telling the stories of the people who work hard, care about their teammates, and love this sport just as much as I do. It’s about the runners and teams who turn nothing into something. <span class="about-final-line">Because being a distance runner isn't cool—and that's the entire point of being a distance runner.</span>
-            </p>
-          </div>
-
-          <div>
-            <img class="about-parent-photo" src="assets/about-ethan-parents.png" alt="Ethan Barossi with his parents" loading="lazy">
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-
-    <section id="contact" class="section section-light">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow">
+</p>
+</div>
+<div>
+<img alt="Ethan Barossi with his parents" class="about-parent-photo" loading="lazy" src="assets/about-ethan-parents.png"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section class="section section-light" id="contact">
+<div class="container">
+<div class="section-heading">
+<div>
+<div class="eyebrow">
               Get in Touch
             </div>
-
-            <h2>
+<h2>
               Contact &amp; Socials
             </h2>
-          </div>
-
-          <p>
+</div>
+<p>
             Reach out for coverage, photography,
             story ideas or other MDP inquiries.
           </p>
-        </div>
-
-        <div class="contact-grid">
-
-          <article class="contact-card personal">
-            <img
-              src="assets/ethan-barossi-profile.jpeg"
-              alt="Massachusetts Distance Project founder"
-            />
-
-            <div>
-              <div class="contact-label">
+</div>
+<div class="contact-grid">
+<article class="contact-card personal">
+<img alt="Massachusetts Distance Project founder" src="assets/ethan-barossi-profile.jpeg">
+<div>
+<div class="contact-label">
                 Founder
               </div>
-
-              <h3>
+<h3>
                 Ethan Barossi
               </h3>
-
-              <div class="contact-role">
+<div class="contact-role">
                 Founder, writer &amp; photographer
               </div>
-
-              <div class="contact-links">
-                <a href="mailto:ethanbarossi@gmail.com">
-                  Email<br><span style="font-weight: 500;">ethanbarossi@gmail.com</span>
-                </a>
-
-                <a
-                  href="https://www.instagram.com/ethanbarossi/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram<br><span style="font-weight: 500;">@ethanbarossi</span>
-                </a>
-
-                <a
-                  href="https://strava.app.link/UGdNEkVcq3b"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Strava<br><span style="font-weight: 500;">Ethan Barossi</span>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="contact-card">
-            <div class="contact-label">
+<div class="contact-links">
+<a href="mailto:ethanbarossi@gmail.com">
+                  Email<br/><span style="font-weight: 500;">ethanbarossi@gmail.com</span>
+</a>
+<a href="https://www.instagram.com/ethanbarossi/" rel="noopener noreferrer" target="_blank">
+                  Instagram<br/><span style="font-weight: 500;">@ethanbarossi</span>
+</a>
+<a href="https://strava.app.link/UGdNEkVcq3b" rel="noopener noreferrer" target="_blank">
+                  Strava<br/><span style="font-weight: 500;">Ethan Barossi</span>
+</a>
+</div>
+</div>
+</img></article>
+<article class="contact-card">
+<div class="contact-label">
               Massachusetts Distance Project
             </div>
-
-            <h3>
+<h3>
               Business &amp; Media
             </h3>
-
-            <div class="contact-role">
-              Coverage, photography &amp; inquiries
+<div class="contact-role">
+              Coverage, photography, interviews &amp; inquiries
             </div>
-
-            <div class="contact-links">
-              <a href="mailto:massachusettsdistanceproject@gmail.com">
-                Email<br><span style="font-weight: 500;">massachusettsdistanceproject@gmail.com</span>
-              </a>
-
-              <a
-                href="https://www.instagram.com/massdistanceproject/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Instagram<br><span style="font-weight: 500;">@massdistanceproject</span>
-              </a>
-
-              <a
-                href="https://www.youtube.com/@MassachusettsDistanceProject"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                YouTube<br><span style="font-weight: 500;">Massachusetts Distance Project</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-
-  <footer>
-    <div class="container footer-wrap">
-
-      <div>
-        <strong>
+<div class="contact-links">
+<a href="mailto:massachusettsdistanceproject@gmail.com">
+                Email<br/><span style="font-weight: 500;">massachusettsdistanceproject@gmail.com</span>
+</a>
+<a href="https://www.instagram.com/massdistanceproject/" rel="noopener noreferrer" target="_blank">
+                Instagram<br/><span style="font-weight: 500;">@massdistanceproject</span>
+</a>
+<a href="https://www.youtube.com/@MassachusettsDistanceProject" rel="noopener noreferrer" target="_blank">
+                YouTube<br/><span style="font-weight: 500;">Massachusetts Distance Project</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer>
+<div class="container footer-wrap">
+<div>
+<strong>
           Massachusetts Distance Project
         </strong>
-
-        <br />
+<br>
 
         Independent Massachusetts high school distance running coverage.
-      </div>
-
-      <div>
+      </br></div>
+<div>
         © 2026 Massachusetts Distance Project
       </div>
-
-    </div>
-  </footer>
-
-  <script src="assets/articles-data.js"></script>
-
-  <script>
+</div>
+</footer>
+<script src="assets/articles-data.js"></script>
+<script>
     const ARTICLES_PER_PAGE = 9;
 
     function escapeArticleText(value) {
@@ -1866,6 +1682,5 @@
       }
     );
   </script>
-
 </body>
 </html>
