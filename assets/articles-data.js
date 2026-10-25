@@ -3,7 +3,7 @@ window.MDP_ARTICLES = [
     "title": "Week 7 Power Rankings",
     "deck": "MDP Week 7 Massachusetts boys cross-country power rankings analysis and honorable mentions.",
     "category": "Power Rankings · Cross Country",
-    "href": "articles/week-7-power-rankings-updated.html",
+    "href": "articles/week-7-power-rankings.html",
     "image": "assets/week-7-power-rankings.jpg",
     "alt": "Needham cross-country runners huddle together before their meet against Wellesley"
   },
