@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Conference Conclusion Part 1: Week in Review",
+    "deck": "Lexington dominates, Brookline shows its depth, Hopedale stays hot, and BC High pulls off a major upset.",
+    "category": "Cross Country · Week in Review",
+    "href": "articles/conference-conclusion-part-1-final.html",
+    "image": "assets/conference-conclusion-part-1.jpg",
+    "alt": "BC High seniors celebrating after the Catholic Conference Championship"
+  },
+  {
     "title": "Week 7 Power Rankings",
     "deck": "MDP Week 7 Massachusetts boys cross-country power rankings analysis and honorable mentions.",
     "category": "Power Rankings · Cross Country",
