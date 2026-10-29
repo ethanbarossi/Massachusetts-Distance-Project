@@ -3,7 +3,7 @@ window.MDP_ARTICLES = [
     "title": "Conference Conclusion Part 1: Week in Review",
     "deck": "Lexington dominates, Brookline shows its depth, Hopedale stays hot, and BC High pulls off a major upset.",
     "category": "Cross Country · Week in Review",
-    "href": "articles/conference-conclusion-part-1-final.html",
+    "href": "articles/conference-conclusion-part-1.html",
     "image": "assets/conference-conclusion-part-1.jpg",
     "alt": "BC High seniors celebrating after the Catholic Conference Championship"
   },
