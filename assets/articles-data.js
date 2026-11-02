@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Conference Conclusion Part 2: Weekend in Review",
+    "deck": "Massachusetts Distance Project reviews the Dual County, Bay State, Hockomock, Merrimack Valley, and Patriot League cross country championships.",
+    "category": "XC",
+    "href": "articles/conference-conclusion-part-2.html",
+    "image": "assets/conference-conclusion-part-2.jpg",
+    "alt": "Top 25 Bay State Conference varsity runners on the Cracker Barrel Fair podium"
+  },
+  {
     "title": "Conference Conclusion Part 1: Week in Review",
     "deck": "Lexington dominates, Brookline shows its depth, Hopedale stays hot, and BC High pulls off a major upset.",
     "category": "Cross Country · Week in Review",
