@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Week 8 Power Rankings",
+    "deck": "Week 8 Massachusetts boys cross-country power rankings: Brookline reclaims the top spot, BC High surges, and more.",
+    "category": "XC",
+    "href": "articles/week-8-power-rankings.html",
+    "image": "assets/week-8-power-rankings.jpg",
+    "alt": "Runners from Natick, Weymouth, Newton North, and other teams racing at the Bay State Conference Championship"
+  },
+  {
     "title": "Conference Conclusion Part 2: Weekend in Review",
     "deck": "Massachusetts Distance Project reviews the Dual County, Bay State, Hockomock, Merrimack Valley, and Patriot League cross country championships.",
     "category": "XC",
