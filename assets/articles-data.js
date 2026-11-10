@@ -3,8 +3,8 @@ window.MDP_ARTICLES = [
     "title": "2026 Division 1: What to Expect",
     "deck": "Massachusetts Distance Project previews the 2026 Division 1 cross country championships, including Division 1A, 1B and 1C team seedings and key individuals.",
     "category": "XC",
-    "href": "articles/MDP-2026-Division-1-What-to-Expect.html",
-    "image": "MDP-Brookline-Bay-State-2026.jpg",
+    "href": "articles/MDP-2026-Division-1-What-to-Expect-FIXED.html",
+    "image": "articles/MDP-Brookline-Bay-State-2026.jpg",
     "alt": "Brookline boys cross country team after winning the A Race at the 2026 Bay State Invitational"
   },
   {
