@@ -1,10 +1,18 @@
 window.MDP_ARTICLES = [
   {
+    "title": "2026 Division 2: What to Expect",
+    "deck": "MDP previews the 2026 Massachusetts Division 2 cross country championships, with team seedings and individual contenders in 2A, 2B and 2C.",
+    "category": "XC",
+    "href": "articles/MDP-2026-Division-2-What-to-Expect.html",
+    "image": "https://massachusettsdistanceproject.com/assets/MDP-Amherst-Pelham-Twilight-2026.jpg",
+    "alt": "2026 Division 2: What to Expect"
+  },
+  {
     "title": "2026 Division 1: What to Expect",
     "deck": "Massachusetts Distance Project previews the 2026 Division 1 cross country championships, including Division 1A, 1B and 1C team seedings and key individuals.",
     "category": "XC",
     "href": "articles/MDP-2026-Division-1-What-to-Expect.html",
-    "image": "assets/MDP-Brookline-Bay-State-2026.jpg",
+    "image": "articles/MDP-Brookline-Bay-State-2026.jpg",
     "alt": "Brookline boys cross country team after winning the A Race at the 2026 Bay State Invitational"
   },
   {
