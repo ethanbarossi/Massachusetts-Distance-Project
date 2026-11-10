@@ -3,7 +3,7 @@ window.MDP_ARTICLES = [
     "title": "2026 Division 3: What to Expect",
     "deck": "MDP previews the 2026 Massachusetts Division 3 cross country championships, including team seedings and key individuals in 3A, 3B and 3C.",
     "category": "XC",
-    "href": "articles/MDP-2026-Division-3-What-to-Expect-FORMATTED.html",
+    "href": "articles/MDP-2026-Division-3-What-to-Expect.html",
     "image": "https://massachusettsdistanceproject.com/assets/MDP-Hopedale-CMAC-2026.jpg",
     "alt": "2026 Division 3: What to Expect"
   },
