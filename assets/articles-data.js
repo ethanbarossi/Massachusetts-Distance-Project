@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Divisional Drama: Weekend in Review",
+    "deck": "Massachusetts Distance Project recaps the 2026 MIAA cross country divisional championships across all nine divisions, from Brookline and Lincoln-Sudbury to Hopedale.",
+    "category": "2026 MIAA Cross Country • Championship Recap",
+    "href": "articles/MDP-Divisional-Drama-Weekend-in-Review.html",
+    "image": "https://massachusettsdistanceproject.com/assets/MDP-Lincoln-Sudbury-D1B-Champions-2026.jpg",
+    "alt": "Divisional Drama: Weekend in Review"
+  },
+  {
     "title": "2026 Division 3: What to Expect",
     "deck": "MDP previews the 2026 Massachusetts Division 3 cross country championships, including team seedings and key individuals in 3A, 3B and 3C.",
     "category": "XC",
