@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "2026 Meet of Champions Predictions",
+    "deck": "MDP previews the 2026 MIAA Cross Country Meet of Champions across Divisions 1, 2 and 3.",
+    "category": "Massachusetts Distance Project • Cross Country 2026",
+    "href": "articles/MDP-2026-Meet-of-Champions-Predictions.html",
+    "image": "https://massachusettsdistanceproject.com/assets/MDP-Longmeadow-D2A-Champions-2026.jpg",
+    "alt": "2026 Meet of Champions Predictions"
+  },
+  {
     "title": "Divisional Drama: Weekend in Review",
     "deck": "Massachusetts Distance Project recaps the 2026 MIAA cross country divisional championships across all nine divisions, from Brookline and Lincoln-Sudbury to Hopedale.",
     "category": "2026 MIAA Cross Country • Championship Recap",
