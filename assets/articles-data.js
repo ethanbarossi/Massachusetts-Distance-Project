@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "Meet of Champions Review & Analysis",
+    "deck": "MDP reviews the 2026 MIAA Cross Country Meet of Champions: Brookline, Weston, Hopedale and standout performances across all three divisions.",
+    "category": "Massachusetts Distance Project • Cross Country 2026",
+    "href": "articles/MDP-Meet-of-Champions-Review-and-Analysis-2026.html",
+    "image": "https://massachusettsdistanceproject.com/assets/MDP-Brookline-2026-Meet-of-Champions.jpg",
+    "alt": "Meet of Champions Review & Analysis"
+  },
+  {
     "title": "2026 Meet of Champions Predictions",
     "deck": "MDP previews the 2026 MIAA Cross Country Meet of Champions across Divisions 1, 2 and 3.",
     "category": "Massachusetts Distance Project • Cross Country 2026",
