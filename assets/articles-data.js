@@ -1,5 +1,13 @@
 window.MDP_ARTICLES = [
   {
+    "title": "2026–27 Bay State Conference Indoor Track Preview",
+    "deck": "MDP previews all 10 Bay State Conference boys’ and girls’ indoor track teams, preseason rankings and athletes to watch.",
+    "category": "Massachusetts Distance Project • Indoor Track 2026–27",
+    "href": "articles/MDP-2026-27-Bay-State-Conference-Indoor-Track-Preview.html",
+    "image": "https://massachusettsdistanceproject.com/assets/MDP-2026-27-Bay-State-Conference-Indoor-Track-Preview.jpg",
+    "alt": "2026–27 Bay State Conference Indoor Track Preview"
+  },
+  {
     "title": "Meet of Champions Review & Analysis",
     "deck": "MDP reviews the 2026 MIAA Cross Country Meet of Champions: Brookline, Weston, Hopedale and standout performances across all three divisions.",
     "category": "Massachusetts Distance Project • Cross Country 2026",
